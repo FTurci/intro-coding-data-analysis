@@ -527,75 +527,120 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exercise-1-import-and-basic-array-creation" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-1-import-and-basic-array-creation">Exercise 1: Import and Basic Array Creation</h2>
 <p><strong>Task:</strong> Import NumPy with the standard <code>import</code> command and create a NumPy array from the list <code>[2, 4, 6, 8, 10, 12]</code>. Print the array, its data type, and its shape.</p>
-<div id="ed15b944" class="cell" data-execution_count="1">
+<div id="e17204c1" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-2-array-indexing-and-slicing" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-2-array-indexing-and-slicing">Exercise 2: Array Indexing and Slicing</h2>
-<p><strong>Task:</strong> Using the array you created in Exercise 1: - Print the first element - Print the last element - Print elements from index 2 to 4 (inclusive of 2, exclusive of 5) - Print every second element</p>
-<div id="f175f4c4" class="cell" data-execution_count="2">
+<p><strong>Task:</strong> Using the array you created in Exercise 1:</p>
+<ul>
+<li>Print the first element</li>
+<li>Print the last element</li>
+<li>Print elements from index 2 to 4 (inclusive of 2, exclusive of 5)</li>
+<li>Print every second element</li>
+</ul>
+<div id="2129411a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-3-element-wise-operations" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-3-element-wise-operations">Exercise 3: Element-wise Operations</h2>
-<p><strong>Task:</strong> Create a NumPy array <code>arr = np.array([1, 4, 9, 16, 25])</code>. Perform the following operations and print the results: - Multiply each element by 3 - Add 10 to each element - Calculate the square root of each element - Apply the sine function to each element</p>
-<div id="3eddd5fd" class="cell" data-execution_count="3">
+<p><strong>Task:</strong> Create a NumPy array <code>arr = np.array([1, 4, 9, 16, 25])</code>. Perform the following operations and print the results:</p>
+<ul>
+<li>Multiply each element by 3</li>
+<li>Add 10 to each element</li>
+<li>Calculate the square root of each element</li>
+<li>Apply the sine function to each element</li>
+</ul>
+<div id="e45be603" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-4-array-operations-with-two-arrays" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-4-array-operations-with-two-arrays">Exercise 4: Array Operations with Two Arrays</h2>
-<p><strong>Task:</strong> Create two NumPy arrays: - <code>arr1 = np.array([1, 2, 3, 4, 5])</code> - <code>arr2 = np.array([10, 20, 30, 40, 50])</code></p>
-<p>Perform element-wise operations and print the results: - Add the two arrays - Subtract arr1 from arr2 - Multiply the two arrays - Divide arr2 by arr1</p>
-<div id="59794da7" class="cell" data-execution_count="4">
+<p><strong>Task:</strong> Create two NumPy arrays:</p>
+<ul>
+<li><code>arr1 = np.array([1, 2, 3, 4, 5])</code></li>
+<li><code>arr2 = np.array([10, 20, 30, 40, 50])</code></li>
+</ul>
+<p>Perform element-wise operations and print the results:</p>
+<ul>
+<li>Add the two arrays</li>
+<li>Subtract arr1 from arr2</li>
+<li>Multiply the two arrays</li>
+<li>Divide arr2 by arr1</li>
+</ul>
+<div id="2388bba6" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-5-shape-mismatch-error" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-5-shape-mismatch-error">Exercise 5: Shape Mismatch Error</h2>
-<p><strong>Task:</strong> Create two arrays with different lengths: - <code>arr_a = np.array([1, 2, 3, 4])</code> - <code>arr_b = np.array([10, 20])</code></p>
+<p><strong>Task:</strong> Create two arrays with different lengths:</p>
+<ul>
+<li><code>arr_a = np.array([1, 2, 3, 4])</code></li>
+<li><code>arr_b = np.array([10, 20])</code></li>
+</ul>
 <p>Try to add these arrays together. What happens? Write the code and explain the error in a comment.</p>
-<div id="bc8fd746" class="cell" data-execution_count="5">
+<div id="3d9d1253" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-6-reductive-operations" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-6-reductive-operations">Exercise 6: Reductive Operations</h2>
-<p><strong>Task:</strong> Create a NumPy array <code>data = np.array([12, 8, 15, 3, 7, 20, 11, 9])</code>. Calculate and print: - The sum of all elements - The mean (average) of all elements - The maximum value - The minimum value - The standard deviation</p>
-<div id="970cf110" class="cell" data-execution_count="6">
+<p><strong>Task:</strong> Create a NumPy array <code>data = np.array([12, 8, 15, 3, 7, 20, 11, 9])</code>. Calculate and print:</p>
+<ul>
+<li>The sum of all elements</li>
+<li>The mean (average) of all elements</li>
+<li>The maximum value</li>
+<li>The minimum value</li>
+<li>The standard deviation</li>
+</ul>
+<div id="f840d279" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-7-array-manipulation" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-7-array-manipulation">Exercise 7: Array Manipulation</h2>
-<p><strong>Task:</strong> Create a NumPy array <code>numbers = np.array([5, 2, 8, 1, 9, 3])</code>. Perform the following operations: - Sort the array and print the result - Calculate the cumulative sum and print the result - Create a new array with duplicates: <code>with_duplicates = np.array([5, 2, 8, 1, 9, 3, 5, 2, 1])</code> and find the unique elements</p>
-<div id="f9b6292d" class="cell" data-execution_count="7">
+<p><strong>Task:</strong> Create a NumPy array <code>numbers = np.array([5, 2, 8, 1, 9, 3])</code>. Perform the following operations:</p>
+<ul>
+<li>Sort the array and print the result</li>
+<li>Calculate the cumulative sum and print the result</li>
+<li>Create a new array with duplicates: <code>with_duplicates = np.array([5, 2, 8, 1, 9, 3, 5, 2, 1])</code> and find the unique elements</li>
+</ul>
+<div id="88c72943" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-8-list-vs-numpy-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-8-list-vs-numpy-comparison">Exercise 8: List vs NumPy Comparison</h2>
-<p><strong>Task:</strong> Compare the flexibility of lists vs NumPy arrays: 1. Create a Python list containing mixed data types: <code>mixed_list = [1, 'hello', 3.14, True]</code> 2. Try to create a NumPy array from this list. What happens to the data types? 3. Create a list of numbers: <code>num_list = [1, 2, 3, 4, 5]</code> 4. Try to multiply the entire list by 2 using <code>num_list * 2</code>. What happens? 5. Create a NumPy array from the same numbers and multiply by 2. Compare the results.</p>
-<div id="3ba60c68" class="cell" data-execution_count="8">
+<p><strong>Task:</strong> Compare the flexibility of lists vs NumPy arrays:</p>
+<ol type="1">
+<li>Create a Python list containing mixed data types: <code>mixed_list = [1, 'hello', 3.14, True]</code></li>
+<li>Try to create a NumPy array from this list. What happens to the data types?</li>
+<li>Create a list of numbers: <code>num_list = [1, 2, 3, 4, 5]</code></li>
+<li>Try to multiply the entire list by 2 using <code>num_list * 2</code>. What happens?</li>
+<li>Create a NumPy array from the same numbers and multiply by 2. Compare the results.</li>
+</ol>
+<div id="9d48c711" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-9-performance-comparison" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-9-performance-comparison">Exercise 9: Performance Comparison</h2>
 <p><strong>Task:</strong> Compare the performance of list comprehension vs NumPy operations: 1. Import the <code>time</code> module 2. Create a range of 50,000 numbers using numpy <code>np.arange()</code> 3. Time how long it takes to square each number using a <strong>list comprehension</strong>, i.e.&nbsp;the syntax <code>[x**2 for x in myarray]</code> 4. Time how long it takes to square each number using NumPy operations 5. Calculate and print how many times faster the NumPy operation is</p>
-<div id="b08c6dbb" class="cell" data-execution_count="9">
+<div id="01bba9f5" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-10-complex-operations" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-10-complex-operations">Exercise 10: Complex Operations</h2>
 <p><strong>Task:</strong> Create a NumPy array representing angles in degrees: <code>angles_deg = np.array([0, 30, 45, 60, 90, 120, 180])</code> 1. Convert these angles to radians (hint: multiply by π/180, use <code>np.pi</code>) 2. Calculate the sine and cosine of each angle 3. Verify that sin²(x) + cos²(x) = 1 for each angle (use <code>np.sin()</code> and <code>np.cos()</code>) 4. Print all results</p>
-<div id="4f410f98" class="cell" data-execution_count="10">
+<div id="37e91276" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="09ffd32a" class="cell" data-execution_count="11">
+<div id="76795288" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -607,7 +652,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Convert all temperatures to Kelvin using the formula: K = C + 273.15</li>
 <li>Calculate the temperature range (max - min) for each scale</li>
 </ol>
-<div id="426f68eb" class="cell" data-execution_count="12">
+<div id="886d8d38" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
@@ -765,7 +810,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/FTurci\.github\.io\/intro-coding-data-analysis\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1117,132 +1162,140 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 2: Array Indexing and Slicing</span></span>
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>**Task:** Using the array you created in Exercise 1:</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print the first element</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print the last element</span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print elements from index 2 to 4 (inclusive of 2, exclusive of 5)</span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print every second element</span>
-<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 3: Element-wise Operations</span></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array <span class="in">`arr = np.array([1, 4, 9, 16, 25])`</span>. Perform the following operations and print the results:</span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiply each element by 3</span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Add 10 to each element</span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calculate the square root of each element</span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply the sine function to each element</span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 4: Array Operations with Two Arrays</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print the first element</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print the last element</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print elements from index 2 to 4 (inclusive of 2, exclusive of 5)</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Print every second element</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 3: Element-wise Operations</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array <span class="in">`arr = np.array([1, 4, 9, 16, 25])`</span>. Perform the following operations and print the results:</span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiply each element by 3</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Add 10 to each element</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calculate the square root of each element</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Apply the sine function to each element</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>**Task:** Create two NumPy arrays:</span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr1 = np.array([1, 2, 3, 4, 5])`</span></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr2 = np.array([10, 20, 30, 40, 50])`</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 4: Array Operations with Two Arrays</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>**Task:** Create two NumPy arrays:</span>
 <span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>Perform element-wise operations and print the results:</span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Add the two arrays</span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Subtract arr1 from arr2</span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiply the two arrays</span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Divide arr2 by arr1</span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 5: Shape Mismatch Error</span></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>**Task:** Create two arrays with different lengths:</span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr_a = np.array([1, 2, 3, 4])`</span></span>
-<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr_b = np.array([10, 20])`</span></span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr1 = np.array([1, 2, 3, 4, 5])`</span></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr2 = np.array([10, 20, 30, 40, 50])`</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>Perform element-wise operations and print the results:</span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Add the two arrays</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Subtract arr1 from arr2</span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Multiply the two arrays</span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Divide arr2 by arr1</span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 5: Shape Mismatch Error</span></span>
 <span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>Try to add these arrays together. What happens? Write the code and explain the error in a comment.</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a>**Task:** Create two arrays with different lengths:</span>
 <span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 6: Reductive Operations</span></span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array <span class="in">`data = np.array([12, 8, 15, 3, 7, 20, 11, 9])`</span>. Calculate and print:</span>
-<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The sum of all elements</span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The mean (average) of all elements</span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The maximum value</span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The minimum value</span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The standard deviation</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr_a = np.array([1, 2, 3, 4])`</span></span>
+<span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`arr_b = np.array([10, 20])`</span></span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a>Try to add these arrays together. What happens? Write the code and explain the error in a comment.</span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 6: Reductive Operations</span></span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array <span class="in">`data = np.array([12, 8, 15, 3, 7, 20, 11, 9])`</span>. Calculate and print:</span>
 <span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The sum of all elements</span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The mean (average) of all elements</span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The maximum value</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The minimum value</span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>The standard deviation</span>
 <span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 7: Array Manipulation</span></span>
-<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array <span class="in">`numbers = np.array([5, 2, 8, 1, 9, 3])`</span>. Perform the following operations:</span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sort the array and print the result</span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calculate the cumulative sum and print the result</span>
-<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create a new array with duplicates: <span class="in">`with_duplicates = np.array([5, 2, 8, 1, 9, 3, 5, 2, 1])`</span> and find the unique elements</span>
-<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 8: List vs NumPy Comparison</span></span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>**Task:** Compare the flexibility of lists vs NumPy arrays:</span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create a Python list containing mixed data types: <span class="in">`mixed_list = [1, 'hello', 3.14, True]`</span></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Try to create a NumPy array from this list. What happens to the data types?</span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Create a list of numbers: <span class="in">`num_list = [1, 2, 3, 4, 5]`</span></span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Try to multiply the entire list by 2 using <span class="in">`num_list * 2`</span>. What happens?</span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Create a NumPy array from the same numbers and multiply by 2. Compare the results.</span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 7: Array Manipulation</span></span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array <span class="in">`numbers = np.array([5, 2, 8, 1, 9, 3])`</span>. Perform the following operations:</span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sort the array and print the result</span>
+<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calculate the cumulative sum and print the result</span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Create a new array with duplicates: <span class="in">`with_duplicates = np.array([5, 2, 8, 1, 9, 3, 5, 2, 1])`</span> and find the unique elements</span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 8: List vs NumPy Comparison</span></span>
 <span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 9: Performance Comparison</span></span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>**Task:** Compare the flexibility of lists vs NumPy arrays:</span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Create a Python list containing mixed data types: <span class="in">`mixed_list = [1, 'hello', 3.14, True]`</span></span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Try to create a NumPy array from this list. What happens to the data types?</span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Create a list of numbers: <span class="in">`num_list = [1, 2, 3, 4, 5]`</span></span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Try to multiply the entire list by 2 using <span class="in">`num_list * 2`</span>. What happens?</span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Create a NumPy array from the same numbers and multiply by 2. Compare the results.</span>
 <span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>**Task:** Compare the performance of list comprehension vs NumPy operations:</span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Import the <span class="in">`time`</span> module</span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Create a range of 50,000 numbers using numpy <span class="in">`np.arange()`</span></span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Time how long it takes to square each number using a **list comprehension**, i.e. the syntax `[x**2 for x in myarray]`</span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Time how long it takes to square each number using NumPy operations</span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Calculate and print how many times faster the NumPy operation is</span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 10: Complex Operations</span></span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 9: Performance Comparison</span></span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>**Task:** Compare the performance of list comprehension vs NumPy operations:</span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Import the <span class="in">`time`</span> module</span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Create a range of 50,000 numbers using numpy <span class="in">`np.arange()`</span></span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Time how long it takes to square each number using a **list comprehension**, i.e. the syntax `[x**2 for x in myarray]`</span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Time how long it takes to square each number using NumPy operations</span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Calculate and print how many times faster the NumPy operation is</span>
 <span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array representing angles in degrees: <span class="in">`angles_deg = np.array([0, 30, 45, 60, 90, 120, 180])`</span></span>
-<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Convert these angles to radians (hint: multiply by π/180, use <span class="in">`np.pi`</span>)</span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Calculate the sine and cosine of each angle</span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Verify that sin²(x) + cos²(x) = 1 for each angle (use <span class="in">`np.sin()`</span> and <span class="in">`np.cos()`</span>)</span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Print all results</span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="fu">## Challenge Exercise: Temperature Conversion</span></span>
+<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise 10: Complex Operations</span></span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>**Task:** Create a NumPy array representing angles in degrees: <span class="in">`angles_deg = np.array([0, 30, 45, 60, 90, 120, 180])`</span></span>
+<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Convert these angles to radians (hint: multiply by π/180, use <span class="in">`np.pi`</span>)</span>
+<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Calculate the sine and cosine of each angle</span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Verify that sin²(x) + cos²(x) = 1 for each angle (use <span class="in">`np.sin()`</span> and <span class="in">`np.cos()`</span>)</span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Print all results</span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>**Task:** You have temperature readings in Celsius: <span class="in">`celsius_temps = np.array([0, 10, 20, 25, 30, 35, 40])`</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Convert all temperatures to Fahrenheit using the formula: F = (C × 9/5) + 32</span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Convert all temperatures to Kelvin using the formula: K = C + 273.15</span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Calculate the temperature range (max - min) for each scale</span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="fu">## Challenge Exercise: Temperature Conversion</span></span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>**Task:** You have temperature readings in Celsius: <span class="in">`celsius_temps = np.array([0, 10, 20, 25, 30, 35, 40])`</span></span>
+<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Convert all temperatures to Fahrenheit using the formula: F = (C × 9/5) + 32</span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Convert all temperatures to Kelvin using the formula: K = C + 273.15</span>
+<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Calculate the temperature range (max - min) for each scale</span>
+<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a><span class="co"># Your code here</span></span>
+<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
