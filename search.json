@@ -4,7 +4,7 @@
     "href": "08/exercises_lecture_working_with_numpy.html",
     "title": "Exercises - Working with NumPy",
     "section": "",
-    "text": "Create a 1D NumPy array of integers from 10 to 19. Access the element at index 3.",
+    "text": "Create a 1D NumPy array arr of integers from 10 to 19. Access the element at index 3.\n\n# Your code here",
     "crumbs": [
       "Home",
       "08 Working with NumPy",
@@ -16,7 +16,7 @@
     "href": "08/exercises_lecture_working_with_numpy.html#exercise-9-problem-solving-with-numpy",
     "title": "Exercises - Working with NumPy",
     "section": "Exercise 9: Problem solving with NumPy",
-    "text": "Exercise 9: Problem solving with NumPy\nConsider the following problem:\n\nA panoramic wheel (a Ferris wheel) with a radius of 10 meters rotates anti-clockwise at a constant speed of 2 revolutions per minute. A passenger is seated in a car at the edge of the wheel. Calculate the trajectory of the passenger with respect to the center of the wheel for the duration of 30 seconds, with a time resolution of 2 seconds, assuming they start at the rightmost point of the wheel.\n\nThe problem is a two-dimensional problem. The passenger has coordinates \\(x(t), y(t)\\) and is performing uniform rotational motion, with angular velocity \\(\\omega\\) and radius \\(R\\).\nThe angle formed at which the passenger is located is \\(\\theta(t)\\) and simply evolves as\n\\[\\theta(t) = \\omega t +\\theta_0\\]\nwhere \\(\\theta_0\\) is the initial angle (\\(\\theta_0=0\\) in our case).\nHence, the trajectory is expressed by\n\\[\n\\begin{align}\nx(t) & = R\\cos\\theta(t) = R \\cos{\\omega t}+x_0\\\\\ny(t) & = R\\sin\\theta(t)  = R \\sin{\\omega t}+y_0\n\\end{align}\n\\]\nSo, we have all the theoretical knowledge that we need to solve the problem. How can we translate this into code?\nThe first approach is via using vanilla Python\n\nimport math\nR = 10.0 #in metres\nomega = 2.0*2*math.pi/60. # in radians per second\nx0 = R # in metres\ny0 = 0 # in metres\ndt = 2.0 # in seconds\nduration = 20.0 #in seconds\nnum_iterations  = int(duration/dt)\nx, y = [], []\nt = 0\nfor _ in range(num_iterations):\n    x.append(R*math.cos(omega*t)+x0)\n    y.append(R*math.sin(omega*t)+y0)\n    t += dt \n\n# plotting, ignore the details for now sicne we will cover this in a later lecture\nimport matplotlib.pyplot as plt\nplt.scatter(x,y)\nplt.axis(\"equal\")\nplt.show()\n\n\n\n\n\n\n\n\nThe question now is: can you simpify this code by using NumPy? Your focus should be on avoiding for loops and using NumPy’s array operations instead.",
+    "text": "Exercise 9: Problem solving with NumPy\nConsider the following problem:\n\nA panoramic wheel (a Ferris wheel) with a radius of 10 meters rotates anti-clockwise at a constant speed of 2 revolutions per minute. A passenger is seated in a car at the edge of the wheel. Calculate the trajectory of the passenger with respect to the center of the wheel for the duration of 30 seconds, with a time resolution of 2 seconds, assuming they start at the rightmost point of the wheel.\n\nThe problem is a two-dimensional problem. The passenger has coordinates \\(x(t), y(t)\\) and is performing uniform rotational motion, with angular velocity \\(\\omega\\) and radius \\(R\\).\nThe angle formed at which the passenger is located is \\(\\theta(t)\\) and simply evolves as\n\\[\\theta(t) = \\omega t +\\theta_0\\]\nwhere \\(\\theta_0\\) is the initial angle (\\(\\theta_0=0\\) in our case).\nHence, the trajectory is expressed by\n\\[\n\\begin{align}\nx(t) & = R\\cos\\theta(t) = R \\cos{\\omega t}+x_0\\\\\ny(t) & = R\\sin\\theta(t)  = R \\sin{\\omega t}+y_0\n\\end{align}\n\\]\nSo, we have all the theoretical knowledge that we need to solve the problem. How can we translate this into code?\nThe first approach is via using vanilla Python\n\nimport math\nR = 10.0 #in metres\nomega = 2.0*2*math.pi/60. # in radians per second\nx0 = R # in metres\ny0 = 0 # in metres\ndt = 2.0 # in seconds\nduration = 20.0 #in seconds\nnum_iterations  = int(duration/dt)\nx, y = [], []\nt = 0\nfor _ in range(num_iterations):\n    x.append(R*math.cos(omega*t)+x0)\n    y.append(R*math.sin(omega*t)+y0)\n    t += dt \n\n# plotting, ignore the details for now sicne we will cover this in a later lecture\nimport matplotlib.pyplot as plt\nplt.scatter(x,y)\nplt.axis(\"equal\")\nplt.show()\n\n\n\n\n\n\n\n\nThe question now is: can you simpify this code by using NumPy? Your focus should be on avoiding for loops and using NumPy’s array operations instead.\n\n# Your code here",
     "crumbs": [
       "Home",
       "08 Working with NumPy",
@@ -1664,7 +1664,7 @@
     "href": "08/exercises_lecture_working_with_numpy_solutions.html",
     "title": "Exercises - Working with NumPy",
     "section": "",
-    "text": "Create a 1D NumPy array of integers from 10 to 19. Access the element at index 3.\n\nimport numpy as np\narr = np.arange(10, 20)\narr[3]\n\n13",
+    "text": "Create a 1D NumPy array arr of integers from 10 to 19. Access the element at index 3.\n\nimport numpy as np\narr = np.arange(10, 20)\narr[3]\n\n13",
     "crumbs": [
       "Home",
       "08 Working with NumPy",
