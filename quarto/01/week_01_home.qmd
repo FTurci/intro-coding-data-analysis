@@ -3,9 +3,9 @@ title: 'Week 1: Introduction to Data Types'
 jupyter: python3
 ---
 
-# Introduction to Data Types
 
-<!-- Welcome to the 2025 SCIF10002 Introduction to Coding and Data Analysis for Scientists course! -->
+
+Welcome to the 2025 SCIF10002 Introduction to Coding and Data Analysis for Scientists course!
 
 
 ### Table of Contents

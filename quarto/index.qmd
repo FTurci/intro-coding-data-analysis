@@ -11,7 +11,7 @@ This is the course material for **Introduction to coding and data analysis**, SC
 - You will find the more theoretical introduction under **Lesson**
 - The hands-on exercises will be under **Exercises**
 - Over the course of the weeks the solutions will be released under **Solutions**
-- Regularly, interactive **Formative tests** will be released under **formative tests**
+- Regularly, interactive **formative tests** will be released under **Formative tests**
 
 **Important.** You can use the search button 🔎 to search across all the pages and skim through the course.
 
