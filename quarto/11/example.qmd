@@ -2,31 +2,31 @@
 jupyter: python3
 ---
 
-```{python}
+```{pyodide}
 ! mkdir src2
 ```
 
-```{python}
+```{pyodide}
 ! touch src2/naive_script.py
 ```
 
-```{python}
+```{pyodide}
 ! cat src2/naive_script.py
 ```
 
-```{python}
+```{pyodide}
 run src2/naive_script.py
 ```
 
-```{python}
+```{pyodide}
 path = ! pwd
 ```
 
-```{python}
+```{pyodide}
 path
 ```
 
-```{python}
+```{pyodide}
 run src2/parabola.py
 ```
 

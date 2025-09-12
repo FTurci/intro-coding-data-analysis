@@ -68,7 +68,7 @@ Whichever course you are taking you will likely need to write code at some point
  - We saw that variables can be assigned values using `=` 
  - To display the values of variables we can use `print`
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 x = 5
 print(x)
@@ -84,7 +84,7 @@ print(x)
    - Lists are ordered groups of items
  - We spent some time looking at various things we could do with some of these data types
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 # Int
 x = 5
@@ -110,7 +110,7 @@ shopping = ["milk", "bread", "eggs", "cheese"]
  - We can use logical operators to combine Boolean statements
    - `cat_is_black and cat_has_four_legs` represented the sentence "The cat is black and has four legs"
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 cat_is_black = True
 cat_has_four_legs = False
@@ -129,7 +129,7 @@ print(cat_is_black and cat_has_four_legs)
  - Instead, we may want Python to act only when a specific condition is true
  - This is where the `if` statement comes in...
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 print("Hello World")
 ```
@@ -138,7 +138,7 @@ print("Hello World")
 
  - An if statement lets you run code when a Boolean statement is True
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 # Integer value
 number = 5
@@ -155,7 +155,7 @@ if my_boolean:
     - Python tells what is in the body by looking at which code is indented!
  - Often we don’t bother naming the boolean, and instead write it directly inside the if statement
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 # Integer value
 number = 5
@@ -169,7 +169,7 @@ if number > 0:
 
  - We can also tell the if statement what to do when the Boolean is False by using `else`!
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 # Integer value
 number = 5
@@ -187,7 +187,7 @@ else:
 
  - An `elif` (short for else if) can be added to check more extra conditions.
 
-```{python}
+```{pyodide}
 #| slideshow: {slide_type: fragment}
 # Integer value
 number = 5

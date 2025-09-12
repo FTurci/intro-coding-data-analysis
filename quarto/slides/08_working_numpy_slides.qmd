@@ -16,7 +16,7 @@ execute:
 
 ## Array Indexing & Slicing
 
-```{python}
+```{pyodide}
 import numpy as np
 arr = np.array([10, 20, 30, 40, 50])
 
@@ -28,7 +28,7 @@ print("Slice [1:4]:", arr[1:4])
 ```
 
 **Advanced slicing:**
-```{python}
+```{pyodide}
 print("Every other element:", arr[::2])
 print("Last three elements:", arr[-3:])
 print("Reversed array:", arr[::-1])
@@ -39,14 +39,14 @@ print("Reversed array:", arr[::-1])
 ## Views vs Copies
 
 **Slicing creates views (shared data):**
-```{python}
+```{pyodide}
 slice_view = arr[2:5]
 slice_view[0] = 99
 print("Original after view modification:", arr)
 ```
 
 **Creating independent copies:**
-```{python}
+```{pyodide}
 arr = np.array([10, 20, 30, 40, 50])  # Reset
 arr_copy = arr[2:5].copy()
 arr_copy[0] = 100
@@ -59,7 +59,7 @@ print("Original unchanged:", arr)
 ## Boolean Indexing
 
 **Filter data with conditions:**
-```{python}
+```{pyodide}
 arr = np.array([1, 2, 3, 4, 5, 6])
 threshold = 3
 
@@ -69,7 +69,7 @@ print("Filtered values:", arr[bool_mask])
 ```
 
 **Using `np.where`:**
-```{python}
+```{pyodide}
 # Get indices where condition is True
 indices = np.where(arr > threshold)[0]
 print("Indices:", indices)
@@ -84,13 +84,13 @@ print("Conditional result:", result)
 ## Generating Sequences
 
 **`np.arange` - step-based:**
-```{python}
+```{pyodide}
 print("Integers:", np.arange(0, 10, 2))
 print("Floats:", np.arange(0.0, 1.0, 0.2))
 ```
 
 **`np.linspace` - count-based:**
-```{python}
+```{pyodide}
 print("5 points from 0 to 1:", np.linspace(0, 1, 5))
 ```
 
@@ -101,7 +101,7 @@ print("5 points from 0 to 1:", np.linspace(0, 1, 5))
 
 ## Filled Arrays
 
-```{python}
+```{pyodide}
 # Create arrays with specific values
 zeros_arr = np.zeros(5)
 ones_arr = np.ones(4)
@@ -113,7 +113,7 @@ print("Full:", full_arr)
 ```
 
 **Same shape as existing array:**
-```{python}
+```{pyodide}
 template = np.array([1, 2, 3])
 print("Zeros like:", np.zeros_like(template))
 print("Ones like:", np.ones_like(template))
@@ -125,12 +125,12 @@ print("Full like:", np.full_like(template, 9))
 ## Random Number Generation
 
 **Initialize generator (for reproducibility):**
-```{python}
+```{pyodide}
 rng = np.random.default_rng(seed=123)
 ```
 
 **Different distributions:**
-```{python}
+```{pyodide}
 # Random integers
 print("Random integers:", rng.integers(0, 100, size=5))
 
@@ -152,7 +152,7 @@ print("Normal samples:", normal_samples)
 $$x_{n+1} = (a \times x_n + c) \bmod m$$
 
 **Key concept: Seeds enable reproducibility**
-```{python}
+```{pyodide}
 # Same seed = same sequence
 rng1 = np.random.default_rng(seed=42)
 rng2 = np.random.default_rng(seed=42)
@@ -166,7 +166,7 @@ print("RNG2:", rng2.integers(0, 10, size=3))  # Same output!
 ## Performance Tips
 
 **Preallocate for efficiency:**
-```{python}
+```{pyodide}
 # Less efficient: generate one at a time
 # for _ in range(1000):
 #     val = rng.integers(0, 100)

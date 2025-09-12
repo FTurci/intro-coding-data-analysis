@@ -20,7 +20,7 @@ execute:
 
 **matplotlib** - Powerful Python library for creating visualizations
 
-```{python}
+```{pyodide}
 import matplotlib.pyplot as plt
 import numpy as np
 ```
@@ -30,7 +30,7 @@ import numpy as np
 - **Axes**: The x-y plotting area
 - **Object-oriented** approach (recommended)
 
-```{python}
+```{pyodide}
 fig, ax = plt.subplots()  # Create figure and axes
 ```
 
@@ -44,7 +44,7 @@ plt.plot(x, y)  # Direct plotting
 ```
 
 **Object-oriented (Recommended):**
-```{python}
+```{pyodide}
 fig, ax = plt.subplots()
 ax.plot(x, y)  # Plot using axes object
 ```
@@ -58,7 +58,7 @@ ax.plot(x, y)  # Plot using axes object
 
 ## Basic Plot Types
 
-```{python}
+```{pyodide}
 # Sample data
 rng = np.random.default_rng(seed=124)
 x = np.arange(1, 20, 2)
@@ -75,7 +75,7 @@ ax.legend()
 
 ## Customizing Appearance
 
-```{python}
+```{pyodide}
 fig, ax = plt.subplots(figsize=(8, 4))
 
 # Styling options
@@ -109,7 +109,7 @@ ax.set_title("Customized Plot")
 
 ## Legends and Annotations
 
-```{python}
+```{pyodide}
 fig, ax = plt.subplots()
 
 ax.plot(x, y1, label="Fitted line", color="blue", linestyle="--")
@@ -125,7 +125,7 @@ ax.set_title("Plot with Legend")
 
 ## Histograms
 
-```{python}
+```{pyodide}
 # Generate random data
 rng = np.random.default_rng(seed=68)
 data1 = rng.normal(0, 1, 5000)
@@ -154,7 +154,7 @@ ax.legend()
 - `density`: Normalize to show probability density
 - `histtype`: 'bar', 'step', 'stepfilled'
 
-```{python}
+```{pyodide}
 fig, ax = plt.subplots()
 ax.hist(data1, bins=30, alpha=0.6, histtype='step', 
         color='purple', linewidth=2)
@@ -164,7 +164,7 @@ ax.hist(data1, bins=30, alpha=0.6, histtype='step',
 
 ## Multiple Plots on Same Axes
 
-```{python}
+```{pyodide}
 fig, ax = plt.subplots(figsize=(10, 5))
 
 # Multiple data series
@@ -199,7 +199,7 @@ ax.set_ylabel("y")
 
 ## Figure Size and Layout
 
-```{python}
+```{pyodide}
 # Control figure size
 fig, ax = plt.subplots(figsize=(12, 6))
 
@@ -222,7 +222,7 @@ ax2.set_title("Plot 2")
 - **Use colors wisely** - consider colorblind accessibility
 - **Keep it simple** - don't over-decorate
 
-```{python}
+```{pyodide}
 # Good example
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.plot(x, y1, label="Data")

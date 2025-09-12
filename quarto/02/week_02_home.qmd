@@ -1,5 +1,5 @@
 ---
-title: 'Week 2: Booleans and Conditionals'
+title: Booleans and Conditionals
 jupyter: python3
 ---
 
@@ -46,7 +46,7 @@ This notebook will guide you through the recently introduced `Match` statement, 
 
 There is a lot to remember when first learning Python. To get more help see the [Python API](https://docs.python.org/3/library/). Another useful link is the [W3 schools series on Python](https://www.w3schools.com/python/) which is very good, especially for new users. Another way to get help if you are ever unsure what a function is doing is to use the`help` function in the Python terminal like so:
 
-```{python}
+```{pyodide}
 #| scrolled: true
 help(print)
 ```

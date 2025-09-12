@@ -23,7 +23,7 @@ execute:
 - **3D**: Cuboid/Tensor (depth × rows × columns)
 - **nD**: Higher dimensions
 
-```{python}
+```{pyodide}
 import numpy as np
 from numpy import random
 rng = random.default_rng(seed=24)
@@ -40,7 +40,7 @@ print(array_2d)
 
 **Row-major order**: `[row, column]` (like `[y, x]`)
 
-```{python}
+```{pyodide}
 # Access single element
 print("Element at [1,2]:", array_2d[1, 2])
 
@@ -52,7 +52,7 @@ print("First column:", array_2d[:, 0])
 ```
 
 **Slicing works with multiple dimensions:**
-```{python}
+```{pyodide}
 print("First 2 rows:\n", array_2d[:2])
 ```
 
@@ -60,7 +60,7 @@ print("First 2 rows:\n", array_2d[:2])
 
 ## Array Properties
 
-```{python}
+```{pyodide}
 # Creating arrays with different shapes
 zeros_2d = np.zeros((2, 3))  # 2 rows, 3 columns
 random_3d = rng.integers(0, 3, size=(2, 3, 4))  # 2×3×4 tensor
@@ -80,7 +80,7 @@ print("3D rank/dimensions:", random_3d.ndim)
 ## Operations Along Axes
 
 **Axis-specific operations:**
-```{python}
+```{pyodide}
 matrix = rng.integers(0, 5, size=(3, 4))
 print("Original matrix:\n", matrix)
 
@@ -97,7 +97,7 @@ print("Mean along axis 0:", np.mean(matrix, axis=0))
 ## Reshaping and Flattening
 
 **Reshape without changing data:**
-```{python}
+```{pyodide}
 arr_1d = np.arange(12)
 arr_2d = arr_1d.reshape((3, 4))
 arr_3d = arr_1d.reshape((2, 2, 3))
@@ -108,7 +108,7 @@ print("3D shape:", arr_3d.shape)
 ```
 
 **Using `-1` for automatic dimension:**
-```{python}
+```{pyodide}
 # -1 means "figure out this dimension"
 auto_reshape = arr_1d.reshape(-1, 4)  # ? rows, 4 columns
 print("Auto-reshaped:\n", auto_reshape)
@@ -119,7 +119,7 @@ print("Auto-reshaped:\n", auto_reshape)
 ## Flattening Arrays
 
 **`ravel()` - returns view (shares data):**
-```{python}
+```{pyodide}
 matrix = rng.integers(0, 10, (2, 3))
 print("Original:\n", matrix)
 
@@ -129,7 +129,7 @@ print("After modifying view:\n", matrix)
 ```
 
 **`flatten()` - returns copy:**
-```{python}
+```{pyodide}
 matrix = rng.integers(0, 10, (2, 3))
 copy = matrix.flatten()
 copy[0] = 99  # Original unchanged
@@ -141,7 +141,7 @@ print("Original unchanged:\n", matrix)
 ## Broadcasting
 
 **Combine arrays of different shapes automatically:**
-```{python}
+```{pyodide}
 matrix = np.array([[1, 2, 3],
                    [4, 5, 6]])
 vector = np.array([10, 20, 30])
@@ -152,7 +152,7 @@ print("Matrix + Vector:\n", result)
 ```
 
 **Create grids with broadcasting:**
-```{python}
+```{pyodide}
 row_vec = np.arange(3).reshape(1, -1)    # Shape: (1, 3)
 col_vec = np.arange(3).reshape(-1, 1)    # Shape: (3, 1)
 grid = row_vec + col_vec                 # Shape: (3, 3)
@@ -166,7 +166,7 @@ print("Broadcast grid:\n", grid)
 **Matrix operations for solving systems:**
 $$A\mathbf{x} = \mathbf{b}$$
 
-```{python}
+```{pyodide}
 # System: 2x + 3y + z = 5, 4x - y = 1, 2y + z = 3
 A = np.array([[2, 3, 1], 
               [4, -1, 0], 
@@ -185,7 +185,7 @@ print("Verification:\n", A @ x)
 
 ## Linear Algebra Operations
 
-```{python}
+```{pyodide}
 # Matrix multiplication with @
 result = A @ x
 
@@ -208,7 +208,7 @@ x_alt = A_inv @ b  # Alternative solution method
 ## Arrays as Images
 
 **Visualize 2D arrays as images:**
-```{python}
+```{pyodide}
 import matplotlib.pyplot as plt
 
 # Simple matrix visualization
@@ -226,7 +226,7 @@ ax2.set_title('imshow (origin=lower)')
 
 ## Working with Real Images
 
-```{python}
+```{pyodide}
 from skimage import data
 
 # Grayscale image
@@ -244,7 +244,7 @@ ax.set_title('Grayscale Image')
 
 ## Color Images (3D Arrays)
 
-```{python}
+```{pyodide}
 # Color image has 3 channels: RGB
 color_image = data.chelsea()
 print("Color image shape:", color_image.shape)
@@ -267,7 +267,7 @@ for i, (cmap, title) in enumerate(zip(channels, titles)):
 
 ## Boolean Operations on Images
 
-```{python}
+```{pyodide}
 # Extract green channel
 green = color_image[:, :, 1]
 
