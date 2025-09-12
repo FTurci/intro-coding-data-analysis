@@ -41,6 +41,16 @@ This notebook will guide you through the recently introduced `Match` statement, 
 
 #### Option 3: Advanced
 
+If you are an experienced programmer with a strong grasp of Python, begin by reviewing the exercises in the notebooks below to ensure you are fully comfortable with the material:
+
+- [Beginner: If Statements](./week_02_booleans_and_conditionals_beginner.qmd)  
+- [Intermediate: Match Statements](./week_02_booleans_and_conditionals_intermediate.qmd)
+
+Once you are confident in your understanding, move on to the following notebook:
+
+- [Advanced: Conditional Expressions and Lazy Evaluation](./week_02_booleans_and_conditionals_advanced.qmd)
+
+This notebook will talk you through some of the more complex nuances to boolean logic in Python, including lazy evaluation and in-line conditional evaluation. Please attempt this only if you have spent a lot of time developing code in Python already.
 
 ## Getting Help
 

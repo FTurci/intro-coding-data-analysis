@@ -59,14 +59,14 @@ First, please do check over the exercises in the `Basic Data Types` notebook and
 
 Once you feel confident with the material above, move on to the `Collections` notebook. This will introduce you to Python’s built-in collections and highlight the differences between `sets`, `lists`, `dicts`, and `tuples`. As always, aim to complete as many of the exercises as you can.
 
-- [Intermediate: Collections](./week_01_collections.qmd)
+- [Intermediate: Collections](./week_01_intro_to_data_types_intermediate.qmd)
 
 #### Option 3: Advanced
 
 If you are an experienced programmer with a strong grasp of Python, begin by reviewing the exercises in the notebooks below to ensure you are fully comfortable with the material:
 
 - [Beginner: Basic Data Types](./week_01_intro_to_data_types_beginner.qmd)  
-- [Intermediate: Collections](./week_01_collections.qmd)
+- [Intermediate: Collections](./week_01_intro_to_data_types_intermediate.qmd)
 
 Once you are confident in your understanding, move on to the following notebook:
 

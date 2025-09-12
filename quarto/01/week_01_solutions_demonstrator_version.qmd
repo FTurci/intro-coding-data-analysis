@@ -14,7 +14,7 @@ This notebook contains the solutions to the week 1 `Beginner`, `Intermediate` an
  - [Intermediate: Collections](./week_01_intro_to_data_types_intermediate.qmd)
  - [Advanced: Copying and References](./week_01_intro_to_data_types_advanced.qmd)
 
- - [**Solutions**](./week_01_solutions.qmd)
+ - **Solutions**
    - [Beginner: Basic Data Types](#Beginner:-Basic-Data-Types)
    - [Intermediate: Collections](#Intermediate:-Collections)
    - [Advanced: Copying and References](#Advanced:-Copying-and-References)
