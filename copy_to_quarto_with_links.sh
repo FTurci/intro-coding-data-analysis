@@ -60,6 +60,8 @@ done
 # Replace {python} → {pyodide} in all qmds under quarto
 find "$DEST_DIR" -name "*.qmd" -exec sed -i '' 's/{python}/{pyodide}/g' {} +
 
+#add caption
+find . -name "*.qmd" -exec perl -i -pe 's/{pyodide}/{pyodide}\n#| caption: "▶ Ctrl\/Cmd+Enter | ⇥ Ctrl\/Cmd+] | ⇤ Ctrl\/Cmd+\["/g' {} +
 echo ""
 echo "Summary:"
 echo "- Converted: $converted_count notebooks"
