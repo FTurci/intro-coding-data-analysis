@@ -1330,37 +1330,37 @@
   {
     "objectID": "03/week_03_home.html",
     "href": "03/week_03_home.html",
-    "title": "Week 3: Loops",
+    "title": "Loops",
     "section": "",
     "text": "Welcome to the third week of the 2025 SCIF10002 Introduction to Coding and Data Analysis for Scientists course! This week we shall be looking at for and while loops!",
     "crumbs": [
       "Home",
       "03 Loops",
-      "Week 3: Loops"
+      "Loops"
     ]
   },
   {
     "objectID": "03/week_03_home.html#todays-material",
     "href": "03/week_03_home.html#todays-material",
-    "title": "Week 3: Loops",
+    "title": "Loops",
     "section": "Today’s Material",
     "text": "Today’s Material\nIn today’s class, we shall focus on loops. As in the previous two classes, this week you have a choice of working through one of three notebooks.\n\nImportant: For today, please choose just one of the options below. You’ll have many opportunities to revisit the other concepts later in the course, so focus on building confidence with the Beginner material before tackling more advanced work.\n\n\nOption 1: Beginner\nIf you have not spent much time coding in Python prior to taking this course, today you should work through the for and while loops notebook linked below:\n\nBeginner: For and While Loops\n\nThis notebook will talk you through the basics of loops in Python. Please read through the text carefully and attempt all exercises!\n\n\nOption 2: Intermediate\nThis weeks intermediate notebook should only be taken by those who are very comfortable with the material in the beginner notebook. Please ensure that you are able to complete the exercises in the beginner notebook before attempting this option. The intermediate material for this week is given below:\n\nIntermediate: Advanced Iteration\n\nThis notebook will guide you through more advanced loop syntax such as iteration over dictionaries and the zip function.\n\n\nOption 3: Advanced\nIf you are an experienced programmer with a strong grasp of Python, begin by reviewing the exercises in the notebooks below to ensure you are fully comfortable with the material:\n\nBeginner: For and While Loops\n\nIntermediate: Advanced Iteration\n\nOnce you are confident in your understanding, move on to the following notebook:\n\nAdvanced: Comprehensions\n\nThis will introduce you to list, set, dict and generator comprehensions, and explain how they can be combined with conditional expressions. Please only attempt this notebook if you have a strong background in Python programming.",
     "crumbs": [
       "Home",
       "03 Loops",
-      "Week 3: Loops"
+      "Loops"
     ]
   },
   {
     "objectID": "03/week_03_home.html#getting-help",
     "href": "03/week_03_home.html#getting-help",
-    "title": "Week 3: Loops",
+    "title": "Loops",
     "section": "Getting Help",
     "text": "Getting Help\nThere is a lot to remember when first learning Python. To get more help see the Python API. Another useful link is the W3 schools series on Python which is very good, especially for new users. Another way to get help if you are ever unsure what a function is doing is to use thehelp function in the Python terminal like so:\n\n\n\n\n\n\nIn class, you can ask for help from the lecturer, demonstrators and your peers around you. We advise you do not ask AI for help unless you are really stuck.",
     "crumbs": [
       "Home",
       "03 Loops",
-      "Week 3: Loops"
+      "Loops"
     ]
   },
   {
