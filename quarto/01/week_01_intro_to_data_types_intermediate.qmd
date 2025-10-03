@@ -37,7 +37,7 @@ In this section, we are going to look at Tuples and Lists.
 
  - A list is a collection which is ordered and ***changeable***. In Python lists are written with ***square brackets***. 
 
-*where **changeable** means that once 
+*where **changeable** means that once created, the elements of the list can be modified, added, or removed, while the elements of a tuple cannot be altered after creation.*
 
 Both tuples and lists are built-in data types, can hold elements of arbitrary datatypes and behave, in many respects, like mathematical vectors. However, for numerical vectors and arrays it is much better to use numpy arrays, which are covered later in the course.
 

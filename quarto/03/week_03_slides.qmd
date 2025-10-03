@@ -30,6 +30,23 @@ jupyter: python3
 
 <img src="./images/noteable2.png" alt="Welcome page for the unit on Blackboard" style="display:block;margin-left:auto;margin-right:auto;width:20%"/>
 
+## Important: Assessed Coursework 1
+
+ - The first assignment will be released this week!
+   - Released `Wednesday 8th October` at `12:00PM`
+   - Due `Wednesday 22nd October` at `12:00PM`
+ - This is assessed (`15%` of your grade!)
+ - Submission is via `Noteable`
+ - You can submit as many times as you like up until the submission date
+
+## Noteable Submission
+
+ - Download using the Assignments tab on `noteable`
+ - Press `Fetch` and click on the assignment
+ - Fill your answers in and `Validate`
+ - Once done, save your answers and `Submit`
+ - Feedback will be available when you see the `(view feedback)` option
+
 ## Recap: If Statements
 
  - Last week, we looked at the `if` statement

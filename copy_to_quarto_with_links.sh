@@ -2,6 +2,21 @@
 
 SOURCE_DIR="."
 DEST_DIR="quarto"
+FORCE=false
+
+# Parse args
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -f|--force)
+            FORCE=true
+            shift
+            ;;
+        *)
+            echo "Usage: $0 [-f|--force]"
+            exit 1
+            ;;
+    esac
+done
 
 # Ensure quarto exists
 if ! command -v quarto &>/dev/null; then
@@ -32,8 +47,8 @@ for folder in "$SOURCE_DIR"/*; do
                 base_name=$(basename "$notebook" .ipynb)
                 qmd_file="$DEST_DIR/$folder_name/$base_name.qmd"
 
-                # Convert only if qmd is missing or older than ipynb
-                if [ ! -f "$qmd_file" ] || [ "$notebook" -nt "$qmd_file" ]; then
+                # Convert if force OR qmd missing/older
+                if $FORCE || [ ! -f "$qmd_file" ] || [ "$notebook" -nt "$qmd_file" ]; then
                     echo "  Converting: $base_name.ipynb → $base_name.qmd"
                     if quarto convert "$notebook" --output "$qmd_file" 2>/dev/null; then
                         ((converted_count++))
@@ -60,8 +75,9 @@ done
 # Replace {python} → {pyodide} in all qmds under quarto
 find "$DEST_DIR" -name "*.qmd" -exec sed -i '' 's/{python}/{pyodide}/g' {} +
 
-#add caption
+# Add caption
 find . -name "*.qmd" -exec perl -i -pe 's/{pyodide}/{pyodide}\n#| caption: "▶ Ctrl\/Cmd+Enter | ⇥ Ctrl\/Cmd+] | ⇤ Ctrl\/Cmd+\["/g' {} +
+
 echo ""
 echo "Summary:"
 echo "- Converted: $converted_count notebooks"
