@@ -1,4 +1,4 @@
-# Height	Time	Reaction	Name
+Height	Time	Reaction	Name
 3.86	0.873	0.039	Titania
 4.44	0.985	0.032	Helena
 1.25	0.468	0.023	Lysander
