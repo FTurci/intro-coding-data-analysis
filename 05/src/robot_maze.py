@@ -515,9 +515,11 @@ class RobotMaze:
                            fontsize=9,
                            color='#2c3e50',
                            wrap=True)
-        
+        # return self.fig       
         display(self.fig)
+        
         clear_output(wait=True)
+ 
         
         if delay > 0:
             time.sleep(delay)
