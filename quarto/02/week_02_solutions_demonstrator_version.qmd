@@ -470,7 +470,7 @@ match target_currency:
 
 > **Demonstrator Notes:** See the notes on *Beginner Question 6* about unit conversion. In this question, some students may try to code every possible pair of conversions separately (e.g. `GBP -> USD`, `GBP -> EUR`, … , `EUR -> JPY`). Discourage this, as it leads to unnecessary repetition (especially if we wanted to add more currency units!). Instead, hint at the approach shown above: convert everything via a common unit, requiring only two conversions.  
 
-**Question 10:** Below is a solution to this exercise:
+**Question 5:** Below is a solution to this exercise:
 
 ```{pyodide}
 #| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["

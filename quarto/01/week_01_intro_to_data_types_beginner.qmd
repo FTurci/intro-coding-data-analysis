@@ -563,8 +563,6 @@ t = # Write your answer here...
 # Write your code here...
 ```
 
-*Hint: You may wish to look up `Truthy` and `Falsy` values.*
-
 **Question 8:**  The below code takes two numbers, `x` and `y` and computes $z=\frac{x+y}{y^2}$. For instance, when we set $x=1$ and $y=5$ we get $z=0.24$.
 
 ```{pyodide}

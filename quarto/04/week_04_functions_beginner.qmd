@@ -1,10 +1,11 @@
 ---
+title: 'Beginner: Defining Functions'
 jupyter: python3
+resources:
+    - src/plot.py
 ---
 
 
-
-# Beginner: Defining Functions
 
 ### Table of Contents
 
@@ -389,8 +390,8 @@ Once you have created the lists named `times`, `kinetic_energy` and `potential_e
 
 ```{pyodide}
 #| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
-import os
-os.chdir('/home/jovyan/intro-coding-data-analysis.git/04/src')
+import sys
+sys.path.append("./src")
 
 from plot import *
 

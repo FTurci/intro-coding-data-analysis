@@ -78,6 +78,13 @@ find "$DEST_DIR" -name "*.qmd" -exec sed -i '' 's/{python}/{pyodide}/g' {} +
 # Add caption
 find . -name "*.qmd" -exec perl -i -pe 's/{pyodide}/{pyodide}\n#| caption: "▶ Ctrl\/Cmd+Enter | ⇥ Ctrl\/Cmd+] | ⇤ Ctrl\/Cmd+\["/g' {} +
 
+# remove duplicate captions
+find . -type f -name "*.qmd" -exec sed -i '' '/^#| caption: "▶ Ctrl\/Cmd\+Enter | ⇥ Ctrl\/Cmd\+] | ⇤ Ctrl\/Cmd+\["$/{
+N
+/^\(#| caption: "▶ Ctrl\/Cmd\+Enter | ⇥ Ctrl\/Cmd\+] | ⇤ Ctrl\/Cmd+\["\)\n\1$/d
+}' {} +
+
+
 echo ""
 echo "Summary:"
 echo "- Converted: $converted_count notebooks"
