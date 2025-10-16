@@ -144,7 +144,7 @@ class RobotMaze:
             else:
                 raise ValueError(
                     f"Invalid direction: '{direction}'. "
-                    f"Must be one of: {', '.join(direction_map.keys())}"
+                    f"Must be one of: LEFT, RIGHT, AHEAD, BEHIND"
                 )
         return direction  # If it's already an int, return as-is for internal use
     
@@ -170,23 +170,37 @@ class RobotMaze:
             self.BEEN_THERE: "BEEN_THERE"
         }
         return status_map.get(status, str(status))
-        
+    
     def print(self, message):
         """
         Print a message to the console area below the maze.
-        
+
         Args:
             message: String message to display
         """
-        self.console_buffer.append(str(message))
+        # Convert to string and handle special characters
+        message_str = str(message)
+
+        # Replace newlines and tabs with spaces
+        message_str = message_str.replace('\n', ' ').replace('\r', ' ').replace('\t', ' ')
+
+        # Remove other control characters (optional - keeps printable chars only)
+        message_str = ''.join(char if char.isprintable() or char == ' ' else '' for char in message_str)
+
+        # Crop to 90 characters
+        if len(message_str) > 90:
+            message_str = message_str[:90]
+
+        self.console_buffer.append(message_str)
+
         # Keep only the last N lines
         if len(self.console_buffer) > self.console_lines:
             self.console_buffer = self.console_buffer[-self.console_lines:]
-            
-        
+
         # Initial visualization
         if self.auto_visualize:
             self.visualize(delay=0)
+    
     
     def get_maze_id(self):
         """
@@ -316,6 +330,7 @@ class RobotMaze:
         if self.auto_visualize:
             self.visualize(delay=self.delay)
     
+    
     def move(self):
         """
         Move the robot one square forward in its current heading.
@@ -328,10 +343,10 @@ class RobotMaze:
             if self.auto_visualize:
                 self.visualize(delay=self.delay)
             return 
-        
+
         # Update step count
         self.step_count += 1
-        
+
         # Check step limit
         if self.step_count >= self.max_steps:
             self.out_of_fuel = True
@@ -340,37 +355,61 @@ class RobotMaze:
             if self.auto_visualize:
                 self.visualize(delay=self.delay)
             return 
-        
+
         new_x, new_y = self._get_adjacent_position(self.robot_heading)
-        
-        # Check boundaries
+
+        # Check if hitting a wall
+        hit_wall = False
         if new_x < 0 or new_x >= self.size or new_y < 0 or new_y >= self.size:
-            self.print("I tried to walk forward... ow that's a wall!")
+            hit_wall = True
+        elif self.maze[new_y, new_x] == self.WALL:
+            hit_wall = True
+
+        if hit_wall:
+            # Add jitter effect - temporarily move forward slightly and bounce back
             if self.auto_visualize:
+                # Save original position
+                orig_x, orig_y = self.robot_x, self.robot_y
+
+                # Calculate forward offset (0.15 squares for subtle effect)
+                dx, dy = 0, 0
+                if self.robot_heading == self.NORTH:
+                    dy = -0.15
+                elif self.robot_heading == self.EAST:
+                    dx = 0.15
+                elif self.robot_heading == self.SOUTH:
+                    dy = 0.15
+                elif self.robot_heading == self.WEST:
+                    dx = -0.15
+
+                # Show "pushed forward" position
+                self.robot_x = orig_x + dx
+                self.robot_y = orig_y + dy
                 self.visualize(delay=self.delay)
-            return False
-        
-        # Check for walls
-        if self.maze[new_y, new_x] == self.WALL:
+
+                # Show "bounced back" position
+                self.robot_x = orig_x
+                self.robot_y = orig_y
+                self.visualize(delay=self.delay)
+
+            # Print message after the bump
             self.print("I tried to walk forward... ow that's a wall!")
-            if self.auto_visualize:
-                self.visualize(delay=self.delay)
-            return 
-        
+            return
+
         # Move robot
         self.robot_x = new_x
         self.robot_y = new_y
         self.maze[new_y, new_x] = self.BEEN_THERE
-        
+
         # Check if target reached
         if self.at_target():
             self.print(f"Target reached in {self.step_count} steps!")
-        
+
         if self.auto_visualize:
             self.visualize(delay=self.delay)
-        
-        return 
-    
+
+        return
+
     def at_target(self):
         """Check if robot has reached the target."""
         return self.robot_x == self.target_x and self.robot_y == self.target_y
