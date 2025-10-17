@@ -573,91 +573,91 @@
     "href": "slides/07_intro_numpy_slides.html#arrays-vs-lists",
     "title": "The numpy module",
     "section": "Arrays vs lists",
-    "text": "Arrays vs lists\n\n\nPython Lists\n\nOrdered, Mutable\n\nMixed data types\nExplicit operations needed\nSlower performance\n\n\nNumPy Arrays\n\nOrdered, Mutable\nOne data type per array\nElement-wise operations\nFast & memory efficient\n\n\n\n\n\nlist_ex = [1, 2, 3, 4]\nprint(list_ex)\n\nimport numpy as np\n#notice that we explicitly call the np.array()\narr_ex = np.array([1, 2, 3, 4]) \nprint(arr_ex)\n\nWe are going to see these differences in detail."
+    "text": "Arrays vs lists\n\n\nPython Lists\n\nOrdered, Mutable\n\nMixed data types\nExplicit operations needed\nSlower performance\n\n\nNumPy Arrays\n\nOrdered, Mutable\nOne data type per array\nElement-wise operations\nFast & memory efficient\n\n\n\n\n\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nlist_ex = [1, 2, 3, 4]\nprint(list_ex)\n\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport numpy as np\n#notice that we explicitly call the np.array()\narr_ex = np.array([1, 2, 3, 4]) \nprint(arr_ex)\n\nWe are going to see these differences in detail."
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#arrays-from-lists",
     "href": "slides/07_intro_numpy_slides.html#arrays-from-lists",
     "title": "The numpy module",
     "section": "Arrays from lists",
-    "text": "Arrays from lists\nA purely numerical list can readily be converted to an array.\nimport numpy as np\n# Create array from list\nlist1 = [1.,1.,2.,3.,5.,8.]\narr1 = np.array(list1)\nprint(arr1)\n\nThe type of the elements yields the data type of the array\nprint(arr1.dtype)\n\nTry and change the list1 object to contain only integers and see the change!"
+    "text": "Arrays from lists\nA purely numerical list can readily be converted to an array.\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport numpy as np\n# Create array from list\nlist1 = [1.,1.,2.,3.,5.,8.]\narr1 = np.array(list1)\nprint(arr1)\n\nThe type of the elements yields the data type of the array\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(arr1.dtype)\n\nTry and change the list1 object to contain only integers and see the change!"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#array-properties",
     "href": "slides/07_intro_numpy_slides.html#array-properties",
     "title": "The numpy module",
     "section": "Array properties",
-    "text": "Array properties\nArrays possess plenty of properties.\nThese are accessed with the . notation1.\nprint(f\"Data type: {arr1.dtype}\")\nprint(f\"Shape: {arr1.shape}\")\nprint(f\"Shape: {arr1.size}\")\nFor now, we consider only 1d arrays, i.e. sequences. Their length is is their size and corresponds to the first element of the property shape.\nuse . and then TAB to see all of the properties"
+    "text": "Array properties\nArrays possess plenty of properties.\nThese are accessed with the . notation1.\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(f\"Data type: {arr1.dtype}\")\nprint(f\"Shape: {arr1.shape}\")\nprint(f\"Shape: {arr1.size}\")\nFor now, we consider only 1d arrays, i.e. sequences. Their length is is their size and corresponds to the first element of the property shape.\nuse . and then TAB to see all of the properties"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#accessing-array-elements",
     "href": "slides/07_intro_numpy_slides.html#accessing-array-elements",
     "title": "The numpy module",
     "section": "Accessing array elements",
-    "text": "Accessing array elements\nSimilarly to lists, we access an element in an array via zero-based indexing\nprint(arr1[0])    # First element\nprint(arr1[-1])   # Last element\nAgain, similarly to lists, we can access regions of the array via slicing\nprint(arr1[3:6])  # Elements from index 3 to 6"
+    "text": "Accessing array elements\nSimilarly to lists, we access an element in an array via zero-based indexing\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(arr1[0])    # First element\nprint(arr1[-1])   # Last element\nAgain, similarly to lists, we can access regions of the array via slicing\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(arr1[3:6])  # Elements from index 3 to 6"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#element-wise-operations",
     "href": "slides/07_intro_numpy_slides.html#element-wise-operations",
     "title": "The numpy module",
     "section": "Element-wise Operations",
-    "text": "Element-wise Operations\nThe main motivation to use arrays is that lists are cumbersome when performing maths.\nSuppose we have a list and want to double all of its elements:\nlist1 = [1,2,3,4]\nWe need to loop over all of them and create a new list\nlist2 = []\nfor item in list1:\n    list2.append(2*item)\nprint(list2)\nIn fact, we can do this in a slightly more compact way using list comprehension\nlist2 = [item*2 for item in list1]\nStill, an explicit loop is needed. Loops in Python are slow."
+    "text": "Element-wise Operations\nThe main motivation to use arrays is that lists are cumbersome when performing maths.\nSuppose we have a list and want to double all of its elements:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nlist1 = [1,2,3,4]\nWe need to loop over all of them and create a new list\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nlist2 = []\nfor item in list1:\n    list2.append(2*item)\nprint(list2)\nIn fact, we can do this in a slightly more compact way using list comprehension\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nlist2 = [item*2 for item in list1]\nStill, an explicit loop is needed. Loops in Python are slow."
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#element-wise-operations-1",
     "href": "slides/07_intro_numpy_slides.html#element-wise-operations-1",
     "title": "The numpy module",
     "section": "Element-wise Operations",
-    "text": "Element-wise Operations\nThe numpy syntax avoids the explicit Python loop.\narr1 = np.array(list1)\narr2 = 2*arr1\nprint(arr2)\nThis is not just a cosmetic change: under the hood numpy uses an efficient architecture that performs operations in compiled code, making it much faster than Python loops."
+    "text": "Element-wise Operations\nThe numpy syntax avoids the explicit Python loop.\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\narr1 = np.array(list1)\narr2 = 2*arr1\nprint(arr2)\nThis is not just a cosmetic change: under the hood numpy uses an efficient architecture that performs operations in compiled code, making it much faster than Python loops."
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#performance-advantage",
     "href": "slides/07_intro_numpy_slides.html#performance-advantage",
     "title": "The numpy module",
     "section": "Performance advantage",
-    "text": "Performance advantage\nThis performance difference can be tracked explicitly.\nWe create a large list and a large array with identical content\n# Create a large list and array\nlarge_list = list(range(1_000_000))\nlarge_array = np.array(large_list)\nAnd then track the time for the two operations\nimport time\n#  Track the time taken for the list multiplication\nstart = time.time()\nlist_result = [x * 2 for x in large_list]\nend = time.time()\nprint(f\"List comprehension time: {end - start:.5f} seconds\")\n\n# Time array multiplication\nstart = time.time()\narray_result = large_array * 2\nend = time.time()\nprint(f\"NumPy array time: {end - start:.5f} seconds\")"
+    "text": "Performance advantage\nThis performance difference can be tracked explicitly.\nWe create a large list and a large array with identical content\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Create a large list and array\nlarge_list = list(range(1_000_000))\nlarge_array = np.array(large_list)\nAnd then track the time for the two operations\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport time\n#  Track the time taken for the list multiplication\nstart = time.time()\nlist_result = [x * 2 for x in large_list]\nend = time.time()\nprint(f\"List comprehension time: {end - start:.5f} seconds\")\n\n# Time array multiplication\nstart = time.time()\narray_result = large_array * 2\nend = time.time()\nprint(f\"NumPy array time: {end - start:.5f} seconds\")"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#general-mathematical-functions",
     "href": "slides/07_intro_numpy_slides.html#general-mathematical-functions",
     "title": "The numpy module",
     "section": "General mathematical functions",
-    "text": "General mathematical functions\nThe multiplication we performed earlier is done element-wise: every element is update according to teh same rule.\nWe can apply plenty of element-wise operations to the arrays.\nMany of these are available as numpy functions directly accessed from the np. module\n# Element-wise functions\nprint(f\"Square root: {np.sqrt(arr1)}\")\nprint(f\"Mean: {np.mean(arr1)}\")\nprint(f\"Cosine: {np.cos(arr1)}\")\n\nThe operations do not modify the original array, but produce new copies\narr2 = arr1*3/2 + 5\nprint(f\"Original: {arr1}\")\nprint(f\"Modified: {arr2}\")"
+    "text": "General mathematical functions\nThe multiplication we performed earlier is done element-wise: every element is update according to teh same rule.\nWe can apply plenty of element-wise operations to the arrays.\nMany of these are available as numpy functions directly accessed from the np. module\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Element-wise functions\nprint(f\"Square root: {np.sqrt(arr1)}\")\nprint(f\"Mean: {np.mean(arr1)}\")\nprint(f\"Cosine: {np.cos(arr1)}\")\n\nThe operations do not modify the original array, but produce new copies\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\narr2 = arr1*3/2 + 5\nprint(f\"Original: {arr1}\")\nprint(f\"Modified: {arr2}\")"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#sums",
     "href": "slides/07_intro_numpy_slides.html#sums",
     "title": "The numpy module",
     "section": "Sums",
-    "text": "Sums\nOther convenent numpy functions allow you to accumulate values without loops.\nAssume we have an array \\(x\\)\nx = np.array([1,2,3,4,5,6,7,8])\nSums\n\\[\nS = \\sum_{i=1}^{n} x_i\n\\]\nIn NumPy, this is translated as:\nS = np.sum(x)\nprint(S)"
+    "text": "Sums\nOther convenent numpy functions allow you to accumulate values without loops.\nAssume we have an array \\(x\\)\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nx = np.array([1,2,3,4,5,6,7,8])\nSums\n\\[\nS = \\sum_{i=1}^{n} x_i\n\\]\nIn NumPy, this is translated as:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nS = np.sum(x)\nprint(S)"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#sums-1",
     "href": "slides/07_intro_numpy_slides.html#sums-1",
     "title": "The numpy module",
     "section": "Sums",
-    "text": "Sums\nCumulative sums\nA cumulative sum is a sequence where each element is the sum of all previous elements up to that position. \\[\ny_i = \\sum_{j=1}^{i} x_j\n\\]\nIn NumPy, this is translated as:\n y = np.cumsum(x)\n print(y)"
+    "text": "Sums\nCumulative sums\nA cumulative sum is a sequence where each element is the sum of all previous elements up to that position. \\[\ny_i = \\sum_{j=1}^{i} x_j\n\\]\nIn NumPy, this is translated as:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n y = np.cumsum(x)\n print(y)"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#example-molecular-masses",
     "href": "slides/07_intro_numpy_slides.html#example-molecular-masses",
     "title": "The numpy module",
     "section": "Example: molecular masses",
-    "text": "Example: molecular masses\nLet’s consider the formula for the molecular mass of a compound:\n\\[\nM = \\sum_{i=1}^{n} a_i m_i\n\\]\nwhere\n\n\\(a_i\\) is the number of atoms of element \\(i\\)\n\\(m_i\\) is the atomic mass of element \\(i\\)\n\n\nWith numpy, you can compute this as:\na = np.array([2, 1, 4])      # Number of atoms for each element\nm = np.array([12.01, 1.01, 16.00])  # Atomic masses (e.g., C, H, O)\nM = np.sum(a * m)\nprint(f\"Molecular mass: {M}\")"
+    "text": "Example: molecular masses\nLet’s consider the formula for the molecular mass of a compound:\n\\[\nM = \\sum_{i=1}^{n} a_i m_i\n\\]\nwhere\n\n\\(a_i\\) is the number of atoms of element \\(i\\)\n\\(m_i\\) is the atomic mass of element \\(i\\)\n\n\nWith numpy, you can compute this as:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\na = np.array([2, 1, 4])      # Number of atoms for each element\nm = np.array([12.01, 1.01, 16.00])  # Atomic masses (e.g., C, H, O)\nM = np.sum(a * m)\nprint(f\"Molecular mass: {M}\")"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#operations-between-arrays",
     "href": "slides/07_intro_numpy_slides.html#operations-between-arrays",
     "title": "The numpy module",
     "section": "Operations between arrays",
-    "text": "Operations between arrays\nYou can perform arithmetic operations directly between arrays of the same shape. Operations like addition, subtraction, multiplication, and division are applied element-wise.\nFor example:\nElement-wise operations:\nadded = arr1 + arr2\nmultiplied = arr1 * arr2\nprint(f\"Added: {added}\")\nprint(f\"Multiplied: {multiplied}\")\n\nNote: Arrays must have compatible shapes!\narr3 = np.array([1, 2, 3])\narr4 = np.array([4, 5])\nresult = arr3 + arr4"
+    "text": "Operations between arrays\nYou can perform arithmetic operations directly between arrays of the same shape. Operations like addition, subtraction, multiplication, and division are applied element-wise.\nFor example:\nElement-wise operations:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nadded = arr1 + arr2\nmultiplied = arr1 * arr2\nprint(f\"Added: {added}\")\nprint(f\"Multiplied: {multiplied}\")\n\nNote: Arrays must have compatible shapes!\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\narr3 = np.array([1, 2, 3])\narr4 = np.array([4, 5])\nresult = arr3 + arr4"
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#combining-arrays",
     "href": "slides/07_intro_numpy_slides.html#combining-arrays",
     "title": "The numpy module",
     "section": "Combining arrays",
-    "text": "Combining arrays\nWith lists, the + operator concatenated different lists. Since for arrays the sign + corresponds to true mathematical addition, a dedicated concatenation function exists:\ncombined = np.concatenate([arr1, arr2])\nprint(f\"Unique elements: {combined}\")\nMany other variations of concatenation exist. Consult the documentation."
+    "text": "Combining arrays\nWith lists, the + operator concatenated different lists. Since for arrays the sign + corresponds to true mathematical addition, a dedicated concatenation function exists:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\ncombined = np.concatenate([arr1, arr2])\nprint(f\"Unique elements: {combined}\")\nMany other variations of concatenation exist. Consult the documentation."
   },
   {
     "objectID": "slides/07_intro_numpy_slides.html#key-takeaways",
@@ -671,91 +671,91 @@
     "href": "slides/10_multidimensional_arrays_slides.html#numpy-arrays-beyond-1d",
     "title": "Multi-dimensional Arrays",
     "section": "NumPy Arrays Beyond 1D",
-    "text": "NumPy Arrays Beyond 1D\nMulti-dimensional arrays enable representation of: - 2D: Grid/Matrix (rows × columns) - 3D: Cuboid/Tensor (depth × rows × columns) - nD: Higher dimensions\nimport numpy as np\nfrom numpy import random\nrng = random.default_rng(seed=24)\n\n# 2D array (3×3 matrix)\narray_2d = rng.random((3, 3))\nprint(f\"Shape: {array_2d.shape}\")\nprint(array_2d)"
+    "text": "NumPy Arrays Beyond 1D\nMulti-dimensional arrays enable representation of: - 2D: Grid/Matrix (rows × columns) - 3D: Cuboid/Tensor (depth × rows × columns) - nD: Higher dimensions\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport numpy as np\nfrom numpy import random\nrng = random.default_rng(seed=24)\n\n# 2D array (3×3 matrix)\narray_2d = rng.random((3, 3))\nprint(f\"Shape: {array_2d.shape}\")\nprint(array_2d)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#indexing-multi-dimensional-arrays",
     "href": "slides/10_multidimensional_arrays_slides.html#indexing-multi-dimensional-arrays",
     "title": "Multi-dimensional Arrays",
     "section": "Indexing Multi-dimensional Arrays",
-    "text": "Indexing Multi-dimensional Arrays\nRow-major order: [row, column] (like [y, x])\n# Access single element\nprint(\"Element at [1,2]:\", array_2d[1, 2])\n\n# Access entire row\nprint(\"First row:\", array_2d[0, :])\n\n# Access entire column  \nprint(\"First column:\", array_2d[:, 0])\nSlicing works with multiple dimensions:\nprint(\"First 2 rows:\\n\", array_2d[:2])"
+    "text": "Indexing Multi-dimensional Arrays\nRow-major order: [row, column] (like [y, x])\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Access single element\nprint(\"Element at [1,2]:\", array_2d[1, 2])\n\n# Access entire row\nprint(\"First row:\", array_2d[0, :])\n\n# Access entire column  \nprint(\"First column:\", array_2d[:, 0])\nSlicing works with multiple dimensions:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(\"First 2 rows:\\n\", array_2d[:2])"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#array-properties",
     "href": "slides/10_multidimensional_arrays_slides.html#array-properties",
     "title": "Multi-dimensional Arrays",
     "section": "Array Properties",
-    "text": "Array Properties\n# Creating arrays with different shapes\nzeros_2d = np.zeros((2, 3))  # 2 rows, 3 columns\nrandom_3d = rng.integers(0, 3, size=(2, 3, 4))  # 2×3×4 tensor\n\nprint(\"2D shape:\", zeros_2d.shape)\nprint(\"3D shape:\", random_3d.shape)\nprint(\"3D rank/dimensions:\", random_3d.ndim)\nTerminology: - Rank/ndim: Number of dimensions - Matrix: Rank 2 array - Tensor: Rank 3+ array"
+    "text": "Array Properties\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Creating arrays with different shapes\nzeros_2d = np.zeros((2, 3))  # 2 rows, 3 columns\nrandom_3d = rng.integers(0, 3, size=(2, 3, 4))  # 2×3×4 tensor\n\nprint(\"2D shape:\", zeros_2d.shape)\nprint(\"3D shape:\", random_3d.shape)\nprint(\"3D rank/dimensions:\", random_3d.ndim)\nTerminology: - Rank/ndim: Number of dimensions - Matrix: Rank 2 array - Tensor: Rank 3+ array"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#operations-along-axes",
     "href": "slides/10_multidimensional_arrays_slides.html#operations-along-axes",
     "title": "Multi-dimensional Arrays",
     "section": "Operations Along Axes",
-    "text": "Operations Along Axes\nAxis-specific operations:\nmatrix = rng.integers(0, 5, size=(3, 4))\nprint(\"Original matrix:\\n\", matrix)\n\nprint(\"Sum along axis 0 (columns):\", matrix.sum(axis=0))\nprint(\"Sum along axis 1 (rows):\", matrix.sum(axis=1))\nprint(\"Mean along axis 0:\", np.mean(matrix, axis=0))\nAxis 0: Operations across rows (result has column shape)\nAxis 1: Operations across columns (result has row shape)"
+    "text": "Operations Along Axes\nAxis-specific operations:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nmatrix = rng.integers(0, 5, size=(3, 4))\nprint(\"Original matrix:\\n\", matrix)\n\nprint(\"Sum along axis 0 (columns):\", matrix.sum(axis=0))\nprint(\"Sum along axis 1 (rows):\", matrix.sum(axis=1))\nprint(\"Mean along axis 0:\", np.mean(matrix, axis=0))\nAxis 0: Operations across rows (result has column shape)\nAxis 1: Operations across columns (result has row shape)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#reshaping-and-flattening",
     "href": "slides/10_multidimensional_arrays_slides.html#reshaping-and-flattening",
     "title": "Multi-dimensional Arrays",
     "section": "Reshaping and Flattening",
-    "text": "Reshaping and Flattening\nReshape without changing data:\narr_1d = np.arange(12)\narr_2d = arr_1d.reshape((3, 4))\narr_3d = arr_1d.reshape((2, 2, 3))\n\nprint(\"1D:\", arr_1d)\nprint(\"2D (3×4):\\n\", arr_2d)\nprint(\"3D shape:\", arr_3d.shape)\nUsing -1 for automatic dimension:\n# -1 means \"figure out this dimension\"\nauto_reshape = arr_1d.reshape(-1, 4)  # ? rows, 4 columns\nprint(\"Auto-reshaped:\\n\", auto_reshape)"
+    "text": "Reshaping and Flattening\nReshape without changing data:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\narr_1d = np.arange(12)\narr_2d = arr_1d.reshape((3, 4))\narr_3d = arr_1d.reshape((2, 2, 3))\n\nprint(\"1D:\", arr_1d)\nprint(\"2D (3×4):\\n\", arr_2d)\nprint(\"3D shape:\", arr_3d.shape)\nUsing -1 for automatic dimension:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# -1 means \"figure out this dimension\"\nauto_reshape = arr_1d.reshape(-1, 4)  # ? rows, 4 columns\nprint(\"Auto-reshaped:\\n\", auto_reshape)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#flattening-arrays",
     "href": "slides/10_multidimensional_arrays_slides.html#flattening-arrays",
     "title": "Multi-dimensional Arrays",
     "section": "Flattening Arrays",
-    "text": "Flattening Arrays\nravel() - returns view (shares data):\nmatrix = rng.integers(0, 10, (2, 3))\nprint(\"Original:\\n\", matrix)\n\nview = matrix.ravel()\nview[0] = 99  # Changes original!\nprint(\"After modifying view:\\n\", matrix)\nflatten() - returns copy:\nmatrix = rng.integers(0, 10, (2, 3))\ncopy = matrix.flatten()\ncopy[0] = 99  # Original unchanged\nprint(\"Original unchanged:\\n\", matrix)"
+    "text": "Flattening Arrays\nravel() - returns view (shares data):\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nmatrix = rng.integers(0, 10, (2, 3))\nprint(\"Original:\\n\", matrix)\n\nview = matrix.ravel()\nview[0] = 99  # Changes original!\nprint(\"After modifying view:\\n\", matrix)\nflatten() - returns copy:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nmatrix = rng.integers(0, 10, (2, 3))\ncopy = matrix.flatten()\ncopy[0] = 99  # Original unchanged\nprint(\"Original unchanged:\\n\", matrix)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#broadcasting",
     "href": "slides/10_multidimensional_arrays_slides.html#broadcasting",
     "title": "Multi-dimensional Arrays",
     "section": "Broadcasting",
-    "text": "Broadcasting\nCombine arrays of different shapes automatically:\nmatrix = np.array([[1, 2, 3],\n                   [4, 5, 6]])\nvector = np.array([10, 20, 30])\n\n# Vector is broadcast to each row\nresult = matrix + vector\nprint(\"Matrix + Vector:\\n\", result)\nCreate grids with broadcasting:\nrow_vec = np.arange(3).reshape(1, -1)    # Shape: (1, 3)\ncol_vec = np.arange(3).reshape(-1, 1)    # Shape: (3, 1)\ngrid = row_vec + col_vec                 # Shape: (3, 3)\nprint(\"Broadcast grid:\\n\", grid)"
+    "text": "Broadcasting\nCombine arrays of different shapes automatically:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nmatrix = np.array([[1, 2, 3],\n                   [4, 5, 6]])\nvector = np.array([10, 20, 30])\n\n# Vector is broadcast to each row\nresult = matrix + vector\nprint(\"Matrix + Vector:\\n\", result)\nCreate grids with broadcasting:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nrow_vec = np.arange(3).reshape(1, -1)    # Shape: (1, 3)\ncol_vec = np.arange(3).reshape(-1, 1)    # Shape: (3, 1)\ngrid = row_vec + col_vec                 # Shape: (3, 3)\nprint(\"Broadcast grid:\\n\", grid)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#linear-algebra-with-numpy",
     "href": "slides/10_multidimensional_arrays_slides.html#linear-algebra-with-numpy",
     "title": "Multi-dimensional Arrays",
     "section": "Linear Algebra with NumPy",
-    "text": "Linear Algebra with NumPy\nMatrix operations for solving systems: \\[A\\mathbf{x} = \\mathbf{b}\\]\n# System: 2x + 3y + z = 5, 4x - y = 1, 2y + z = 3\nA = np.array([[2, 3, 1], \n              [4, -1, 0], \n              [0, 2, 1]])\nb = np.array([[5], [1], [3]])\n\n# Solve the system\nx = np.linalg.solve(A, b)\nprint(\"Solution:\", x.flatten())\n\n# Verify: A @ x should equal b\nprint(\"Verification:\\n\", A @ x)"
+    "text": "Linear Algebra with NumPy\nMatrix operations for solving systems: \\[A\\mathbf{x} = \\mathbf{b}\\]\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# System: 2x + 3y + z = 5, 4x - y = 1, 2y + z = 3\nA = np.array([[2, 3, 1], \n              [4, -1, 0], \n              [0, 2, 1]])\nb = np.array([[5], [1], [3]])\n\n# Solve the system\nx = np.linalg.solve(A, b)\nprint(\"Solution:\", x.flatten())\n\n# Verify: A @ x should equal b\nprint(\"Verification:\\n\", A @ x)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#linear-algebra-operations",
     "href": "slides/10_multidimensional_arrays_slides.html#linear-algebra-operations",
     "title": "Multi-dimensional Arrays",
     "section": "Linear Algebra Operations",
-    "text": "Linear Algebra Operations\n# Matrix multiplication with @\nresult = A @ x\n\n# Transpose with .T\nprint(\"b transpose:\", b.T)\n\n# Dot product\ndot_product = np.dot(b.T, b)\nprint(\"Dot product:\", dot_product)\n\n# Matrix inverse\nA_inv = np.linalg.inv(A)\nx_alt = A_inv @ b  # Alternative solution method\nNumPy.linalg provides: inverse, solve, eigenvalues, SVD, etc."
+    "text": "Linear Algebra Operations\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Matrix multiplication with @\nresult = A @ x\n\n# Transpose with .T\nprint(\"b transpose:\", b.T)\n\n# Dot product\ndot_product = np.dot(b.T, b)\nprint(\"Dot product:\", dot_product)\n\n# Matrix inverse\nA_inv = np.linalg.inv(A)\nx_alt = A_inv @ b  # Alternative solution method\nNumPy.linalg provides: inverse, solve, eigenvalues, SVD, etc."
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#arrays-as-images",
     "href": "slides/10_multidimensional_arrays_slides.html#arrays-as-images",
     "title": "Multi-dimensional Arrays",
     "section": "Arrays as Images",
-    "text": "Arrays as Images\nVisualize 2D arrays as images:\nimport matplotlib.pyplot as plt\n\n# Simple matrix visualization\nmatrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))\n\nax1.matshow(matrix)\nax1.set_title('matshow')\n\nax2.imshow(matrix, origin='lower')\nax2.set_title('imshow (origin=lower)')"
+    "text": "Arrays as Images\nVisualize 2D arrays as images:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport matplotlib.pyplot as plt\n\n# Simple matrix visualization\nmatrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))\n\nax1.matshow(matrix)\nax1.set_title('matshow')\n\nax2.imshow(matrix, origin='lower')\nax2.set_title('imshow (origin=lower)')"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#working-with-real-images",
     "href": "slides/10_multidimensional_arrays_slides.html#working-with-real-images",
     "title": "Multi-dimensional Arrays",
     "section": "Working with Real Images",
-    "text": "Working with Real Images\nfrom skimage import data\n\n# Grayscale image\ngray_image = data.camera()\nprint(\"Image shape:\", gray_image.shape)\n\nfig, ax = plt.subplots(figsize=(6, 6))\nax.imshow(gray_image, cmap='gray')\nax.set_title('Grayscale Image')\nImages are arrays: Each pixel is a number (intensity)"
+    "text": "Working with Real Images\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfrom skimage import data\n\n# Grayscale image\ngray_image = data.camera()\nprint(\"Image shape:\", gray_image.shape)\n\nfig, ax = plt.subplots(figsize=(6, 6))\nax.imshow(gray_image, cmap='gray')\nax.set_title('Grayscale Image')\nImages are arrays: Each pixel is a number (intensity)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#color-images-3d-arrays",
     "href": "slides/10_multidimensional_arrays_slides.html#color-images-3d-arrays",
     "title": "Multi-dimensional Arrays",
     "section": "Color Images (3D Arrays)",
-    "text": "Color Images (3D Arrays)\n# Color image has 3 channels: RGB\ncolor_image = data.chelsea()\nprint(\"Color image shape:\", color_image.shape)\n\nfig, axes = plt.subplots(1, 4, figsize=(15, 4))\n\naxes[0].imshow(color_image)\naxes[0].set_title('Full Color')\n\n# Individual color channels\nchannels = ['Reds', 'Greens', 'Blues']\ntitles = ['Red Channel', 'Green Channel', 'Blue Channel']\n\nfor i, (cmap, title) in enumerate(zip(channels, titles)):\n    axes[i+1].imshow(color_image[:, :, i], cmap=cmap)\n    axes[i+1].set_title(title)"
+    "text": "Color Images (3D Arrays)\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Color image has 3 channels: RGB\ncolor_image = data.chelsea()\nprint(\"Color image shape:\", color_image.shape)\n\nfig, axes = plt.subplots(1, 4, figsize=(15, 4))\n\naxes[0].imshow(color_image)\naxes[0].set_title('Full Color')\n\n# Individual color channels\nchannels = ['Reds', 'Greens', 'Blues']\ntitles = ['Red Channel', 'Green Channel', 'Blue Channel']\n\nfor i, (cmap, title) in enumerate(zip(channels, titles)):\n    axes[i+1].imshow(color_image[:, :, i], cmap=cmap)\n    axes[i+1].set_title(title)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#boolean-operations-on-images",
     "href": "slides/10_multidimensional_arrays_slides.html#boolean-operations-on-images",
     "title": "Multi-dimensional Arrays",
     "section": "Boolean Operations on Images",
-    "text": "Boolean Operations on Images\n# Extract green channel\ngreen = color_image[:, :, 1]\n\n# Create binary mask\nthreshold_mask = green &gt; 120\n\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))\n\nax1.imshow(green, cmap='Greens')\nax1.set_title('Green Channel')\n\nax2.imshow(threshold_mask, cmap='gray')\nax2.set_title('Thresholded (&gt;120)')\nLogical operations: & (AND), | (OR), ~ (NOT)"
+    "text": "Boolean Operations on Images\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Extract green channel\ngreen = color_image[:, :, 1]\n\n# Create binary mask\nthreshold_mask = green &gt; 120\n\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))\n\nax1.imshow(green, cmap='Greens')\nax1.set_title('Green Channel')\n\nax2.imshow(threshold_mask, cmap='gray')\nax2.set_title('Thresholded (&gt;120)')\nLogical operations: & (AND), | (OR), ~ (NOT)"
   },
   {
     "objectID": "slides/10_multidimensional_arrays_slides.html#key-takeaways",
@@ -769,56 +769,56 @@
     "href": "slides/08_working_numpy_slides.html#array-indexing-slicing",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Array Indexing & Slicing",
-    "text": "Array Indexing & Slicing\nimport numpy as np\narr = np.array([10, 20, 30, 40, 50])\n\n# Integer indexing\nprint(\"Element at index 1:\", arr[1])\n\n# Basic slicing\nprint(\"Slice [1:4]:\", arr[1:4])\nAdvanced slicing:\nprint(\"Every other element:\", arr[::2])\nprint(\"Last three elements:\", arr[-3:])\nprint(\"Reversed array:\", arr[::-1])"
+    "text": "Array Indexing & Slicing\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport numpy as np\narr = np.array([10, 20, 30, 40, 50])\n\n# Integer indexing\nprint(\"Element at index 1:\", arr[1])\n\n# Basic slicing\nprint(\"Slice [1:4]:\", arr[1:4])\nAdvanced slicing:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(\"Every other element:\", arr[::2])\nprint(\"Last three elements:\", arr[-3:])\nprint(\"Reversed array:\", arr[::-1])"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#views-vs-copies",
     "href": "slides/08_working_numpy_slides.html#views-vs-copies",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Views vs Copies",
-    "text": "Views vs Copies\nSlicing creates views (shared data):\nslice_view = arr[2:5]\nslice_view[0] = 99\nprint(\"Original after view modification:\", arr)\nCreating independent copies:\narr = np.array([10, 20, 30, 40, 50])  # Reset\narr_copy = arr[2:5].copy()\narr_copy[0] = 100\nprint(\"Copy:\", arr_copy)\nprint(\"Original unchanged:\", arr)"
+    "text": "Views vs Copies\nSlicing creates views (shared data):\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nslice_view = arr[2:5]\nslice_view[0] = 99\nprint(\"Original after view modification:\", arr)\nCreating independent copies:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\narr = np.array([10, 20, 30, 40, 50])  # Reset\narr_copy = arr[2:5].copy()\narr_copy[0] = 100\nprint(\"Copy:\", arr_copy)\nprint(\"Original unchanged:\", arr)"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#boolean-indexing",
     "href": "slides/08_working_numpy_slides.html#boolean-indexing",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Boolean Indexing",
-    "text": "Boolean Indexing\nFilter data with conditions:\narr = np.array([1, 2, 3, 4, 5, 6])\nthreshold = 3\n\nbool_mask = arr &gt; threshold\nprint(\"Boolean mask:\", bool_mask)\nprint(\"Filtered values:\", arr[bool_mask])\nUsing np.where:\n# Get indices where condition is True\nindices = np.where(arr &gt; threshold)[0]\nprint(\"Indices:\", indices)\n\n# Conditional selection\nresult = np.where(arr &gt; 3, arr, 0)\nprint(\"Conditional result:\", result)"
+    "text": "Boolean Indexing\nFilter data with conditions:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\narr = np.array([1, 2, 3, 4, 5, 6])\nthreshold = 3\n\nbool_mask = arr &gt; threshold\nprint(\"Boolean mask:\", bool_mask)\nprint(\"Filtered values:\", arr[bool_mask])\nUsing np.where:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Get indices where condition is True\nindices = np.where(arr &gt; threshold)[0]\nprint(\"Indices:\", indices)\n\n# Conditional selection\nresult = np.where(arr &gt; 3, arr, 0)\nprint(\"Conditional result:\", result)"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#generating-sequences",
     "href": "slides/08_working_numpy_slides.html#generating-sequences",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Generating Sequences",
-    "text": "Generating Sequences\nnp.arange - step-based:\nprint(\"Integers:\", np.arange(0, 10, 2))\nprint(\"Floats:\", np.arange(0.0, 1.0, 0.2))\nnp.linspace - count-based:\nprint(\"5 points from 0 to 1:\", np.linspace(0, 1, 5))\n\narange: Use when you know the step size\nlinspace: Use when you know the number of points"
+    "text": "Generating Sequences\nnp.arange - step-based:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(\"Integers:\", np.arange(0, 10, 2))\nprint(\"Floats:\", np.arange(0.0, 1.0, 0.2))\nnp.linspace - count-based:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nprint(\"5 points from 0 to 1:\", np.linspace(0, 1, 5))\n\narange: Use when you know the step size\nlinspace: Use when you know the number of points"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#filled-arrays",
     "href": "slides/08_working_numpy_slides.html#filled-arrays",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Filled Arrays",
-    "text": "Filled Arrays\n# Create arrays with specific values\nzeros_arr = np.zeros(5)\nones_arr = np.ones(4)\nfull_arr = np.full(3, 7)\n\nprint(\"Zeros:\", zeros_arr)\nprint(\"Ones:\", ones_arr)\nprint(\"Full:\", full_arr)\nSame shape as existing array:\ntemplate = np.array([1, 2, 3])\nprint(\"Zeros like:\", np.zeros_like(template))\nprint(\"Ones like:\", np.ones_like(template))\nprint(\"Full like:\", np.full_like(template, 9))"
+    "text": "Filled Arrays\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Create arrays with specific values\nzeros_arr = np.zeros(5)\nones_arr = np.ones(4)\nfull_arr = np.full(3, 7)\n\nprint(\"Zeros:\", zeros_arr)\nprint(\"Ones:\", ones_arr)\nprint(\"Full:\", full_arr)\nSame shape as existing array:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\ntemplate = np.array([1, 2, 3])\nprint(\"Zeros like:\", np.zeros_like(template))\nprint(\"Ones like:\", np.ones_like(template))\nprint(\"Full like:\", np.full_like(template, 9))"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#random-number-generation",
     "href": "slides/08_working_numpy_slides.html#random-number-generation",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Random Number Generation",
-    "text": "Random Number Generation\nInitialize generator (for reproducibility):\nrng = np.random.default_rng(seed=123)\nDifferent distributions:\n# Random integers\nprint(\"Random integers:\", rng.integers(0, 100, size=5))\n\n# Uniform floats [0, 1)\nprint(\"Uniform [0,1):\", rng.random(5))\n\n# Normal distribution\nnormal_samples = rng.normal(loc=0, scale=1, size=5)\nprint(\"Normal samples:\", normal_samples)"
+    "text": "Random Number Generation\nInitialize generator (for reproducibility):\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nrng = np.random.default_rng(seed=123)\nDifferent distributions:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Random integers\nprint(\"Random integers:\", rng.integers(0, 100, size=5))\n\n# Uniform floats [0, 1)\nprint(\"Uniform [0,1):\", rng.random(5))\n\n# Normal distribution\nnormal_samples = rng.normal(loc=0, scale=1, size=5)\nprint(\"Normal samples:\", normal_samples)"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#pseudo-random-numbers",
     "href": "slides/08_working_numpy_slides.html#pseudo-random-numbers",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Pseudo-Random Numbers",
-    "text": "Pseudo-Random Numbers\nComputers are deterministic - they use algorithms to generate “pseudo-random” sequences\nLinear Congruential Generator example: \\[x_{n+1} = (a \\times x_n + c) \\bmod m\\]\nKey concept: Seeds enable reproducibility\n# Same seed = same sequence\nrng1 = np.random.default_rng(seed=42)\nrng2 = np.random.default_rng(seed=42)\n\nprint(\"RNG1:\", rng1.integers(0, 10, size=3))\nprint(\"RNG2:\", rng2.integers(0, 10, size=3))  # Same output!"
+    "text": "Pseudo-Random Numbers\nComputers are deterministic - they use algorithms to generate “pseudo-random” sequences\nLinear Congruential Generator example: \\[x_{n+1} = (a \\times x_n + c) \\bmod m\\]\nKey concept: Seeds enable reproducibility\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Same seed = same sequence\nrng1 = np.random.default_rng(seed=42)\nrng2 = np.random.default_rng(seed=42)\n\nprint(\"RNG1:\", rng1.integers(0, 10, size=3))\nprint(\"RNG2:\", rng2.integers(0, 10, size=3))  # Same output!"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#performance-tips",
     "href": "slides/08_working_numpy_slides.html#performance-tips",
     "title": "Working with NumPy: Indexing and Random Data",
     "section": "Performance Tips",
-    "text": "Performance Tips\nPreallocate for efficiency:\n# Less efficient: generate one at a time\n# for _ in range(1000):\n#     val = rng.integers(0, 100)\n\n# More efficient: preallocate\nprealloc = rng.integers(0, 100, size=1000)\n# Then use values from prealloc array\nMemory vs Speed tradeoff: - Small tasks: 100-1,000 elements - Medium tasks: 10,000-100,000 elements\n- Large tasks: 1,000,000+ elements"
+    "text": "Performance Tips\nPreallocate for efficiency:\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Less efficient: generate one at a time\n# for _ in range(1000):\n#     val = rng.integers(0, 100)\n\n# More efficient: preallocate\nprealloc = rng.integers(0, 100, size=1000)\n# Then use values from prealloc array\nMemory vs Speed tradeoff: - Small tasks: 100-1,000 elements - Medium tasks: 10,000-100,000 elements\n- Large tasks: 1,000,000+ elements"
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#key-takeaways",
@@ -1247,160 +1247,206 @@
     ]
   },
   {
-    "objectID": "05/week_05_physics.html",
-    "href": "05/week_05_physics.html",
+    "objectID": "05/week_05_slides.html#todays-lecture",
+    "href": "05/week_05_slides.html#todays-lecture",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Today’s Lecture",
+    "text": "Today’s Lecture\n\nLecture 5: Consolidation\n\nRecap: The Course So Far\nTackling Difficult Problems\nA Worked Example\nPractical"
+  },
+  {
+    "objectID": "05/week_05_slides.html#recap-the-course-so-far",
+    "href": "05/week_05_slides.html#recap-the-course-so-far",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Recap: The Course So Far",
+    "text": "Recap: The Course So Far\n\nOver the last 4 weeks, we’ve covered the basics of Python\nWe’ve looked at:\n\nDatatypes\nConditional Logic\nLoops\nFunctions"
+  },
+  {
+    "objectID": "05/week_05_slides.html#recap-the-course-so-far-1",
+    "href": "05/week_05_slides.html#recap-the-course-so-far-1",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Recap: The Course So Far",
+    "text": "Recap: The Course So Far\n\nBefore moving on to the next parts of the course…\n\nNumPy, Pandas and Matplotlib\n\n… this week we are going to do some “consolidation challenges”\n\nUsing what we have learnt to tackle the kinds of tasks you might encounter in the real world"
+  },
+  {
+    "objectID": "05/week_05_slides.html#aside-dictionaries",
+    "href": "05/week_05_slides.html#aside-dictionaries",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Aside: Dictionaries",
+    "text": "Aside: Dictionaries\n\nBefore we dive into today’s work, there is one concept we’d like to revisit in more detail\nA dictionary, or dict, is a data type in Python\n\nIt allows us to store values under keys\n\nThink of a real-life dictionary\n\nYou look up a word (the key)\nYou read its definition (the value)\n\nIn the same way, a Python dict lets you\n\nYou look up a key\nGet back the value associated with it"
+  },
+  {
+    "objectID": "05/week_05_slides.html#aside-dictionaries-1",
+    "href": "05/week_05_slides.html#aside-dictionaries-1",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Aside: Dictionaries",
+    "text": "Aside: Dictionaries\n\nNew values can be added to the dictionary using the syntax\n\nmy_dict[key] = value"
+  },
+  {
+    "objectID": "05/week_05_slides.html#aside-dictionaries-2",
+    "href": "05/week_05_slides.html#aside-dictionaries-2",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Aside: Dictionaries",
+    "text": "Aside: Dictionaries\n\nAnd keys and values can be any datatype you like\n\nThey don’t have to be strings!"
+  },
+  {
+    "objectID": "05/week_05_slides.html#aside-dictionaries-3",
+    "href": "05/week_05_slides.html#aside-dictionaries-3",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Aside: Dictionaries",
+    "text": "Aside: Dictionaries\n\nDictionaries will be crucial to some of today’s challenges as well as throughout the rest of this course\nIf you are unsure about these please take the time to read over:\n\nWeek 1's intermediate notebook Section: Sets and Dictionaries\n\nYou can do this either in today’s class or over the week 6 break"
+  },
+  {
+    "objectID": "05/week_05_slides.html#tackling-difficult-problems",
+    "href": "05/week_05_slides.html#tackling-difficult-problems",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Tackling Difficult Problems",
+    "text": "Tackling Difficult Problems\n\nToday, we’re going to be looking at some challenge problems\nThese problems may feel a little more open-ended than you are used to\n\nThis can be a little daunting at first\nBut do not worry…\nYou already have all the skills necessary to complete the tasks!\n\nWhen faced with a difficult coding problem, here’s some general tips to help you get started out"
+  },
+  {
+    "objectID": "05/week_05_slides.html#tackling-difficult-problems-1",
+    "href": "05/week_05_slides.html#tackling-difficult-problems-1",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Tackling Difficult Problems",
+    "text": "Tackling Difficult Problems\n\nPlan before you code\n\nBefore you start coding, grab a pen and paper and try to solve the problem by hand!\n\nClarify inputs and outputs\n\nWhen getting started think about what you have and what you need – these are probably your inputs and outputs\n\nLook for structure and repetition\n\nWhen you convert your thoughts to code, ask yourself which parts of the code are repetitive or self-contained"
+  },
+  {
+    "objectID": "05/week_05_slides.html#tackling-difficult-problems-2",
+    "href": "05/week_05_slides.html#tackling-difficult-problems-2",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Tackling Difficult Problems",
+    "text": "Tackling Difficult Problems\n\nDivide and Conquer\n\nTry to break the task down into smaller chunks where possible!\n\nTalk things through\n\nIf you are struggling to get started, talk through the problem with a friend or peer\n\nUse Resources\n\nGoogling and looking up documentation are key coding skills\n\nTrust your own process\n\nTry to avoid using AI to make structural decisions about your code"
+  },
+  {
+    "objectID": "05/week_05_slides.html#tackling-difficult-problems-3",
+    "href": "05/week_05_slides.html#tackling-difficult-problems-3",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Tackling Difficult Problems",
+    "text": "Tackling Difficult Problems\n\nAbove all, remember…\n\nCoding can be hard!\n\nIt can feel like you are running into the same problems over and over again sometimes\n\nThis is a normal part of the process\n\nIf you keep trying you will get there"
+  },
+  {
+    "objectID": "05/week_05_slides.html#a-worked-example",
+    "href": "05/week_05_slides.html#a-worked-example",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "A Worked Example",
+    "text": "A Worked Example\n\nLet’s go through an example together to see these principles in action:\n\n\nQuestion: Write some code which, for a given positive integer \\(n\\), finds the largest prime number that is less than or equal to \\(n\\).\n\n\nPrinciples:\n\nPlan before you code\nClarify inputs and outputs\nLook for structure and repetition\nDivide and conquer\nTalk things through\nTrust your own process"
+  },
+  {
+    "objectID": "05/week_05_slides.html#practical",
+    "href": "05/week_05_slides.html#practical",
+    "title": "Introduction to Coding and Data Analysis for Scientists",
+    "section": "Practical",
+    "text": "Practical\n\nWe now move over to Python\nPlease open week_05_home.ipynb\nFor the rest of today, you must work through a Python notebook\nThis week is a little different…\nPlease choose the challenge according to your course\n\nChemistry Challenge\nData Science Challenge\nPhysics Challenge"
+  },
+  {
+    "objectID": "05/week_05_chemistry.html",
+    "href": "05/week_05_chemistry.html",
     "title": "",
     "section": "",
     "text": "Code",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Physics Challenge"
+      "05 Consolidation: Python in the field",
+      "Chemistry Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_physics.html#physics-challenge",
-    "href": "05/week_05_physics.html#physics-challenge",
+    "objectID": "05/week_05_chemistry.html#chemistry-challenge",
+    "href": "05/week_05_chemistry.html#chemistry-challenge",
     "title": "",
-    "section": "Physics Challenge",
-    "text": "Physics Challenge\nThis week, we’ll bring together the skills you’ve developed over the past four weeks to tackle a practical challenge. In this notebook, you’ll find a Physics coding challenge. This challenge is designed to consolidate your recent Python learning and give you practice working with strings, loops, and dictionaries.\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nChallenge 2: Physics\n\nBackground\n\nMeasuring Gravity with a Picket Fence and Photogate\nThe Data\n\nThe Challenge\n\nTask 1: Clean the Data\nTask 2: Detect When Each Bar Begins to Block the Beam\nTask 3: Estimate Average Velocities\nTask 4: Estimate Accelerations\nTask 5: Estimate \\(g\\)\n\n\nChallenge 3: Chemistry\nSlides (Powerpoint)",
+    "section": "Chemistry Challenge",
+    "text": "Chemistry Challenge\nThis week, we’ll bring together the skills you’ve developed over the past four weeks to tackle a practical challenge. Specifically, for the Chemistry challenge in this notebook, you will use data from the periodic table to determine various properties of isotopes. This task is designed to give you practice working with strings, conditional logic, and dictionaries in a familiar Chemistry setting.\n\nPlease Note: This week’s challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nChallenge 2: Physics\nChallenge 3: Chemistry\n\nBackground\n\nThe Periodic Table\nIsotopes\n\nThe Challenge\n\nTask 1: Verifying Elements\nTask 2: Verifying the Atomic Number\nTask 3: Counting Electrons, Protons and Neutrons\nTask 4: Group and Period\nTask 5: Isotope Names\nTask 6: Categorizing Isotopes\n\n\nSlides (Powerpoint)",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Physics Challenge"
+      "05 Consolidation: Python in the field",
+      "Chemistry Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_physics.html#background",
-    "href": "05/week_05_physics.html#background",
+    "objectID": "05/week_05_chemistry.html#background",
+    "href": "05/week_05_chemistry.html#background",
     "title": "",
     "section": "Background",
-    "text": "Background\n\nMeasuring Gravity with a Picket Fence and Photogate\nA classic experiment in introductory physics is the photogate picket fence experiment. In this setup, a picket fence (a clear plastic strip with evenly spaced opaque bars) is dropped vertically through a photogate sensor.\n\nThe photogate shines an infrared beam across a small gap. A sensor on the other side detects whether the beam makes it through or not. If the beam is blocked (by one of the bars), the sensor records 'x'. If the beam is not blocked, the sensor records 'o'. Every \\(\\Delta t = 0.5\\) milliseconds (\\(=0.0005s\\)) the photogate logs whether the beam is blocked or not.\nBecause the bars on the picket fence are evenly spaced, the vertical distance between the start of one bar and the start of the next is always the same:\n\\[\n\\Delta d = 5 \\text{cm (constant distance between bars).}\n\\]\nAs the picket fence falls through the photogate, each bar successively blocks the beam. By measuring the time between when one bar starts blocking the beam and when the next bar does, we can estimate the velocity of the falling object. From changes in velocity, we can then estimate the acceleration due to gravity.\n\n\nThe Data\n\nNote: Before starting this challenge, if you haven’t already, you may wish to read the sections on dictionaries in the week 1 intermediate notebook. This will be helpful in what follows.\n\nYou are given a Python dictionary that encodes \\(100\\) trials of the photogate picket fence experiment. Each entry:\n\nHas a key like \"Trial 1\", \"Trial 2\", …\nHas a value that is a long string of 'o', 'x', and 'e' characters, representing the sensor state at regular time intervals (recordings are taken \\(\\Delta t\\) seconds apart). We can interpret these as follows:\n\n'x' = beam blocked (bar in photogate)\n'o' = beam unblocked (gap)\n'e' = error (the sensor glitched)\n\n\nFor example, suppose the dictionary contains the entry:\ndata_dict[\"Trial 1\"] = \"oooxxxoooxexo\"\nThis string represents the sensor readings for the first trial. Each character corresponds to a single timepoint, spaced by \\(\\Delta t = 0.0005\\) s. We can interpret this as follows:\n\nThe first three characters (\"ooo\") mean the beam was unblocked at times \\(t = 0 \\text{ms}\\), \\(5 \\text{ms}\\), and \\(10 \\text{ms}\\),\nThe next three characters (\"xxx\") indicate the beam was blocked at \\(t = 15 \\text{ms}\\), \\(20 \\text{ms}\\), and \\(25 \\text{ms}\\),\nThe next three (\"ooo\") show the beam was unblocked again,\nAt \\(t = 50 \\text{ms}\\), the character is 'e', indicating that the sensor glitched,\nThis is followed by 'x' and 'o' at the final two timepoints.\n\nNote: Across the \\(100\\) trials, several different picket fences were used. Some had the same number of bars, while others did not. Consequently, the number of black and white bars varied between trials.",
+    "text": "Background\n\nThe Periodic Table\nIn your previous studies, you have likely encountered the periodic table of elements. In this challenge, you will use the periodic table to explore and derive various properties of isotopes.\n\nThe periodic table organizes chemical elements (substances whose atoms contain a fixed number of protons) into rows (periods) and columns (groups). In addition to ordering the elements, the periodic table is also a powerful tool for categorization. It groups together elements that share similar properties.\nFor instance, in the image above, the colors highlight the following categories of elements:\n\n\nAlkali metals: very reactive metals that readily form compounds with nonmetals.\n\n\nAlkaline earth metals: reactive metals that form basic solutions when they react with water.\n\n\nLanthanides: rare earth elements often used in magnets and electronics.\n\n\nActinides: heavy elements, many of which are radioactive.\n\n\nTransition metals: versatile metals widely used in alloys and catalysts.\n\n\nPost-transition metals: softer metals with lower melting points than transition metals.\n\n\nMetalloids: elements with properties of both metals and nonmetals.\n\n\nHalogens and other nonmetals: generally poor conductors; many are gases or brittle solids, and halogens in particular are very reactive.\n\n\nNoble gases: very stable gases that rarely react with other elements.\n\n\nBy convention, we assume that all lathanides have period 6 and group 3, and all actinides have period 7 and group 3 (see periodic table above).\nIn each box of the periodic table, you can see the name, chemical symbol, and category of the element. The atomic number is shown in the top left. This tells you how many protons are in the nucleus of the atom, and it also determines the element’s position in the table. An atom has the same number of protons and electrons, so the atomic number also represents the number of electrons in the atom. The relative atomic mass is shown in the top right. This value represents the average mass of all the naturally occurring isotopes of that element, taking into account how common each isotope is.\nFor example, the box for carbon (C) shows the atomic number 6 in the top left, which means every carbon atom has 6 protons. In the top right, the relative atomic mass is shown as about 12.01, reflecting the natural mixture of mostly carbon-12 and a small amount of carbon-13.\n\n\nIsotopes\nAs noted above, not all of the atoms of the same element have the same mass. This is because, although atoms of the same element must have, by definition, the same number of protons, they can have different numbers of neutrons. An atom with a fixed number of neutrons is known as an isotope and we usually denote isotopes by the element name followed by the mass number: that is, the total number of protons and neutrons in the atom. For instance, carbon-12 is an isotope of carbon with a mass number of 12. You might also see this written as \\(^{12}C\\) or \\(^{12}_6C\\), if we want to highlight that the atom possesses \\(6\\) protons.",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Physics Challenge"
+      "05 Consolidation: Python in the field",
+      "Chemistry Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_physics.html#the-challenge",
-    "href": "05/week_05_physics.html#the-challenge",
+    "objectID": "05/week_05_chemistry.html#the-challenge",
+    "href": "05/week_05_chemistry.html#the-challenge",
     "title": "",
     "section": "The Challenge",
-    "text": "The Challenge\nYour challenge is to perform the following tasks:\n\nTask 1: Clean the Data\nMany trials contain one or more 'e' (error) characters due to sensor glitches. Apply the following rules to clean each string:\n\nIf an 'e' (or group of 'e's) is adjacent to at least one 'x', replace all 'e's in that group with 'x',\nOtherwise, replace them with 'o'.\n\nFor example, 'ooxexoeoxeeo' would become 'ooxxxoooxxxo'.\n\n\n\n\n\n\n\n\nTask 2: Detect When Each Bar Begins to Block the Beam\nOnce the data is cleaned, your next task is to identify the exact times at which each bar starts to block the photogate beam.\nThis occurs every time the sensor reading transitions from 'o' (unblocked) to 'x' (blocked). Each from 'o' to 'x' transition corresponds to the leading edge of a bar entering the photogate.\nTo detect these moments:\n\nLoop through the cleaned string from left to right.\nLook for every index i where the character is 'x', and the character just before it (at index i-1) is 'o'.\nFor each such index, compute the time \\(t = i × Δt\\), where \\(\\Delta t =\\) 5 milliseconds.\n\nFor each trial, you must save a list of timestamps (in seconds) showing when each bar starts to block the beam. For instance, given this cleaned string:\n\"oooxxxoooxxxooooxxx\"\nYou should detect transitions at indices: 3, 9, and 16 (remember, Python starts counting at 0!). In this case, the corresponding times would be:\n[0.0015, 0.0045, 0.0080] # Computed by doing [3*0.0005,9*0.0005,16*0.0005]\n\n\n\n\n\n\n\n\nTask 3: Estimate Average Velocities\nOnce you’ve computed the times when each bar starts to block the beam, you can use those times to estimate the velocity of the falling picket fence.\nFrom the previous, we have;\n\n\\(\\Delta d = 0.05\\) meters is the constant distance between the leading edges of two consecutive bars.\n\\(t_k\\) and \\(t_{k+1}\\) are the times at which two consecutive bars start to block the beam.\n\nWe can now estimate the average velocity of the picket fence between two successive bar detections using:\n\\[\nv_k = \\frac{\\Delta d}{t_{k+1} - t_k}\n\\]\nThis gives the average velocity of the picket fence between the times \\(t_k\\) (when the \\(k^{th}\\) bar first blocks the sensor) and \\(t_{k+1}\\) (when the \\((k+1)^{th}\\) bar does the same).\nFor each trial, you must now use your list of bar-blocking times to compute a list of velocities between each pair of consecutive bars. For instance, if the bar-blocking times for a single trial are:\n[0.0015, 0.0045, 0.0080]\nThen you must compute the velocities:\n\\[v_0= \\frac{0.05}{0.0045-0.0015} = 16.66...\\quad\\text{and}\\quad v_1= \\frac{0.05}{0.0080-0.0045} = 14.28...\\]\n\n\n\n\n\n\n\n\nTask 4: Estimate Accelerations\nNow that you’ve estimated velocities, you can use them to estimate how the instantaneous velocity of the picket fence changes over time - that is, its acceleration.\nIn step 3, each velocity \\(v_k\\) was calculated as an average over a time interval of the form \\([t_k,t_{k+1}]\\). We can treat this as a velocity recorded at the midpoint of the interval. That is, we treat this velocity as though it were recorded at the time \\(\\tau_k\\), defined as:\n\\[\n\\tau_k := \\frac{t_k + t_{k+1}}{2}\n\\]\nTo estimate the acceleration between two consecutive velocities, we need to look at their differences. That is, we must compute:\n\\[\na_k = \\frac{v_{k+1} - v_k}{\\tau_{k+1} - \\tau_k}\n\\]\nThis gives an estimate of the average acceleration between the times \\(\\tau_k\\) and \\(\\tau_{k+1}\\). For each trial, you must now compute all such acceleration values, and then compute the average acceleration across the trial:\n\\[\\overline{a}^{(j)} = \\frac{1}{M_j} \\sum_{k=1}^{M_j} a_k\\] where \\(M_j\\) is the number of acceleration values in trial \\(j\\) (which is one less than the number of velocities).\n\n\n\n\n\n\n\n\nTask 5: Estimate \\(g\\)\nTo obtain a final estimate of the gravitational acceleration, we must now average the acceleration values computed across all trials.\nAs in Step 4, let \\(\\overline{a}^{(j)}\\) be the average acceleration for trial \\(j\\), and let \\(N\\) be the total number of trials. Then you must compute your final estimate of \\(g\\), given by:\n\\[\n\\hat{g} = \\frac{1}{N} \\sum_{j=1}^{N} \\overline{a}^{(j)}\n\\]\nThis value, \\(\\hat{g}\\), represents your best overall estimate of the acceleration due to gravity based on the experimental data.",
+    "text": "The Challenge\nYou are given a string of one of the following forms: N_P_E or N_E, where: - \\(N\\) is an integer representing the number of mass number of the isotope, - \\(P\\) is an integer representing the number of protons in an isotope, - \\(E\\) is the chemical symbol of the element.\nFor instance, 12_6_C represents \\(^{12}_6C\\) and 12_C represents \\(^{12}C\\).\n\n\n\n\n\n\nYou are also given the variable named periodic_table, loaded in by the below code. This includes some of the data displayed in the periodic table, saved as a dictionary of dictionaries.\n\n\n\n\n\n\n\nNote: Don’t worry if you are unsure what the import and from keywords are doing in the above code. For now, you can think of these as a way of loading in pre-written functions such as the get_periodic_table function. You’ll have plenty of opportunities to practice and understand these features of Python as the course goes on.\n\nTry running the following commands to see if you can understand how to use this variable:\n\n\n\n\n\n\n\nNote: Before proceeding, if you are unsure about dictionaries please see the week 1 intermediate notebook for further detail.\n\nFor an arbitrary isotope represented as described above, the challenge is to solve the following tasks.\nNote: If you are not sure how to get started, have a look at the guidance section on this week’s home page.\n\nImportant: For this task, you may only use material covered in the previous 4 week’s classes. To solve the challenge problems, you may use any content from the beginner, intermediate, or advanced notebooks. However, every challenge can be completed using only the material in the beginner notebooks, so don’t worry if you haven’t looked at the others. The tasks are designed to be accessible to everyone!\n\n\nTask 1: Verifying Elements\nWrite a function that takes two inputs; a string representing an isotope and the periodic_table dictionary. The function should verify whether the chemical symbol in the isotope string corresponds to a valid element in the periodic table and print a message indicating the result.\n\n\n\n\n\n\nHint: You can convert the keys in dictionary to a list using list(dict_name.keys()).\n\n\nTask 2: Verifying the Atomic Number\nWrite a function that takes two inputs; a string representing an isotope and the periodic_table dictionary. The function must check whether the number of protons, if provided, matches that in the periodic table.\n\n\n\n\n\n\n\n\nTask 3: Counting Electrons, Protons and Neutrons\nUpdate your code from Task 2 so that, unless an incorrect number of protons is provided, it prints the number of protons, neutrons, and electrons in the isotope. Make sure your code outputs these values even if the number of protons is not explicitly included in the isotope string.\n\n\n\n\n\n\n\n\nTask 4: Group and Period\nWrite a function that takes two inputs; a string representing an isotope and the periodic_table dictionary. The function must print the group and period of the element in the periodic table.\n\n\n\n\n\n\n\n\nTask 5: Isotope Names\nWrite a function which return a string representing the name of the isotope. For instance, 12_C should return \"Carbon-12\". Note that \\(^1H\\),\\(^2H\\) and \\(^3H\\) do not follow the standard convention and are usually referred to as \"Hydrogen\", \"Deuterium\" and \"Tritium\" rather than \"Hydrogen-1\", \"Hydrogen-2\" and \"Hydrogen-3\", respectively.\n\n\n\n\n\n\n\n\nTask 6: Categorizing Isotopes\nWrite a function which returns a string representing the category the isotope belongs to (e.g. \"Alkali Metals\", \"Actinides\",…, etc).",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Physics Challenge"
+      "05 Consolidation: Python in the field",
+      "Chemistry Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_home.html",
-    "href": "05/week_05_home.html",
-    "title": "Consolidation",
+    "objectID": "05/week_05_solutions_demonstrator_version.html",
+    "href": "05/week_05_solutions_demonstrator_version.html",
+    "title": "Week 5: Solutions",
     "section": "",
-    "text": "We’ve now reached the fifth week of SCIF10002!\nThis marks the end of the basics section of the course. Over the next few weeks, we’ll begin shifting our focus away from Python’s built-in features and towards powerful external packages, such as numpy, matplotlib and pandas, that will no doubt be invaluable in your future studies and professional work.\nTo wrap up this section of the course, we will apply the skills we’ve learned so far to a set of applied challenges. This will give you an opportunity to consolidate your understanding and get a feel for the kinds of coding tasks you may encounter beyond the classroom.",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Consolidation"
-    ]
+    "text": "This notebook presents solutions to the Week 5 challenges in Data Science, Physics and Chemistry. Unlike previous weeks, these challenges are designed to be more open-ended, so the answers provided below are intended only as examples. There are many ways to approach these questions, and it is not our intention to suggest that the given answers are the “best” approaches, or that a “best” approach even exists."
   },
   {
-    "objectID": "05/week_05_home.html#todays-material",
-    "href": "05/week_05_home.html#todays-material",
-    "title": "Consolidation",
-    "section": "Today’s Material",
-    "text": "Today’s Material\nFor this week’s class, we’ll be doing something a little different from previous weeks.\nBelow, you’ll find three challenges. The challenges are organised by course; data science, chemistry and physics.\n\nChallenge 1: Data Science\nChallenge 2: Physics\nChallenge 3: Chemistry\n\nYour goal is to attempt at least one challenge. Once you have read the Guidance section below, try the challenge for your own course. If you manage to finish the challenge for your course, move onto the challenges for the other courses. None of the challenge notebooks assume course-specific background knowledge.\n\nImportant: For this task, you may only use material covered in the previous 4 week’s classes. To solve the challenge problems, you may use any content from the beginner, intermediate, or advanced notebooks. However, every challenge can be completed using only the material in the beginner notebooks, so don’t worry if you haven’t looked at the others. The tasks are designed to be accessible to everyone!\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Consolidation"
-    ]
+    "objectID": "05/week_05_solutions_demonstrator_version.html#challenge-1-data-science",
+    "href": "05/week_05_solutions_demonstrator_version.html#challenge-1-data-science",
+    "title": "Week 5: Solutions",
+    "section": "Challenge 1: Data Science",
+    "text": "Challenge 1: Data Science\nTo run the solutions for this challenge, you will first need to run the below import statement.\n\n\n\n\n\n\nTask 1: Getting Started. Code for this task can be found below:\n\n\n\n\n\n\n\nDemonstrator Notes: The aim of this task is two-fold: (i) to get students familiar with the robot environment and (ii) to get students thinking about how they can use loops to repeatedly move in a given direction. If you see students who are writing \"robot.move()\" repeatedly, please encourage them to think about how they can make their code shorter by using loops for this task.\n\nTask 2: Sensing Danger. Here is an answer to this problem:\n\n\n\n\n\n\n\nDemonstrator Notes: This question aims to get students thinking about how they can use if statements to navigate the robot environment. It should be noted that students are not asked to stop the robot from turning if it senses a wall to the left or right. The reason that we do not ask for this is that the robot could be in a dead-end (e.g. there is a wall left, right and ahead). If we ask the students to prevent the robot from turning whenever it senses a wall, then in a dead-end the robot will get stuck and the while loop will execute indefinitely. If you see students with this issue, remind them that the question does not ask them to modify the turning behaviour of the robot - it only asks them to modify the call to robot.move().\n\nTask 3: End of the Road. The below code provides a solution to this question.\n\n\n\n\n\n\n\nDemonstrator Notes: Some general advice for this question: - Make sure students have their browser zoomed far enough out so that they can see both the Robot Console and the maze at the same time. - If they haven’t already, advise students to set the robot delay so that the robot moves slowly (e.g. robot.delay = 2). This will allow them to verify that what the robot is printing the correct response in real time. - There are many ways to approach this task; however, one of the most convenient is to count the number of walls around the robot, as counting the wall allows you to handle the dead-end, single-wall and unbordered-square cases immediately. - When students are trying to count the number of walls, let them first write out the robot.sense(\"AHEAD\"), robot.sense(\"LEFT\"),… etc calls one-at-a-time. Once they have done this, point out the repetitive nature of the code to them, and explain why this code might be cleaner using a loop. - When distinguishing between corners and corridors it is easier to list the situations in which you are in a corridor (there is a wall to the left and right, or there is a wall behind and ahead) then the situations where you are in a corner (there is a wall ahead and left, ahead and right, behind and left, behind and right).\n\nTask 4: Turning Back. Below is an example solution for this question.\n\n\n\n\n\n\n\nDemonstrator Notes: This challenge is difficult as it will be drawing on many concepts, some of which are relatively new to the students. It is expected that many students will struggle with (i) identifying the explored and unexplored squares and (ii) choosing randomly from these directions. Feel free to offer more guidance/hold-the-hands of those students that are struggling on this question and stress that it is okay to be struggling at this level. Solving this question should be satisfying, as the robot will move towards the target in a much more directed fashion than in the previous questions.\n\nTask 5: Final Challenge. There are plenty of solutions to this task. Here is just one example:\n\n\n\n\n\n\n\nDemonstrator Notes: Although there are lots of possible algorithms students could use here, the most sensible choice, both in terms of efficiency and implementability, given the setup we have, is the “Hand on Wall Rule”. Encourage students who are unsure to try this rule; compared to part 4 of this challenge, this algorithm is surprisingly easy to implement."
   },
   {
-    "objectID": "05/week_05_home.html#guidance",
-    "href": "05/week_05_home.html#guidance",
-    "title": "Consolidation",
-    "section": "Guidance",
-    "text": "Guidance\nYou will find that the challenge problems this week are much more open-ended than those you have encountered in previous classes. At first, this might feel a bit intimidating, but please do not fret - you already have all the skills necessary to complete the tasks!\nHere are some general tips to help make the challenges feel less daunting:\n\nPlan before you code: Before writing any code, try taking notes about the background material. Once you understand the background material, think about how you might approach the task by hand, and jot the steps you would perform down on paper.\n\n\nClarify inputs and outputs: When getting started, think about the following questions: - What information do I have before I start coding? (These are likely my inputs.) - What do I want my code to produce? (This is my output.)\n\n\nLook for structure and repetition: When converting your thoughts to code, consider the below: - Which steps of the computation are repetitive? (Think loops!) - Which steps of the computation are self-contained? (Perhaps, I should use a function for these…)\n\n\nDivide and conquer: Try to break the task down into smaller, more manageable chunks, and solve each piece one at a time before putting them together.\n\n\nTalk things through: If you’re struggling to get started, try talking the question through with a peer or class tutor. You might be surprised how much this helps to organise your thoughts!\n\n\nUse resources: Don’t be afraid to use google or Python documentation when you’re thinking about the best way to implement a solution. Sometimes the act of googling alone can help spark new ideas.\n\n\nTrust your own process: Try to avoid using AI when deciding how to structure your code. You will find it much easier to understand and refine your work if the structure comes from your own reasoning.\n\nAbove all, remember that coding can be hard! At times, it might feel like you’re running into the same problem over and over without making much progress. If you feel this way, don’t worry - this is a perfectly normal part of the process. If you keep trying, you will get there!",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Consolidation"
-    ]
+    "objectID": "05/week_05_solutions_demonstrator_version.html#challenge-2-physics",
+    "href": "05/week_05_solutions_demonstrator_version.html#challenge-2-physics",
+    "title": "Week 5: Solutions",
+    "section": "Challenge 2: Physics",
+    "text": "Challenge 2: Physics\nThis code will load in the challenge data.\n\n\n\n\n\n\nTask 1: Clean the Data. Below is an example solution for part (1) of the Physics challenge.\n\n\n\n\n\n\n\nDemonstrator Notes: This is the hardest part of this challenge and it is expected that many of the students will struggle at first. Encourage students to try and break down this question into parts. e.g. useful advice could inclue: - Make sure you can describe the experiment/context in words before starting to code. - Start by considering a string for a single trial. - Write out some string examples on paper first. Make sure you understand the rules for replacing errors before starting to code. - If necessary, try working with some smaller example strings first, e.g. write out test_string = 'ooexx'; test_string2 = 'ooxxe'; test_string3 = 'oeexx' and try to “clean” these one by one.\nAlso, it is possible for students to get to this point in the course without having worked with dictionaries and lists very much. If a student seems unsure about dictionaries and lists please refer them to the week 1 and week 3 intermediate notebooks for further reading.\n\nTask 2: Detect When Each Bar Begins to Block the Beam. Solution code for part (1) of the Physics challenge is given below.\n\n\n\n\n\n\n\nDemonstrator Notes: It is expected that a large stumbling block for students will be figuring out how they are going to approach the question and, in particular, how they plan to store the results of their computations. Encourage them to think about how carefully about how many time values they will have to store before they start to code:\n\nIn an invidiual trial, they will have to record the time in seconds every time a bar blocks the sensor. This means they will have one time recorded per bar.\nThe dataset has been deliberately constructed so that different trials use a different number of bars. This is mentioned in the section titled “The Data”.\nSo for each trial, we have one time per bar and the number of bars may vary between trials.\n\nBy first discussing the above, it should be easier to motivate potential approaches to storing the time values. For instance, in the above code, a dictionary of lists is used. This approach can be motivated by noting that we have many time values per trial, so it seems reasonable to store these as a list, and then noting that we wish to keep track of which trial each list of times came from, hence the dictionary.\n\nTask 3: Estimate Average Velocities. Example code for this question is given below.\n\n\n\n\n\n\n\nDemonstrator Notes: Compared to the previous, this question is much simpler. However, it is expected that many students may fail to notice that the number of recorded velocities (which are computed as finite differences in distance) will be one less than the number of recorded times (that is, in the above it should be the case that len(times_data)==len(velo_list)+1). If students are experiencing index out of bounds errors, it is worth checking their logic here and writing out on paper an example illustrating how \\(n\\) datapoints leads to \\(n-1\\) finite differences. E.g.\n\\[(2,4,5) \\rightarrow (4-2,5-4)=(2,1)\\]\n\nTask 4: Estimate Accelerations. An answer to this question is provided below.\n\n\n\n\n\n\n\nDemonstrator Notes: If students have got this far they are likely to complete this question and the next successfully. That said, if reading too fast, some students may confuse \\(\\tau_k\\) and \\(t_k\\). If students are getting any strange values in their computation, it may be worth checking they have this notation correct.\n\nTask 5: Estimate \\(g\\). The below code computes the within-trial averages of the acceleration.\n\n\n\n\n\n\nThe following code averages acceleration across trials.\n\n\n\n\n\n\n\nDemonstrator Notes: The final value output should be 9.825957197907218 (up to python rounding errors). If a student has something wildly different to this, they have likely made a mistake somewhere."
   },
   {
-    "objectID": "05/week_05_home.html#getting-help",
-    "href": "05/week_05_home.html#getting-help",
-    "title": "Consolidation",
-    "section": "Getting Help",
-    "text": "Getting Help\nAs always, to get more help you can view the Python API or the W3 schools series on Python. Another way to get help if you are ever unsure what a function is doing is to use thehelp function in the Python terminal like so:\n\n\n\n\n\n\nIn class, you can ask for help from the lecturer, demonstrators and your peers around you. We advise you do not ask AI for help unless you are really stuck.",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Consolidation"
-    ]
+    "objectID": "05/week_05_solutions_demonstrator_version.html#challenge-3-chemistry",
+    "href": "05/week_05_solutions_demonstrator_version.html#challenge-3-chemistry",
+    "title": "Week 5: Solutions",
+    "section": "Challenge 3: Chemistry",
+    "text": "Challenge 3: Chemistry\nTo run the solutions for this challenge you must first run the below code.\n\n\n\n\n\n\nTask 1: Verifying Elements. Here is an example solution to this problem.\n\n\n\n\n\n\n\nDemonstrator Notes: Students will still be building confidence with dictionaries at this point. Try to provide simple examples where possible to help them get to grips with the idea of keys and values.\n\nTask 2: Verifying the Atomic Number. Here is an example answer to task 2.\n\n\n\n\n\n\n\nDemonstrator Notes: Students who skim the text may miss that the number of protons is the atomic number in the periodic table. If they ask about this, encourage them to look back through the text for clarification.\n\nTask 3: Counting Electrons, Protons and Neutrons. Here is some example code for task 3:\n\n\n\n\n\n\n\nDemonstrator Notes: Students who skim the text may miss the fact that the number of protons is the same as the number of electrons. Encourage students who are unsure to CTRL+F for the word electron.\n\nTask 4: Group and Period. Example code for this task is given below.\n\n\n\n\n\n\n\nDemonstrator Notes: This question is laborious but not difficult once you understand the logic. The basic idea is to break the table down into chunks for which the atomic number can be used to predict the group and period. For instance, along the fourth row, the period is 4 and the group is num_protons - 18. If students are struggling with this question, encourage them to narrow their focus to a smaller segment of the table and work with that.\n\nTask 5: Isotope Names. An example solution for this is given below:\n\n\n\n\n\n\n\nDemonstrator Notes: Compared to the previous questions, this is a little easier. Try not to give too much direct assistance on this question, as most students should be able to complete it. The main errors expected on this question are TypeErrors due to students forgetting to cast the string values to integers.\n\nTask 6: Categorizing Isotopes. Here is an example solution to this task.\n\n\n\n\n\n\n\nDemonstrator Notes: This question is much easier if you use the group and period computed in task 4. If students are stuck, encourage them to think about which of the previous tasks might help them here, and highlight that they can use the functions they have already written. To understand the logic of the solution, it helps to draw out a rough periodic table on paper and shade each section covered by successive clauses of the if statement."
   },
   {
     "objectID": "05/week_05_data_science.html",
     "href": "05/week_05_data_science.html",
     "title": "",
     "section": "",
-    "text": "Code",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Data Science Challenge"
-    ]
+    "text": "Code"
   },
   {
     "objectID": "05/week_05_data_science.html#data-science-challenge",
     "href": "05/week_05_data_science.html#data-science-challenge",
     "title": "",
     "section": "Data Science Challenge",
-    "text": "Data Science Challenge\nThis week we are consolidating the skills we have learned over the past four weeks in order to tackle a practical challenge. In this notebook, you will find the data science challenge, in which you will have to write code that will navigate a small virtual robot around a maze.\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nPreliminaries\nTutorial: The Robot Maze\n\nCreating a Robot Maze\nMoving the Robot\nResetting and Saving the Maze\nAims and Limits\n\nChallenges\n\nTask 1: Getting Started\nTask 2: Sensing Danger\nTask 3: End of the Road\nTask 4: Turning Back\nTask 5: Final Challenge\n\nChallenge 2: Physics\nChallenge 3: Chemistry\nSlides (Powerpoint)",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Data Science Challenge"
-    ]
+    "text": "Data Science Challenge\nThis week we are consolidating the skills we have learned over the past four weeks in order to tackle a practical challenge. In this notebook, you will find the data science challenge, in which you will have to write code that will navigate a small virtual robot around a maze.\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nPreliminaries\nTutorial: The Robot Maze\n\nCreating a Robot Maze\nMoving the Robot\nResetting and Saving the Maze\nAims and Limits\n\nChallenges\n\nTask 1: Getting Started\nTask 2: Sensing Danger\nTask 3: End of the Road\nTask 4: Turning Back\nTask 5: Final Challenge\n\nChallenge 2: Physics\nChallenge 3: Chemistry\nSlides (Powerpoint)"
   },
   {
     "objectID": "05/week_05_data_science.html#preliminaries",
     "href": "05/week_05_data_science.html#preliminaries",
     "title": "",
     "section": "Preliminaries",
-    "text": "Preliminaries\nThis notebook draws on the knowledge you’ve built over the last four weeks. This challenge assumes knowledge of only the material from the beginner notebooks - however, you are welcome to draw upon material from the intermediate and advanced notebooks as well! The tasks are designed to be accessible to everyone.\nBefore getting started, you’ll need to know how to generate random numbers. Here’s a quick primer.\nTo load in a package (collection of functions) that will let you generate random numbers, you must run the below code:\n\n\n\n\n\n\nYou only need to run the above line of code once (unless you restart the notebook, in which case you will have to run it again after restarting). Once you have run the import code you will be able to generate random numbers using the random.random() and random.randint() functions like so:\n\n\n\n\n\n\nTry running the above box a few times and observe how a new value is produced each time you call random or randint. For today’s class, this is all the knowledge we will need concerning random numbers in Python. We’ll explore random number generation in greater depth later on in the course.",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Data Science Challenge"
-    ]
+    "text": "Preliminaries\nThis notebook draws on the knowledge you’ve built over the last four weeks. This challenge assumes knowledge of only the material from the beginner notebooks - however, you are welcome to draw upon material from the intermediate and advanced notebooks as well! The tasks are designed to be accessible to everyone.\nBefore getting started, you’ll need to know how to generate random numbers. Here’s a quick primer.\nTo load in a package (collection of functions) that will let you generate random numbers, you must run the below code:\n\n\n\n\n\n\nYou only need to run the above line of code once (unless you restart the notebook, in which case you will have to run it again after restarting). Once you have run the import code you will be able to generate random numbers using the random.random() and random.randint() functions like so:\n\n\n\n\n\n\nTry running the above box a few times and observe how a new value is produced each time you call random or randint. For today’s class, this is all the knowledge we will need concerning random numbers in Python. We’ll explore random number generation in greater depth later on in the course."
   },
   {
     "objectID": "05/week_05_data_science.html#tutorial-the-robot-maze",
     "href": "05/week_05_data_science.html#tutorial-the-robot-maze",
     "title": "",
     "section": "Tutorial: The Robot Maze",
-    "text": "Tutorial: The Robot Maze\nToday, you will be programming a robot to navigate a small maze. To get started, run the code box below. This will load in the RobotMaze function which we will be working with today.\n\n\n\n\n\n\n\nCreating a Robot Maze\nThe RobotMaze function will create a new randomly generated maze with a robot inside it. Try running the below code to see what this looks like:\n\n\n\n\n\n\nLet’s break down what we can see here. The maze contains:\n\nWhite Squares: Open spaces, which the robot has not yet visited.\nBlack squares: Walls. The robot cannot walk into these.\nGrey squares: These are open spaces that the robot has visited previously.\nA red circle with a white arrow: This is the robot. The arrow tells us which way it is facing.\nA green circle with a T: This is the target. This is where the robot must move to.\n\nAt the top of the maze, we see the title Robot Maze - Run #1. Here, the number #1 refers to the number of times we have attempted to solve the maze.\nAt the bottom of the maze, we see the Robot Console. This is a handy message box, which we shall use to display messages from the robot throughout this task.\n\n\nMoving the Robot\nHere are some instructions you can give the robot:\n\nrobot.move(): Running this will cause the robot to take one step forward in the direction it is currently facing.\nrobot.turn(): This function takes a string as input. It will turn the robot to the left if the string is \"LEFT\", right if the string is \"RIGHT\", behind if the string is \"BEHIND\" and ahead if the string is \"AHEAD\". The robot always turns relative to the direction it is currently facing (that is, where the white arrow is pointing).\n\nRun the below code to see how this works.\n\n\n\n\n\n\n\nNote: If the robot bumps into a wall, it will not move forward. Instead, it will print a message to the Robot Console telling you it has bumped into a wall.\n\nIf the robot is moving too fast or slow, you can change the speed at which it moves using the robot.delay parameter. For instance:\n\n\n\n\n\n\n\nNote: Due to limitations on how Jupyter notebooks are rendered, there is a limit to how fast the robot can move. That is, setting robot.delay to less than around 0.1 might not result in much of a speedup.\n\n\n\nResetting and Saving the Maze\nIf you want to reset the maze, and send the robot back to the start, you can use the robot.reset() command like so. Notice that the title will now say Robot Maze - Run #2, but the Robot Console will keep the robot’s message history.\n\n\n\n\n\n\nEvery time you run the robot = RobotMaze(), a new random maze is generated. Sometimes you might want to save a particular maze to come back to later. You can do this by running robot.get_maze_id(). For instance, to save the maze you have above, you can run the following:\n\n\n\n\n\n\nYou can then load the same maze again later on using my_maze_id. Try commenting out and uncommenting the below lines of code to test your understanding.\n\n\n\n\n\n\n\nRecall: You can clear the output of a cell in a Jupyter notebook by going to Cell on the toolbar, then Current Outputs and Clear.\n\n\nRecall: You can interrupt a cell that is running in Jupyter by pressing the stop button on the toolbar (which looks like a square) or by clicking Kernel and then Interrupt.\n\n\n\nAims and Limits\nYour aim in this challenge to write code that moves the robot to the target. However, there is a catch - the robot only has a finite amount of fuel!\nThe robot begins with 1000 units of fuel. Each call to robot.move() and robot.turn() costs one unit of fuel. Once the robot has no fuel left, it will not be able to move.\nHere are some functions you can use to check on the robot’s status:\n\nrobot.at_target(): This will return True if the robot is on the target square and False otherwise.\nrobot.check_fuel(): This will tell you how much fuel the robot has left. The amount will be returned as an integer between 0 and 1000.\nrobot.print(): This will print a message to the robot console.\n\nThe below code uses the above commands. See if you can understand what it is doing.\n\n\n\n\n\n\nFinally, the robot is equipped with a sensor that can detect what type of square is in a given direction.\nTo use the sensor, call the robot.sense() function with one of the following inputs: \"AHEAD\", \"LEFT\", \"RIGHT\", or \"BEHIND\". The function returns a string describing the square in that direction, returning either \"WALL\", \"EMPTY\", or \"BEEN_THERE\" if the robot has already visited it.\nHave a look at the below code for an example:\n\n\n\n\n\n\n\nNote: Using the sensor does not require fuel! That is, it may be better to sense before you move…",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Data Science Challenge"
-    ]
+    "text": "Tutorial: The Robot Maze\nToday, you will be programming a robot to navigate a small maze. To get started, run the code box below. This will load in the RobotMaze function which we will be working with today.\n\n\n\n\n\n\n\nCreating a Robot Maze\nThe RobotMaze function will create a new randomly generated maze with a robot inside it. Try running the below code to see what this looks like:\n\n\n\n\n\n\nLet’s break down what we can see here. The maze contains:\n\nWhite Squares: Open spaces, which the robot has not yet visited.\nBlack squares: Walls. The robot cannot walk into these.\nGrey squares: These are open spaces that the robot has visited previously.\nA red circle with a white arrow: This is the robot. The arrow tells us which way it is facing.\nA green circle with a T: This is the target. This is where the robot must move to.\n\nAt the top of the maze, we see the title Robot Maze - Run #1. Here, the number #1 refers to the number of times we have attempted to solve the maze.\nAt the bottom of the maze, we see the Robot Console. This is a handy message box, which we shall use to display messages from the robot throughout this task.\n\n\nMoving the Robot\nHere are some instructions you can give the robot:\n\nrobot.move(): Running this will cause the robot to take one step forward in the direction it is currently facing.\nrobot.turn(): This function takes a string as input. It will turn the robot to the left if the string is \"LEFT\", right if the string is \"RIGHT\", behind if the string is \"BEHIND\" and ahead if the string is \"AHEAD\". The robot always turns relative to the direction it is currently facing (that is, where the white arrow is pointing).\n\nRun the below code to see how this works.\n\n\n\n\n\n\n\nNote: If the robot bumps into a wall, it will not move forward. Instead, it will print a message to the Robot Console telling you it has bumped into a wall.\n\nIf the robot is moving too fast or slow, you can change the speed at which it moves using the robot.delay parameter. For instance:\n\n\n\n\n\n\n\nNote: Due to limitations on how Jupyter notebooks are rendered, there is a limit to how fast the robot can move. That is, setting robot.delay to less than around 0.1 might not result in much of a speedup.\n\n\n\nResetting and Saving the Maze\nIf you want to reset the maze, and send the robot back to the start, you can use the robot.reset() command like so. Notice that the title will now say Robot Maze - Run #2, but the Robot Console will keep the robot’s message history.\n\n\n\n\n\n\nEvery time you run the robot = RobotMaze(), a new random maze is generated. Sometimes you might want to save a particular maze to come back to later. You can do this by running robot.get_maze_id(). For instance, to save the maze you have above, you can run the following:\n\n\n\n\n\n\nYou can then load the same maze again later on using my_maze_id. Try commenting out and uncommenting the below lines of code to test your understanding.\n\n\n\n\n\n\n\nRecall: You can clear the output of a cell in a Jupyter notebook by going to Cell on the toolbar, then Current Outputs and Clear.\n\n\nRecall: You can interrupt a cell that is running in Jupyter by pressing the stop button on the toolbar (which looks like a square) or by clicking Kernel and then Interrupt.\n\n\n\nAims and Limits\nYour aim in this challenge to write code that moves the robot to the target. However, there is a catch - the robot only has a finite amount of fuel!\nThe robot begins with 1000 units of fuel. Each call to robot.move() and robot.turn() costs one unit of fuel. Once the robot has no fuel left, it will not be able to move.\nHere are some functions you can use to check on the robot’s status:\n\nrobot.at_target(): This will return True if the robot is on the target square and False otherwise.\nrobot.check_fuel(): This will tell you how much fuel the robot has left. The amount will be returned as an integer between 0 and 1000.\nrobot.print(): This will print a message to the robot console.\n\nThe below code uses the above commands. See if you can understand what it is doing.\n\n\n\n\n\n\nFinally, the robot is equipped with a sensor that can detect what type of square is in a given direction.\nTo use the sensor, call the robot.sense() function with one of the following inputs: \"AHEAD\", \"LEFT\", \"RIGHT\", or \"BEHIND\". The function returns a string describing the square in that direction, returning either \"WALL\", \"EMPTY\", or \"BEEN_THERE\" if the robot has already visited it.\nHave a look at the below code for an example:\n\n\n\n\n\n\n\nNote: Using the sensor does not require fuel! That is, it may be better to sense before you move…"
   },
   {
     "objectID": "05/week_05_data_science.html#challenges",
     "href": "05/week_05_data_science.html#challenges",
     "title": "",
     "section": "Challenges",
-    "text": "Challenges\nWe’re now ready to get to grips with the robot environment!\n\nTask 1: Getting Started\nThe below code will load a simple four by four RobotMaze.\n\n\n\n\n\n\nIn the below box, use the robot.move() and robot.turn() functions to navigate the robot to the target.\n\n\n\n\n\n\nTry to write your code as concisely as possible.\nHint: You may want to use for loops like we did in the example in the Aims and Limits section.\n\n\nTask 2: Sensing Danger\nWe’re now going to look at a pre-written robot maze program. In the below code box, you will see there is a function named my_controller. See if you can determine what this controller does before reading ahead.\n\n\n\n\n\n\nThe nice thing about writing our commands for the robot inside a function is that we can now run the entire set of instructions simply by calling the function, like so:\n\n\n\n\n\n\nTry updating the my_controller function so that the robot first checks for a wall in front of it before attempting to move forward. If a wall is detected, the robot should stay in place and not move.\n\n\n\n\n\n\n\n\nTask 3: End of the Road\nContinuing with the my_controller function, modify your code to identify if the robot is:\n\nAt a dead-end (a square surrounded by three walls),\nAt a corner (a square bordering two walls whose corners touch),\nIn a corridor (a square with two walls bordering it on opposing sides),\nNext to a single wall (a square with only one wall bordering it),\nOn an unbordered square (a square sharing no edges with a wall).\n\nUse the robot.print() function to print a message to the console stating which type of square the robot is on.\n\n\n\n\n\n\n\n\nTask 4: Turning Back\nWrite your own controller function which does the following: - Senses the squares around the robot. - If there at least one of the surrounding squares is \"EMPTY\", the robot should choose an \"EMPTY\" square at random and move to it. - If there are no \"EMPTY\" squares, the robot should choose at random from the \"BEEN_THERE\" squares surrounding it and move to the chosen square.\n\n\n\n\n\n\n\n\nTask 5: Final Challenge\nIt is now up to you!\nBy doing your own research on maze solving algorithms, choose a method to solve the maze and try writing it up as a controller function. Can you solve the maze faster than the my_controller robot, or your solution to Task 4?\nGood luck!",
-    "crumbs": [
-      "Home",
-      "05 Consolidation: Python on the field",
-      "Data Science Challenge"
-    ]
+    "text": "Challenges\nWe’re now ready to get to grips with the robot environment!\n\nTask 1: Getting Started\nThe below code will load a simple four by four RobotMaze.\n\n\n\n\n\n\nIn the below box, use the robot.move() and robot.turn() functions to navigate the robot to the target.\n\n\n\n\n\n\nTry to write your code as concisely as possible.\nHint: You may want to use for loops like we did in the example in the Aims and Limits section.\n\n\nTask 2: Sensing Danger\nWe’re now going to look at a pre-written robot maze program. In the below code box, you will see there is a function named my_controller. See if you can determine what this controller does before reading ahead.\n\n\n\n\n\n\nThe nice thing about writing our commands for the robot inside a function is that we can now run the entire set of instructions simply by calling the function, like so:\n\n\n\n\n\n\nTry updating the my_controller function so that the robot first checks for a wall in front of it before attempting to move forward. If a wall is detected, the robot should stay in place and not move.\n\n\n\n\n\n\n\n\nTask 3: End of the Road\nContinuing with the my_controller function, modify your code to identify if the robot is:\n\nAt a dead-end (a square surrounded by three walls),\nAt a corner (a square bordering two walls whose corners touch),\nIn a corridor (a square with two walls bordering it on opposing sides),\nNext to a single wall (a square with only one wall bordering it),\nOn an unbordered square (a square sharing no edges with a wall).\n\nUse the robot.print() function to print a message to the console stating which type of square the robot is on.\n\n\n\n\n\n\n\n\nTask 4: Turning Back\nWrite your own controller function which does the following: - Senses the squares around the robot. - If there at least one of the surrounding squares is \"EMPTY\", the robot should choose an \"EMPTY\" square at random and move to it. - If there are no \"EMPTY\" squares, the robot should choose at random from the \"BEEN_THERE\" squares surrounding it and move to the chosen square.\n\n\n\n\n\n\n\n\nTask 5: Final Challenge\nIt is now up to you!\nBy doing your own research on maze solving algorithms, choose a method to solve the maze and try writing it up as a controller function. Can you solve the maze faster than the my_controller robot, or your solution to Task 4?\nGood luck!"
   },
   {
     "objectID": "04/week_04_solutions.html",
@@ -2246,82 +2292,162 @@
     "href": "05/exercises_python_on_the_field.html",
     "title": "",
     "section": "",
-    "text": "Code\n\n\n\n\n\nFunctions - Exercises\nThe following exercises allow to progress at your pace discovering Python applied to your subjects.\n\nChemistry\nPhysics\nData Science\n\nThere is no requirement to succeed at all of them. Come back to these over time to check the progression of your understanding."
+    "text": "Code\n\n\n\n\n\nPython in the field - Exercises\nThe following exercises allow to progress at your pace discovering Python applied to your subjects.\n\nChemistry\nPhysics\nData Science\n\nThere is no requirement to succeed at all of them. Come back to these over time to check the progression of your understanding."
   },
   {
-    "objectID": "05/week_05_solutions_demonstrator_version.html",
-    "href": "05/week_05_solutions_demonstrator_version.html",
-    "title": "Week 5: Solutions",
-    "section": "",
-    "text": "This notebook presents solutions to the Week 5 challenges in Data Science, Physics and Chemistry. Unlike previous weeks, these challenges are designed to be more open-ended, so the answers provided below are intended only as examples. There are many ways to approach these questions, and it is not our intention to suggest that the given answers are the “best” approaches, or that a “best” approach even exists."
-  },
-  {
-    "objectID": "05/week_05_solutions_demonstrator_version.html#challenge-1-data-science",
-    "href": "05/week_05_solutions_demonstrator_version.html#challenge-1-data-science",
-    "title": "Week 5: Solutions",
-    "section": "Challenge 1: Data Science",
-    "text": "Challenge 1: Data Science\nTo run the solutions for this challenge, you will first need to run the below import statement.\n\n\n\n\n\n\nTask 1: Getting Started. Code for this task can be found below:\n\n\n\n\n\n\n\nDemonstrator Notes: The aim of this task is two-fold: (i) to get students familiar with the robot environment and (ii) to get students thinking about how they can use loops to repeatedly move in a given direction. If you see students who are writing \"robot.move()\" repeatedly, please encourage them to think about how they can make their code shorter by using loops for this task.\n\nTask 2: Sensing Danger. Here is an answer to this problem:\n\n\n\n\n\n\n\nDemonstrator Notes: This question aims to get students thinking about how they can use if statements to navigate the robot environment. It should be noted that students are not asked to stop the robot from turning if it senses a wall to the left or right. The reason that we do not ask for this is that the robot could be in a dead-end (e.g. there is a wall left, right and ahead). If we ask the students to prevent the robot from turning whenever it senses a wall, then in a dead-end the robot will get stuck and the while loop will execute indefinitely. If you see students with this issue, remind them that the question does not ask them to modify the turning behaviour of the robot - it only asks them to modify the call to robot.move().\n\nTask 3: End of the Road. The below code provides a solution to this question.\n\n\n\n\n\n\n\nDemonstrator Notes: Some general advice for this question: - Make sure students have their browser zoomed far enough out so that they can see both the Robot Console and the maze at the same time. - If they haven’t already, advise students to set the robot delay so that the robot moves slowly (e.g. robot.delay = 2). This will allow them to verify that what the robot is printing the correct response in real time. - There are many ways to approach this task; however, one of the most convenient is to count the number of walls around the robot, as counting the wall allows you to handle the dead-end, single-wall and unbordered-square cases immediately. - When students are trying to count the number of walls, let them first write out the robot.sense(\"AHEAD\"), robot.sense(\"LEFT\"),… etc calls one-at-a-time. Once they have done this, point out the repetitive nature of the code to them, and explain why this code might be cleaner using a loop. - When distinguishing between corners and corridors it is easier to list the situations in which you are in a corridor (there is a wall to the left and right, or there is a wall behind and ahead) then the situations where you are in a corner (there is a wall ahead and left, ahead and right, behind and left, behind and right).\n\nTask 4: Turning Back. Below is an example solution for this question.\n\n\n\n\n\n\n\nDemonstrator Notes: This challenge is difficult as it will be drawing on many concepts, some of which are relatively new to the students. It is expected that many students will struggle with (i) identifying the explored and unexplored squares and (ii) choosing randomly from these directions. Feel free to offer more guidance/hold-the-hands of those students that are struggling on this question and stress that it is okay to be struggling at this level. Solving this question should be satisfying, as the robot will move towards the target in a much more directed fashion than in the previous questions.\n\nTask 5: Final Challenge. There are plenty of solutions to this task. Here is just one example:\n\n\n\n\n\n\n\nDemonstrator Notes: Although there are lots of possible algorithms students could use here, the most sensible choice, both in terms of efficiency and implementability, given the setup we have, is the “Hand on Wall Rule”. Encourage students who are unsure to try this rule; compared to part 4 of this challenge, this algorithm is surprisingly easy to implement."
-  },
-  {
-    "objectID": "05/week_05_solutions_demonstrator_version.html#challenge-2-physics",
-    "href": "05/week_05_solutions_demonstrator_version.html#challenge-2-physics",
-    "title": "Week 5: Solutions",
-    "section": "Challenge 2: Physics",
-    "text": "Challenge 2: Physics\nThis code will load in the challenge data.\n\n\n\n\n\n\nTask 1: Clean the Data. Below is an example solution for part (1) of the Physics challenge.\n\n\n\n\n\n\n\nDemonstrator Notes: This is the hardest part of this challenge and it is expected that many of the students will struggle at first. Encourage students to try and break down this question into parts. e.g. useful advice could inclue: - Make sure you can describe the experiment/context in words before starting to code. - Start by considering a string for a single trial. - Write out some string examples on paper first. Make sure you understand the rules for replacing errors before starting to code. - If necessary, try working with some smaller example strings first, e.g. write out test_string = 'ooexx'; test_string2 = 'ooxxe'; test_string3 = 'oeexx' and try to “clean” these one by one.\nAlso, it is possible for students to get to this point in the course without having worked with dictionaries and lists very much. If a student seems unsure about dictionaries and lists please refer them to the week 1 and week 3 intermediate notebooks for further reading.\n\nTask 2: Detect When Each Bar Begins to Block the Beam. Solution code for part (1) of the Physics challenge is given below.\n\n\n\n\n\n\n\nDemonstrator Notes: It is expected that a large stumbling block for students will be figuring out how they are going to approach the question and, in particular, how they plan to store the results of their computations. Encourage them to think about how carefully about how many time values they will have to store before they start to code:\n\nIn an invidiual trial, they will have to record the time in seconds every time a bar blocks the sensor. This means they will have one time recorded per bar.\nThe dataset has been deliberately constructed so that different trials use a different number of bars. This is mentioned in the section titled “The Data”.\nSo for each trial, we have one time per bar and the number of bars may vary between trials.\n\nBy first discussing the above, it should be easier to motivate potential approaches to storing the time values. For instance, in the above code, a dictionary of lists is used. This approach can be motivated by noting that we have many time values per trial, so it seems reasonable to store these as a list, and then noting that we wish to keep track of which trial each list of times came from, hence the dictionary.\n\nTask 3: Estimate Average Velocities. Example code for this question is given below.\n\n\n\n\n\n\n\nDemonstrator Notes: Compared to the previous, this question is much simpler. However, it is expected that many students may fail to notice that the number of recorded velocities (which are computed as finite differences in distance) will be one less than the number of recorded times (that is, in the above it should be the case that len(times_data)==len(velo_list)+1). If students are experiencing index out of bounds errors, it is worth checking their logic here and writing out on paper an example illustrating how \\(n\\) datapoints leads to \\(n-1\\) finite differences. E.g.\n\\[(2,4,5) \\rightarrow (4-2,5-4)=(2,1)\\]\n\nTask 4: Estimate Accelerations. An answer to this question is provided below.\n\n\n\n\n\n\n\nDemonstrator Notes: If students have got this far they are likely to complete this question and the next successfully. That said, if reading too fast, some students may confuse \\(\\tau_k\\) and \\(t_k\\). If students are getting any strange values in their computation, it may be worth checking they have this notation correct.\n\nTask 5: Estimate \\(g\\). The below code computes the within-trial averages of the acceleration.\n\n\n\n\n\n\nThe following code averages acceleration across trials.\n\n\n\n\n\n\n\nDemonstrator Notes: The final value output should be 9.825957197907218 (up to python rounding errors). If a student has something wildly different to this, they have likely made a mistake somewhere."
-  },
-  {
-    "objectID": "05/week_05_solutions_demonstrator_version.html#challenge-3-chemistry",
-    "href": "05/week_05_solutions_demonstrator_version.html#challenge-3-chemistry",
-    "title": "Week 5: Solutions",
-    "section": "Challenge 3: Chemistry",
-    "text": "Challenge 3: Chemistry\nTo run the solutions for this challenge you must first run the below code.\n\n\n\n\n\n\nTask 1: Verifying Elements. Here is an example solution to this problem.\n\n\n\n\n\n\n\nDemonstrator Notes: Students will still be building confidence with dictionaries at this point. Try to provide simple examples where possible to help them get to grips with the idea of keys and values.\n\nTask 2: Verifying the Atomic Number. Here is an example answer to task 2.\n\n\n\n\n\n\n\nDemonstrator Notes: Students who skim the text may miss that the number of protons is the atomic number in the periodic table. If they ask about this, encourage them to look back through the text for clarification.\n\nTask 3: Counting Electrons, Protons and Neutrons. Here is some example code for task 3:\n\n\n\n\n\n\n\nDemonstrator Notes: Students who skim the text may miss the fact that the number of protons is the same as the number of electrons. Encourage students who are unsure to CTRL+F for the word electron.\n\nTask 4: Group and Period. Example code for this task is given below.\n\n\n\n\n\n\n\nDemonstrator Notes: This question is laborious but not difficult once you understand the logic. The basic idea is to break the table down into chunks for which the atomic number can be used to predict the group and period. For instance, along the fourth row, the period is 4 and the group is num_protons - 18. If students are struggling with this question, encourage them to narrow their focus to a smaller segment of the table and work with that.\n\nTask 5: Isotope Names. An example solution for this is given below:\n\n\n\n\n\n\n\nDemonstrator Notes: Compared to the previous questions, this is a little easier. Try not to give too much direct assistance on this question, as most students should be able to complete it. The main errors expected on this question are TypeErrors due to students forgetting to cast the string values to integers.\n\nTask 6: Categorizing Isotopes. Here is an example solution to this task.\n\n\n\n\n\n\n\nDemonstrator Notes: This question is much easier if you use the group and period computed in task 4. If students are stuck, encourage them to think about which of the previous tasks might help them here, and highlight that they can use the functions they have already written. To understand the logic of the solution, it helps to draw out a rough periodic table on paper and shade each section covered by successive clauses of the if statement."
-  },
-  {
-    "objectID": "05/week_05_chemistry.html",
-    "href": "05/week_05_chemistry.html",
+    "objectID": "05/week_05_data_science_quarto.html",
+    "href": "05/week_05_data_science_quarto.html",
     "title": "",
     "section": "",
     "text": "Code",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Chemistry Challenge"
+      "05 Consolidation: Python in the field",
+      "Data Science Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_chemistry.html#chemistry-challenge",
-    "href": "05/week_05_chemistry.html#chemistry-challenge",
+    "objectID": "05/week_05_data_science_quarto.html#data-science-challenge",
+    "href": "05/week_05_data_science_quarto.html#data-science-challenge",
     "title": "",
-    "section": "Chemistry Challenge",
-    "text": "Chemistry Challenge\nThis week, we’ll bring together the skills you’ve developed over the past four weeks to tackle a practical challenge. Specifically, for the Chemistry challenge in this notebook, you will use data from the periodic table to determine various properties of isotopes. This task is designed to give you practice working with strings, conditional logic, and dictionaries in a familiar Chemistry setting.\n\nPlease Note: This week’s challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nChallenge 2: Physics\nChallenge 3: Chemistry\n\nBackground\n\nThe Periodic Table\nIsotopes\n\nThe Challenge\n\nTask 1: Verifying Elements\nTask 2: Verifying the Atomic Number\nTask 3: Counting Electrons, Protons and Neutrons\nTask 4: Group and Period\nTask 5: Isotope Names\nTask 6: Categorizing Isotopes\n\n\nSlides (Powerpoint)",
+    "section": "Data Science Challenge",
+    "text": "Data Science Challenge\nThis week we are consolidating the skills we have learned over the past four weeks in order to tackle a practical challenge. In this notebook, you will find the data science challenge, in which you will have to write code that will navigate a small virtual robot around a maze.\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\nYou’re currently viewing the Quarto version of the Data Science Challenge notebook. Please note that, due to differences in how Quarto and Jupyter render outputs, some functions may behave slightly differently or run more slowly. You’re welcome to use this version for today’s material, but we strongly recommend using the version on Jupyter if possible.\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nPreliminaries\nTutorial: The Robot Maze\n\nCreating a Robot Maze\nMoving the Robot\nResetting and Saving the Maze\nAims and Limits\n\nChallenges\n\nTask 1: Getting Started\nTask 2: Sensing Danger\nTask 3: End of the Road\nTask 4: Turning Back\nTask 5: Final Challenge\n\nChallenge 2: Physics\nChallenge 3: Chemistry\nSlides (Powerpoint)",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Chemistry Challenge"
+      "05 Consolidation: Python in the field",
+      "Data Science Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_chemistry.html#background",
-    "href": "05/week_05_chemistry.html#background",
+    "objectID": "05/week_05_data_science_quarto.html#preliminaries",
+    "href": "05/week_05_data_science_quarto.html#preliminaries",
+    "title": "",
+    "section": "Preliminaries",
+    "text": "Preliminaries\nThis notebook draws on the knowledge you’ve built over the last four weeks. This challenge assumes knowledge of only the material from the beginner notebooks - however, you are welcome to draw upon material from the intermediate and advanced notebooks as well! The tasks are designed to be accessible to everyone.\nBefore getting started, you’ll need to know how to generate random numbers. Here’s a quick primer.\nTo load in a package (collection of functions) that will let you generate random numbers, you must run the below code:\n\n\n\n\n\n\nYou only need to run the above line of code once (unless you restart the notebook, in which case you will have to run it again after restarting). Once you have run the import code you will be able to generate random numbers using the random.random() and random.randint() functions like so:\n\n\n\n\n\n\nTry running the above box a few times and observe how a new value is produced each time you call random or randint. For today’s class, this is all the knowledge we will need concerning random numbers in Python. We’ll explore random number generation in greater depth later on in the course.",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Data Science Challenge"
+    ]
+  },
+  {
+    "objectID": "05/week_05_data_science_quarto.html#tutorial-the-robot-maze",
+    "href": "05/week_05_data_science_quarto.html#tutorial-the-robot-maze",
+    "title": "",
+    "section": "Tutorial: The Robot Maze",
+    "text": "Tutorial: The Robot Maze\nToday, you will be programming a robot to navigate a small maze. To get started, run the code box below. This will load in the RobotMaze function which we will be working with today.\n\n\n\n\n\n\n\nCreating a Robot Maze\nThe RobotMaze function will create a new randomly generated maze with a robot inside it. Try running the below code:\n\n\n\n\n\n\nWe can view the robot in the maze using robot.render().\n\n\n\n\n\n\nLet’s break down what we can see here. The maze contains:\n\nWhite Squares: Open spaces, which the robot has not yet visited.\nBlack squares: Walls. The robot cannot walk into these.\nGrey squares: These are open spaces that the robot has visited previously.\nA red circle with a white arrow: This is the robot. The arrow tells us which way it is facing.\nA green circle with a T: This is the target. This is where the robot must move to.\n\nAt the top of the maze, we see the title Robot Maze - Run #1. Here, the number #1 refers to the number of times we have attempted to solve the maze.\nAt the bottom of the maze, we see the Robot Console. This is a handy message box, which we shall use to display messages from the robot throughout this task.\n\n\nMoving the Robot\nHere are some instructions you can give the robot:\n\nrobot.move(): Running this will cause the robot to take one step forward in the direction it is currently facing.\nrobot.turn(): This function takes a string as input. It will turn the robot to the left if the string is \"LEFT\", right if the string is \"RIGHT\", behind if the string is \"BEHIND\" and ahead if the string is \"AHEAD\". The robot always turns relative to the direction it is currently facing (that is, where the white arrow is pointing).\n\nRunning the below code will give the robot the instructions.\n\n\n\n\n\n\nThe robot now knows what it is going to do. To execute the instructions, you must now run robot.render().\n\n\n\n\n\n\n\nNote: If the robot bumps into a wall, it will not move forward. Instead, it will print a message to the Robot Console telling you it has bumped into a wall.\n\nIf the robot is moving too fast or slow, you can change the speed at which it moves using the robot.delay parameter. For instance:\n\n\n\n\n\n\n\nNote: Each time you run robot.render(), the robot will begin moving from it’s last location on the previous render. Try re-running the above box a few times (maybe with a smaller delay!) to make sure you understand how this works.\n\n\n\nResetting and Saving the Maze\nIf you want to reset the maze, and send the robot back to the start, you can use the robot.reset() command like so. Notice that the title will now say Robot Maze - Run #2, but the Robot Console will keep the robot’s message history.\n\n\n\n\n\n\nEvery time you run the robot = RobotMaze(), a new random maze is generated. Sometimes you might want to save a particular maze to come back to later. You can do this by running robot.get_maze_id(). For instance, to save the maze you have above, you can run the following:\n\n\n\n\n\n\nYou can then load the same maze again later on using my_maze_id. Try commenting out and uncommenting the below lines of code to test your understanding.\n\n\n\n\n\n\n\nRecall: You can interrupt a cell that is running in Quarto by pressing the Start Over button.\n\n\n\nAims and Limits\nYour aim in this challenge to write code that moves the robot to the target. However, there is a catch - the robot only has a finite amount of fuel!\nThe robot begins with 100 units of fuel. Each call to robot.move() and robot.turn() costs one unit of fuel. Once the robot has no fuel left, it will not be able to move.\nHere are some functions you can use to check on the robot’s status:\n\nrobot.at_target(): This will return True if the robot is on the target square and False otherwise.\nrobot.check_fuel(): This will tell you how much fuel the robot has left. The amount will be returned as an integer between 0 and 100.\nrobot.print(): This will print a message to the robot console.\n\nThe below code uses the above commands. See if you can understand what it is doing.\n\n\n\n\n\n\nFinally, the robot is equipped with a sensor that can detect what type of square is in a given direction.\nTo use the sensor, call the robot.sense() function with one of the following inputs: \"AHEAD\", \"LEFT\", \"RIGHT\", or \"BEHIND\". The function returns a string describing the square in that direction, returning either \"WALL\", \"EMPTY\", or \"BEEN_THERE\" if the robot has already visited it.\nHave a look at the below code for an example:\n\n\n\n\n\n\n\nNote: Using the sensor does not require fuel! That is, it may be better to sense before you move…",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Data Science Challenge"
+    ]
+  },
+  {
+    "objectID": "05/week_05_data_science_quarto.html#challenges",
+    "href": "05/week_05_data_science_quarto.html#challenges",
+    "title": "",
+    "section": "Challenges",
+    "text": "Challenges\nWe’re now ready to get to grips with the robot environment!\n\nTask 1: Getting Started\nThe below code will load a simple four by four RobotMaze.\n\n\n\n\n\n\nIn the below box, use the robot.move() and robot.turn() functions to navigate the robot to the target.\n\n\n\n\n\n\nTry to write your code as concisely as possible.\nHint: You may want to use for loops like we did in the example in the Aims and Limits section.\n\n\nTask 2: Sensing Danger\nWe’re now going to look at a pre-written robot maze program. In the below code box, you will see there is a function named my_controller. See if you can determine what this controller does before reading ahead.\n\n\n\n\n\n\nThe nice thing about writing our commands for the robot inside a function is that we can now run the entire set of instructions simply by calling the function, like so:\n\n\n\n\n\n\nTry updating the my_controller function so that the robot first checks for a wall in front of it before attempting to move forward. If a wall is detected, the robot should stay in place and not move.\n\n\n\n\n\n\n\n\nTask 3: End of the Road\nContinuing with the my_controller function, modify your code to identify if the robot is:\n\nAt a dead-end (a square surrounded by three walls),\nAt a corner (a square bordering two walls whose corners touch),\nIn a corridor (a square with two walls bordering it on opposing sides),\nNext to a single wall (a square with only one wall bordering it),\nOn an unbordered square (a square sharing no edges with a wall).\n\nUse the robot.print() function to print a message to the console stating which type of square the robot is on.\n\n\n\n\n\n\n\n\nTask 4: Turning Back\nWrite your own controller function which does the following: - Senses the squares around the robot. - If there at least one of the surrounding squares is \"EMPTY\", the robot should choose an \"EMPTY\" square at random and move to it. - If there are no \"EMPTY\" squares, the robot should choose at random from the \"BEEN_THERE\" squares surrounding it and move to the chosen square.\n\n\n\n\n\n\n\n\nTask 5: Final Challenge\nIt is now up to you!\nBy doing your own research on maze solving algorithms, choose a method to solve the maze and try writing it up as a controller function. Can you solve the maze faster than the my_controller robot, or your solution to Task 4?\nGood luck!",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Data Science Challenge"
+    ]
+  },
+  {
+    "objectID": "05/week_05_home.html",
+    "href": "05/week_05_home.html",
+    "title": "Consolidation",
+    "section": "",
+    "text": "We’ve now reached the fifth week of SCIF10002!\nThis marks the end of the basics section of the course. Over the next few weeks, we’ll begin shifting our focus away from Python’s built-in features and towards powerful external packages, such as numpy, matplotlib and pandas, that will no doubt be invaluable in your future studies and professional work.\nTo wrap up this section of the course, we will apply the skills we’ve learned so far to a set of applied challenges. This will give you an opportunity to consolidate your understanding and get a feel for the kinds of coding tasks you may encounter beyond the classroom.",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Consolidation"
+    ]
+  },
+  {
+    "objectID": "05/week_05_home.html#todays-material",
+    "href": "05/week_05_home.html#todays-material",
+    "title": "Consolidation",
+    "section": "Today’s Material",
+    "text": "Today’s Material\nFor this week’s class, we’ll be doing something a little different from previous weeks.\nBelow, you’ll find three challenges. The challenges are organised by course; data science, chemistry and physics.\n\nChallenge 1: Data Science\nChallenge 2: Physics\nChallenge 3: Chemistry\n\nYour goal is to attempt at least one challenge. Once you have read the Guidance section below, try the challenge for your own course. If you manage to finish the challenge for your course, move onto the challenges for the other courses. None of the challenge notebooks assume course-specific background knowledge.\n\nImportant: For this task, you may only use material covered in the previous 4 week’s classes. To solve the challenge problems, you may use any content from the beginner, intermediate, or advanced notebooks. However, every challenge can be completed using only the material in the beginner notebooks, so don’t worry if you haven’t looked at the others. The tasks are designed to be accessible to everyone!\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Consolidation"
+    ]
+  },
+  {
+    "objectID": "05/week_05_home.html#guidance",
+    "href": "05/week_05_home.html#guidance",
+    "title": "Consolidation",
+    "section": "Guidance",
+    "text": "Guidance\nYou will find that the challenge problems this week are much more open-ended than those you have encountered in previous classes. At first, this might feel a bit intimidating, but please do not fret - you already have all the skills necessary to complete the tasks!\nHere are some general tips to help make the challenges feel less daunting:\n\nPlan before you code: Before writing any code, try taking notes about the background material. Once you understand the background material, think about how you might approach the task by hand, and jot the steps you would perform down on paper.\n\n\nClarify inputs and outputs: When getting started, think about the following questions: - What information do I have before I start coding? (These are likely my inputs.) - What do I want my code to produce? (This is my output.)\n\n\nLook for structure and repetition: When converting your thoughts to code, consider the below: - Which steps of the computation are repetitive? (Think loops!) - Which steps of the computation are self-contained? (Perhaps, I should use a function for these…)\n\n\nDivide and conquer: Try to break the task down into smaller, more manageable chunks, and solve each piece one at a time before putting them together.\n\n\nTalk things through: If you’re struggling to get started, try talking the question through with a peer or class tutor. You might be surprised how much this helps to organise your thoughts!\n\n\nUse resources: Don’t be afraid to use google or Python documentation when you’re thinking about the best way to implement a solution. Sometimes the act of googling alone can help spark new ideas.\n\n\nTrust your own process: Try to avoid using AI when deciding how to structure your code. You will find it much easier to understand and refine your work if the structure comes from your own reasoning.\n\nAbove all, remember that coding can be hard! At times, it might feel like you’re running into the same problem over and over without making much progress. If you feel this way, don’t worry - this is a perfectly normal part of the process. If you keep trying, you will get there!",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Consolidation"
+    ]
+  },
+  {
+    "objectID": "05/week_05_home.html#getting-help",
+    "href": "05/week_05_home.html#getting-help",
+    "title": "Consolidation",
+    "section": "Getting Help",
+    "text": "Getting Help\nAs always, to get more help you can view the Python API or the W3 schools series on Python. Another way to get help if you are ever unsure what a function is doing is to use thehelp function in the Python terminal like so:\n\n\n\n\n\n\nIn class, you can ask for help from the lecturer, demonstrators and your peers around you. We advise you do not ask AI for help unless you are really stuck.",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Consolidation"
+    ]
+  },
+  {
+    "objectID": "05/week_05_physics.html",
+    "href": "05/week_05_physics.html",
+    "title": "",
+    "section": "",
+    "text": "Code",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Physics Challenge"
+    ]
+  },
+  {
+    "objectID": "05/week_05_physics.html#physics-challenge",
+    "href": "05/week_05_physics.html#physics-challenge",
+    "title": "",
+    "section": "Physics Challenge",
+    "text": "Physics Challenge\nThis week, we’ll bring together the skills you’ve developed over the past four weeks to tackle a practical challenge. In this notebook, you’ll find a Physics coding challenge. This challenge is designed to consolidate your recent Python learning and give you practice working with strings, loops, and dictionaries.\n\nPlease Note: These challenges are designed to difficult! Do not worry if you are unable to complete a challenge in the time given. The important thing is that you are building resilience and practicing problem-solving skills - everything else is secondary!\n\n\nTable of Contents\n\nWelcome Page\nChallenge 1: Data Science\nChallenge 2: Physics\n\nBackground\n\nMeasuring Gravity with a Picket Fence and Photogate\nThe Data\n\nThe Challenge\n\nTask 1: Clean the Data\nTask 2: Detect When Each Bar Begins to Block the Beam\nTask 3: Estimate Average Velocities\nTask 4: Estimate Accelerations\nTask 5: Estimate \\(g\\)\n\n\nChallenge 3: Chemistry\nSlides (Powerpoint)",
+    "crumbs": [
+      "Home",
+      "05 Consolidation: Python in the field",
+      "Physics Challenge"
+    ]
+  },
+  {
+    "objectID": "05/week_05_physics.html#background",
+    "href": "05/week_05_physics.html#background",
     "title": "",
     "section": "Background",
-    "text": "Background\n\nThe Periodic Table\nIn your previous studies, you have likely encountered the periodic table of elements. In this challenge, you will use the periodic table to explore and derive various properties of isotopes.\n\nThe periodic table organizes chemical elements (substances whose atoms contain a fixed number of protons) into rows (periods) and columns (groups). In addition to ordering the elements, the periodic table is also a powerful tool for categorization. It groups together elements that share similar properties.\nFor instance, in the image above, the colors highlight the following categories of elements:\n\n\nAlkali metals: very reactive metals that readily form compounds with nonmetals.\n\n\nAlkaline earth metals: reactive metals that form basic solutions when they react with water.\n\n\nLanthanides: rare earth elements often used in magnets and electronics.\n\n\nActinides: heavy elements, many of which are radioactive.\n\n\nTransition metals: versatile metals widely used in alloys and catalysts.\n\n\nPost-transition metals: softer metals with lower melting points than transition metals.\n\n\nMetalloids: elements with properties of both metals and nonmetals.\n\n\nHalogens and other nonmetals: generally poor conductors; many are gases or brittle solids, and halogens in particular are very reactive.\n\n\nNoble gases: very stable gases that rarely react with other elements.\n\n\nBy convention, we assume that all lathanides have period 6 and group 3, and all actinides have period 7 and group 3 (see periodic table above).\nIn each box of the periodic table, you can see the name, chemical symbol, and category of the element. The atomic number is shown in the top left. This tells you how many protons are in the nucleus of the atom, and it also determines the element’s position in the table. An atom has the same number of protons and electrons, so the atomic number also represents the number of electrons in the atom. The relative atomic mass is shown in the top right. This value represents the average mass of all the naturally occurring isotopes of that element, taking into account how common each isotope is.\nFor example, the box for carbon (C) shows the atomic number 6 in the top left, which means every carbon atom has 6 protons. In the top right, the relative atomic mass is shown as about 12.01, reflecting the natural mixture of mostly carbon-12 and a small amount of carbon-13.\n\n\nIsotopes\nAs noted above, not all of the atoms of the same element have the same mass. This is because, although atoms of the same element must have, by definition, the same number of protons, they can have different numbers of neutrons. An atom with a fixed number of neutrons is known as an isotope and we usually denote isotopes by the element name followed by the mass number: that is, the total number of protons and neutrons in the atom. For instance, carbon-12 is an isotope of carbon with a mass number of 12. You might also see this written as \\(^{12}C\\) or \\(^{12}_6C\\), if we want to highlight that the atom possesses \\(6\\) protons.",
+    "text": "Background\n\nMeasuring Gravity with a Picket Fence and Photogate\nA classic experiment in introductory physics is the photogate picket fence experiment. In this setup, a picket fence (a clear plastic strip with evenly spaced opaque bars) is dropped vertically through a photogate sensor.\n\nThe photogate shines an infrared beam across a small gap. A sensor on the other side detects whether the beam makes it through or not. If the beam is blocked (by one of the bars), the sensor records 'x'. If the beam is not blocked, the sensor records 'o'. Every \\(\\Delta t = 0.5\\) milliseconds (\\(=0.0005s\\)) the photogate logs whether the beam is blocked or not.\nBecause the bars on the picket fence are evenly spaced, the vertical distance between the start of one bar and the start of the next is always the same:\n\\[\n\\Delta d = 5 \\text{cm (constant distance between bars).}\n\\]\nAs the picket fence falls through the photogate, each bar successively blocks the beam. By measuring the time between when one bar starts blocking the beam and when the next bar does, we can estimate the velocity of the falling object. From changes in velocity, we can then estimate the acceleration due to gravity.\n\n\nThe Data\n\nNote: Before starting this challenge, if you haven’t already, you may wish to read the sections on dictionaries in the week 1 intermediate notebook. This will be helpful in what follows.\n\nYou are given a Python dictionary that encodes \\(100\\) trials of the photogate picket fence experiment. Each entry:\n\nHas a key like \"Trial 1\", \"Trial 2\", …\nHas a value that is a long string of 'o', 'x', and 'e' characters, representing the sensor state at regular time intervals (recordings are taken \\(\\Delta t\\) seconds apart). We can interpret these as follows:\n\n'x' = beam blocked (bar in photogate)\n'o' = beam unblocked (gap)\n'e' = error (the sensor glitched)\n\n\nFor example, suppose the dictionary contains the entry:\ndata_dict[\"Trial 1\"] = \"oooxxxoooxexo\"\nThis string represents the sensor readings for the first trial. Each character corresponds to a single timepoint, spaced by \\(\\Delta t = 0.0005\\) s. We can interpret this as follows:\n\nThe first three characters (\"ooo\") mean the beam was unblocked at times \\(t = 0 \\text{ms}\\), \\(5 \\text{ms}\\), and \\(10 \\text{ms}\\),\nThe next three characters (\"xxx\") indicate the beam was blocked at \\(t = 15 \\text{ms}\\), \\(20 \\text{ms}\\), and \\(25 \\text{ms}\\),\nThe next three (\"ooo\") show the beam was unblocked again,\nAt \\(t = 50 \\text{ms}\\), the character is 'e', indicating that the sensor glitched,\nThis is followed by 'x' and 'o' at the final two timepoints.\n\nNote: Across the \\(100\\) trials, several different picket fences were used. Some had the same number of bars, while others did not. Consequently, the number of black and white bars varied between trials.",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Chemistry Challenge"
+      "05 Consolidation: Python in the field",
+      "Physics Challenge"
     ]
   },
   {
-    "objectID": "05/week_05_chemistry.html#the-challenge",
-    "href": "05/week_05_chemistry.html#the-challenge",
+    "objectID": "05/week_05_physics.html#the-challenge",
+    "href": "05/week_05_physics.html#the-challenge",
     "title": "",
     "section": "The Challenge",
-    "text": "The Challenge\nYou are given a string of one of the following forms: N_P_E or N_E, where: - \\(N\\) is an integer representing the number of mass number of the isotope, - \\(P\\) is an integer representing the number of protons in an isotope, - \\(E\\) is the chemical symbol of the element.\nFor instance, 12_6_C represents \\(^{12}_6C\\) and 12_C represents \\(^{12}C\\).\n\n\n\n\n\n\nYou are also given the variable named periodic_table, loaded in by the below code. This includes some of the data displayed in the periodic table, saved as a dictionary of dictionaries.\n\n\n\n\n\n\n\nNote: Don’t worry if you are unsure what the import and from keywords are doing in the above code. For now, you can think of these as a way of loading in pre-written functions such as the get_periodic_table function. You’ll have plenty of opportunities to practice and understand these features of Python as the course goes on.\n\nTry running the following commands to see if you can understand how to use this variable:\n\n\n\n\n\n\n\nNote: Before proceeding, if you are unsure about dictionaries please see the week 1 intermediate notebook for further detail.\n\nFor an arbitrary isotope represented as described above, the challenge is to solve the following tasks.\nNote: If you are not sure how to get started, have a look at the guidance section on this week’s home page.\n\nImportant: For this task, you may only use material covered in the previous 4 week’s classes. To solve the challenge problems, you may use any content from the beginner, intermediate, or advanced notebooks. However, every challenge can be completed using only the material in the beginner notebooks, so don’t worry if you haven’t looked at the others. The tasks are designed to be accessible to everyone!\n\n\nTask 1: Verifying Elements\nWrite a function that takes two inputs; a string representing an isotope and the periodic_table dictionary. The function should verify whether the chemical symbol in the isotope string corresponds to a valid element in the periodic table and print a message indicating the result.\n\n\n\n\n\n\nHint: You can convert the keys in dictionary to a list using list(dict_name.keys()).\n\n\nTask 2: Verifying the Atomic Number\nWrite a function that takes two inputs; a string representing an isotope and the periodic_table dictionary. The function must check whether the number of protons, if provided, matches that in the periodic table.\n\n\n\n\n\n\n\n\nTask 3: Counting Electrons, Protons and Neutrons\nUpdate your code from Task 2 so that, unless an incorrect number of protons is provided, it prints the number of protons, neutrons, and electrons in the isotope. Make sure your code outputs these values even if the number of protons is not explicitly included in the isotope string.\n\n\n\n\n\n\n\n\nTask 4: Group and Period\nWrite a function that takes two inputs; a string representing an isotope and the periodic_table dictionary. The function must print the group and period of the element in the periodic table.\n\n\n\n\n\n\n\n\nTask 5: Isotope Names\nWrite a function which return a string representing the name of the isotope. For instance, 12_C should return \"Carbon-12\". Note that \\(^1H\\),\\(^2H\\) and \\(^3H\\) do not follow the standard convention and are usually referred to as \"Hydrogen\", \"Deuterium\" and \"Tritium\" rather than \"Hydrogen-1\", \"Hydrogen-2\" and \"Hydrogen-3\", respectively.\n\n\n\n\n\n\n\n\nTask 6: Categorizing Isotopes\nWrite a function which returns a string representing the category the isotope belongs to (e.g. \"Alkali Metals\", \"Actinides\",…, etc).",
+    "text": "The Challenge\nYour challenge is to perform the following tasks:\n\nTask 1: Clean the Data\nMany trials contain one or more 'e' (error) characters due to sensor glitches. Apply the following rules to clean each string:\n\nIf an 'e' (or group of 'e's) is adjacent to at least one 'x', replace all 'e's in that group with 'x',\nOtherwise, replace them with 'o'.\n\nFor example, 'ooxexoeoxeeo' would become 'ooxxxoooxxxo'.\n\n\n\n\n\n\n\n\nTask 2: Detect When Each Bar Begins to Block the Beam\nOnce the data is cleaned, your next task is to identify the exact times at which each bar starts to block the photogate beam.\nThis occurs every time the sensor reading transitions from 'o' (unblocked) to 'x' (blocked). Each from 'o' to 'x' transition corresponds to the leading edge of a bar entering the photogate.\nTo detect these moments:\n\nLoop through the cleaned string from left to right.\nLook for every index i where the character is 'x', and the character just before it (at index i-1) is 'o'.\nFor each such index, compute the time \\(t = i × Δt\\), where \\(\\Delta t =\\) 5 milliseconds.\n\nFor each trial, you must save a list of timestamps (in seconds) showing when each bar starts to block the beam. For instance, given this cleaned string:\n\"oooxxxoooxxxooooxxx\"\nYou should detect transitions at indices: 3, 9, and 16 (remember, Python starts counting at 0!). In this case, the corresponding times would be:\n[0.0015, 0.0045, 0.0080] # Computed by doing [3*0.0005,9*0.0005,16*0.0005]\n\n\n\n\n\n\n\n\nTask 3: Estimate Average Velocities\nOnce you’ve computed the times when each bar starts to block the beam, you can use those times to estimate the velocity of the falling picket fence.\nFrom the previous, we have;\n\n\\(\\Delta d = 0.05\\) meters is the constant distance between the leading edges of two consecutive bars.\n\\(t_k\\) and \\(t_{k+1}\\) are the times at which two consecutive bars start to block the beam.\n\nWe can now estimate the average velocity of the picket fence between two successive bar detections using:\n\\[\nv_k = \\frac{\\Delta d}{t_{k+1} - t_k}\n\\]\nThis gives the average velocity of the picket fence between the times \\(t_k\\) (when the \\(k^{th}\\) bar first blocks the sensor) and \\(t_{k+1}\\) (when the \\((k+1)^{th}\\) bar does the same).\nFor each trial, you must now use your list of bar-blocking times to compute a list of velocities between each pair of consecutive bars. For instance, if the bar-blocking times for a single trial are:\n[0.0015, 0.0045, 0.0080]\nThen you must compute the velocities:\n\\[v_0= \\frac{0.05}{0.0045-0.0015} = 16.66...\\quad\\text{and}\\quad v_1= \\frac{0.05}{0.0080-0.0045} = 14.28...\\]\n\n\n\n\n\n\n\n\nTask 4: Estimate Accelerations\nNow that you’ve estimated velocities, you can use them to estimate how the instantaneous velocity of the picket fence changes over time - that is, its acceleration.\nIn step 3, each velocity \\(v_k\\) was calculated as an average over a time interval of the form \\([t_k,t_{k+1}]\\). We can treat this as a velocity recorded at the midpoint of the interval. That is, we treat this velocity as though it were recorded at the time \\(\\tau_k\\), defined as:\n\\[\n\\tau_k := \\frac{t_k + t_{k+1}}{2}\n\\]\nTo estimate the acceleration between two consecutive velocities, we need to look at their differences. That is, we must compute:\n\\[\na_k = \\frac{v_{k+1} - v_k}{\\tau_{k+1} - \\tau_k}\n\\]\nThis gives an estimate of the average acceleration between the times \\(\\tau_k\\) and \\(\\tau_{k+1}\\). For each trial, you must now compute all such acceleration values, and then compute the average acceleration across the trial:\n\\[\\overline{a}^{(j)} = \\frac{1}{M_j} \\sum_{k=1}^{M_j} a_k\\] where \\(M_j\\) is the number of acceleration values in trial \\(j\\) (which is one less than the number of velocities).\n\n\n\n\n\n\n\n\nTask 5: Estimate \\(g\\)\nTo obtain a final estimate of the gravitational acceleration, we must now average the acceleration values computed across all trials.\nAs in Step 4, let \\(\\overline{a}^{(j)}\\) be the average acceleration for trial \\(j\\), and let \\(N\\) be the total number of trials. Then you must compute your final estimate of \\(g\\), given by:\n\\[\n\\hat{g} = \\frac{1}{N} \\sum_{j=1}^{N} \\overline{a}^{(j)}\n\\]\nThis value, \\(\\hat{g}\\), represents your best overall estimate of the acceleration due to gravity based on the experimental data.",
     "crumbs": [
       "Home",
-      "05 Consolidation: Python on the field",
-      "Chemistry Challenge"
+      "05 Consolidation: Python in the field",
+      "Physics Challenge"
     ]
   },
   {
@@ -2975,28 +3101,28 @@
     "href": "slides/09_intro_matplotlib_slides.html#introduction-to-matplotlib",
     "title": "Plotting with matplotlib",
     "section": "Introduction to matplotlib",
-    "text": "Introduction to matplotlib\nmatplotlib - Powerful Python library for creating visualizations\nimport matplotlib.pyplot as plt\nimport numpy as np\nKey concepts: - Figure: The canvas - Axes: The x-y plotting area - Object-oriented approach (recommended)\nfig, ax = plt.subplots()  # Create figure and axes"
+    "text": "Introduction to matplotlib\nmatplotlib - Powerful Python library for creating visualizations\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nimport matplotlib.pyplot as plt\nimport numpy as np\nKey concepts: - Figure: The canvas - Axes: The x-y plotting area - Object-oriented approach (recommended)\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfig, ax = plt.subplots()  # Create figure and axes"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#two-plotting-approaches",
     "href": "slides/09_intro_matplotlib_slides.html#two-plotting-approaches",
     "title": "Plotting with matplotlib",
     "section": "Two Plotting Approaches",
-    "text": "Two Plotting Approaches\nPyplot (MATLAB-style):\nplt.plot(x, y)  # Direct plotting\nObject-oriented (Recommended):\nfig, ax = plt.subplots()\nax.plot(x, y)  # Plot using axes object\nWhy object-oriented? - More explicit control - Better for complex plots - Modern best practice"
+    "text": "Two Plotting Approaches\nPyplot (MATLAB-style):\nplt.plot(x, y)  # Direct plotting\nObject-oriented (Recommended):\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfig, ax = plt.subplots()\nax.plot(x, y)  # Plot using axes object\nWhy object-oriented? - More explicit control - Better for complex plots - Modern best practice"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#basic-plot-types",
     "href": "slides/09_intro_matplotlib_slides.html#basic-plot-types",
     "title": "Plotting with matplotlib",
     "section": "Basic Plot Types",
-    "text": "Basic Plot Types\n# Sample data\nrng = np.random.default_rng(seed=124)\nx = np.arange(1, 20, 2)\ny1 = x**2\ny2 = x**2 + rng.normal(size=len(x))*50\n\nfig, ax = plt.subplots()\nax.plot(x, y1, label=\"Line plot\")        # Line plot\nax.scatter(x, y2, label=\"Scatter plot\")  # Scatter plot\nax.legend()"
+    "text": "Basic Plot Types\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Sample data\nrng = np.random.default_rng(seed=124)\nx = np.arange(1, 20, 2)\ny1 = x**2\ny2 = x**2 + rng.normal(size=len(x))*50\n\nfig, ax = plt.subplots()\nax.plot(x, y1, label=\"Line plot\")        # Line plot\nax.scatter(x, y2, label=\"Scatter plot\")  # Scatter plot\nax.legend()"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#customizing-appearance",
     "href": "slides/09_intro_matplotlib_slides.html#customizing-appearance",
     "title": "Plotting with matplotlib",
     "section": "Customizing Appearance",
-    "text": "Customizing Appearance\nfig, ax = plt.subplots(figsize=(8, 4))\n\n# Styling options\nax.plot(x, y1, color=\"slategrey\", linestyle=\"--\", linewidth=2)\nax.scatter(x, y2, color=\"indianred\", marker='+', s=60)\n\n# Labels and limits\nax.set_xlabel(\"X values\")\nax.set_ylabel(\"Y values\")\nax.set_xlim(0, 20)\nax.set_title(\"Customized Plot\")"
+    "text": "Customizing Appearance\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfig, ax = plt.subplots(figsize=(8, 4))\n\n# Styling options\nax.plot(x, y1, color=\"slategrey\", linestyle=\"--\", linewidth=2)\nax.scatter(x, y2, color=\"indianred\", marker='+', s=60)\n\n# Labels and limits\nax.set_xlabel(\"X values\")\nax.set_ylabel(\"Y values\")\nax.set_xlim(0, 20)\nax.set_title(\"Customized Plot\")"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#common-style-options",
@@ -3010,28 +3136,28 @@
     "href": "slides/09_intro_matplotlib_slides.html#legends-and-annotations",
     "title": "Plotting with matplotlib",
     "section": "Legends and Annotations",
-    "text": "Legends and Annotations\nfig, ax = plt.subplots()\n\nax.plot(x, y1, label=\"Fitted line\", color=\"blue\", linestyle=\"--\")\nax.scatter(x, y2, label=\"Measurements\", color=\"red\", marker='o')\n\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\") \nax.legend()  # Uses the label parameters\nax.set_title(\"Plot with Legend\")"
+    "text": "Legends and Annotations\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfig, ax = plt.subplots()\n\nax.plot(x, y1, label=\"Fitted line\", color=\"blue\", linestyle=\"--\")\nax.scatter(x, y2, label=\"Measurements\", color=\"red\", marker='o')\n\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\") \nax.legend()  # Uses the label parameters\nax.set_title(\"Plot with Legend\")"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#histograms",
     "href": "slides/09_intro_matplotlib_slides.html#histograms",
     "title": "Plotting with matplotlib",
     "section": "Histograms",
-    "text": "Histograms\n# Generate random data\nrng = np.random.default_rng(seed=68)\ndata1 = rng.normal(0, 1, 5000)\ndata2 = rng.normal(1, 1.5, 1000)\n\nfig, ax = plt.subplots()\nbins = np.arange(-4, 6, 0.3)\n\nax.hist(data1, bins=bins, alpha=0.7, color=\"skyblue\", \n        density=True, label=\"Dataset 1\")\nax.hist(data2, bins=bins, alpha=0.7, color=\"orange\", \n        density=True, label=\"Dataset 2\")\n\nax.set_xlabel(\"Value\")\nax.set_ylabel(\"Density\")\nax.legend()"
+    "text": "Histograms\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Generate random data\nrng = np.random.default_rng(seed=68)\ndata1 = rng.normal(0, 1, 5000)\ndata2 = rng.normal(1, 1.5, 1000)\n\nfig, ax = plt.subplots()\nbins = np.arange(-4, 6, 0.3)\n\nax.hist(data1, bins=bins, alpha=0.7, color=\"skyblue\", \n        density=True, label=\"Dataset 1\")\nax.hist(data2, bins=bins, alpha=0.7, color=\"orange\", \n        density=True, label=\"Dataset 2\")\n\nax.set_xlabel(\"Value\")\nax.set_ylabel(\"Density\")\nax.legend()"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#histogram-options",
     "href": "slides/09_intro_matplotlib_slides.html#histogram-options",
     "title": "Plotting with matplotlib",
     "section": "Histogram Options",
-    "text": "Histogram Options\nKey parameters: - bins: Number or explicit bin edges - alpha: Transparency (0-1) - density: Normalize to show probability density - histtype: ‘bar’, ‘step’, ‘stepfilled’\nfig, ax = plt.subplots()\nax.hist(data1, bins=30, alpha=0.6, histtype='step', \n        color='purple', linewidth=2)"
+    "text": "Histogram Options\nKey parameters: - bins: Number or explicit bin edges - alpha: Transparency (0-1) - density: Normalize to show probability density - histtype: ‘bar’, ‘step’, ‘stepfilled’\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfig, ax = plt.subplots()\nax.hist(data1, bins=30, alpha=0.6, histtype='step', \n        color='purple', linewidth=2)"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#multiple-plots-on-same-axes",
     "href": "slides/09_intro_matplotlib_slides.html#multiple-plots-on-same-axes",
     "title": "Plotting with matplotlib",
     "section": "Multiple Plots on Same Axes",
-    "text": "Multiple Plots on Same Axes\nfig, ax = plt.subplots(figsize=(10, 5))\n\n# Multiple data series\nx_vals = np.linspace(0, 2*np.pi, 100)\ny1 = np.sin(x_vals)\ny2 = np.cos(x_vals)\ny3 = np.sin(2*x_vals)\n\nax.plot(x_vals, y1, label=\"sin(x)\")\nax.plot(x_vals, y2, label=\"cos(x)\", linestyle='--')\nax.scatter(x_vals[::10], y3[::10], label=\"sin(2x)\", marker='o')\n\nax.legend()\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")"
+    "text": "Multiple Plots on Same Axes\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\nfig, ax = plt.subplots(figsize=(10, 5))\n\n# Multiple data series\nx_vals = np.linspace(0, 2*np.pi, 100)\ny1 = np.sin(x_vals)\ny2 = np.cos(x_vals)\ny3 = np.sin(2*x_vals)\n\nax.plot(x_vals, y1, label=\"sin(x)\")\nax.plot(x_vals, y2, label=\"cos(x)\", linestyle='--')\nax.scatter(x_vals[::10], y3[::10], label=\"sin(2x)\", marker='o')\n\nax.legend()\nax.set_xlabel(\"x\")\nax.set_ylabel(\"y\")"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#anatomy-of-a-figure",
@@ -3045,14 +3171,14 @@
     "href": "slides/09_intro_matplotlib_slides.html#figure-size-and-layout",
     "title": "Plotting with matplotlib",
     "section": "Figure Size and Layout",
-    "text": "Figure Size and Layout\n# Control figure size\nfig, ax = plt.subplots(figsize=(12, 6))\n\n# Multiple subplots (brief example)\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))\nax1.plot([1, 2, 3], [1, 4, 2])\nax2.scatter([1, 2, 3], [2, 1, 3])\nax1.set_title(\"Plot 1\")\nax2.set_title(\"Plot 2\")"
+    "text": "Figure Size and Layout\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Control figure size\nfig, ax = plt.subplots(figsize=(12, 6))\n\n# Multiple subplots (brief example)\nfig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))\nax1.plot([1, 2, 3], [1, 4, 2])\nax2.scatter([1, 2, 3], [2, 1, 3])\nax1.set_title(\"Plot 1\")\nax2.set_title(\"Plot 2\")"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#best-practices",
     "href": "slides/09_intro_matplotlib_slides.html#best-practices",
     "title": "Plotting with matplotlib",
     "section": "Best Practices",
-    "text": "Best Practices\n\nAlways label your axes\nUse legends for multiple data series\nChoose appropriate plot types for your data\nControl figure size for readability\nUse colors wisely - consider colorblind accessibility\nKeep it simple - don’t over-decorate\n\n# Good example\nfig, ax = plt.subplots(figsize=(8, 5))\nax.plot(x, y1, label=\"Data\")\nax.set_xlabel(\"Time (s)\")\nax.set_ylabel(\"Amplitude (V)\")\nax.set_title(\"Signal vs Time\")\nax.legend()"
+    "text": "Best Practices\n\nAlways label your axes\nUse legends for multiple data series\nChoose appropriate plot types for your data\nControl figure size for readability\nUse colors wisely - consider colorblind accessibility\nKeep it simple - don’t over-decorate\n\n#| caption: \"▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+[\"\n# Good example\nfig, ax = plt.subplots(figsize=(8, 5))\nax.plot(x, y1, label=\"Data\")\nax.set_xlabel(\"Time (s)\")\nax.set_ylabel(\"Amplitude (V)\")\nax.set_title(\"Signal vs Time\")\nax.legend()"
   },
   {
     "objectID": "slides/09_intro_matplotlib_slides.html#key-takeaways",
