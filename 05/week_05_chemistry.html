@@ -792,7 +792,7 @@ window.Quarto = {
 <span style="display:inline-block;width:15px;height:15px;background-color:#ffe3ba;margin-right:8px;"></span><em>Noble gases:</em> very stable gases that rarely react with other elements.
 </li>
 </ul>
-<p>By convention, we assume that all lathanides have period 6 and group 3, and all actinides have period 7 and group 3 (see periodic table above).</p>
+<p>By convention, we assume that all lanthanides have period 6 and group 3, and all actinides have period 7 and group 3 (see periodic table above).</p>
 <p>In each box of the periodic table, you can see the <em>name</em>, <em>chemical symbol</em>, and <em>category</em> of the element. The <em>atomic number</em> is shown in the top left. This tells you how many protons are in the nucleus of the atom, and it also determines the element’s position in the table. An atom has the same number of protons and electrons, so the atomic number also represents the number of electrons in the atom. The <em>relative atomic mass</em> is shown in the top right. This value represents the average mass of all the naturally occurring isotopes of that element, taking into account how common each isotope is.</p>
 <p>For example, the box for <code>carbon</code> (<code>C</code>) shows the atomic number <code>6</code> in the top left, which means every carbon atom has <code>6</code> protons. In the top right, the relative atomic mass is shown as about <code>12.01</code>, reflecting the natural mixture of mostly <code>carbon-12</code> and a small amount of <code>carbon-13</code>.</p>
 </section>
@@ -803,7 +803,12 @@ window.Quarto = {
 </section>
 <section id="the-challenge" class="level2">
 <h2 class="anchored" data-anchor-id="the-challenge">The Challenge</h2>
-<p>You are given a string of one of the following forms: <code>N_P_E</code> or <code>N_E</code>, where: - <span class="math inline">\(N\)</span> is an integer representing the number of mass number of the isotope, - <span class="math inline">\(P\)</span> is an integer representing the number of protons in an isotope, - <span class="math inline">\(E\)</span> is the chemical symbol of the element.</p>
+<p>You are given a string of one of the following forms: <code>N_P_E</code> or <code>N_E</code>, where:</p>
+<ul>
+<li><span class="math inline">\(N\)</span> is an integer representing the number of mass number of the isotope,</li>
+<li><span class="math inline">\(P\)</span> is an integer representing the number of protons in an isotope,</li>
+<li><span class="math inline">\(E\)</span> is the chemical symbol of the element.</li>
+</ul>
 <p>For instance, <code>12_6_C</code> represents <span class="math inline">\(^{12}_6C\)</span> and <code>12_C</code> represents <span class="math inline">\(^{12}C\)</span>.</p>
 <div>
 <div id="pyodide-1" class="exercise-cell">
@@ -1464,7 +1469,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:inline-block;width:15px;height:15px;background-color:#ffe3ba;margin-right:8px;"</span><span class="dt">&gt;&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;</span><span class="kw">em</span><span class="dt">&gt;</span>Noble gases:<span class="dt">&lt;/</span><span class="kw">em</span><span class="dt">&gt;</span> very stable gases that rarely react with other elements.<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>By convention, we assume that all lathanides have period 6 and group 3, and all actinides have period 7 and group 3 (see periodic table above).</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>By convention, we assume that all lanthanides have period 6 and group 3, and all actinides have period 7 and group 3 (see periodic table above).</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>In each box of the periodic table, you can see the *name*, *chemical symbol*, and *category* of the element. The *atomic number* is shown in the top left. This tells you how many protons are in the nucleus of the atom, and it also determines the element’s position in the table. An atom has the same number of protons and electrons, so the atomic number also represents the number of electrons in the atom. The *relative atomic mass* is shown in the top right. This value represents the average mass of all the naturally occurring isotopes of that element, taking into account how common each isotope is.</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
@@ -1476,98 +1481,99 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Challenge</span></span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>You are given a string of one of the following forms: <span class="in">`N_P_E`</span> or <span class="in">`N_E`</span>, where: </span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>$N$ is an integer representing the number of mass number of the isotope,</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>$P$ is an integer representing the number of protons in an isotope,</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>$E$ is the chemical symbol of the element. </span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>For instance, <span class="in">`12_6_C`</span> represents $^{12}_6C$ and <span class="in">`12_C`</span> represents $^{12}C$.</span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="co"># A string representing the isotope of Neon with 12 neutrons and 10 protons.</span></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>example_isotope <span class="op">=</span> <span class="st">"22_10_Ne"</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>You are also given the variable named <span class="in">`periodic_table`</span>, loaded in by the below code. This includes *some of* the data displayed in the periodic table, saved as a dictionary of dictionaries.</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">"./src"</span>)</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> get_periodic_table <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>periodic_table <span class="op">=</span> get_periodic_table()</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Note:** Don't worry if you are unsure what the </span><span class="in">`import`</span><span class="at"> and </span><span class="in">`from`</span><span class="at"> keywords are doing in the above code. For now, you can think of these as a way of loading in pre-written functions such as the </span><span class="in">`get_periodic_table`</span><span class="at"> function. You'll have plenty of opportunities to practice and understand these features of Python as the course goes on.</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>Try running the following commands to see if you can understand how to use this variable:</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"H"</span>])</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"H"</span>][<span class="st">"relative_atomic_mass"</span>])</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"Fe"</span>][<span class="st">"atomic_number"</span>])</span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"C"</span>][<span class="st">"name"</span>])</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; **Note:** Before proceeding, if you are unsure about dictionaries please see the </span><span class="co">[</span><span class="ot">week 1 intermediate notebook</span><span class="co">](../01/week_01_intro_to_data_types_intermediate.qmd)</span><span class="at"> for further detail.</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>For an arbitrary isotope represented as described above, the challenge is to solve the following tasks.</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>*Note: If you are not sure how to get started, have a look at the guidance section on [this week's home page](./week_05_home.qmd).*</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>You are given a string of one of the following forms: <span class="in">`N_P_E`</span> or <span class="in">`N_E`</span>, where:</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>$N$ is an integer representing the number of mass number of the isotope,</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>$P$ is an integer representing the number of protons in an isotope,</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>$E$ is the chemical symbol of the element. </span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>For instance, <span class="in">`12_6_C`</span> represents $^{12}_6C$ and <span class="in">`12_C`</span> represents $^{12}C$.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="co"># A string representing the isotope of Neon with 12 neutrons and 10 protons.</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>example_isotope <span class="op">=</span> <span class="st">"22_10_Ne"</span></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>You are also given the variable named <span class="in">`periodic_table`</span>, loaded in by the below code. This includes *some of* the data displayed in the periodic table, saved as a dictionary of dictionaries.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>sys.path.append(<span class="st">"./src"</span>)</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> get_periodic_table <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>periodic_table <span class="op">=</span> get_periodic_table()</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; **Note:** Don't worry if you are unsure what the </span><span class="in">`import`</span><span class="at"> and </span><span class="in">`from`</span><span class="at"> keywords are doing in the above code. For now, you can think of these as a way of loading in pre-written functions such as the </span><span class="in">`get_periodic_table`</span><span class="at"> function. You'll have plenty of opportunities to practice and understand these features of Python as the course goes on.</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Try running the following commands to see if you can understand how to use this variable:</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"H"</span>])</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"H"</span>][<span class="st">"relative_atomic_mass"</span>])</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"Fe"</span>][<span class="st">"atomic_number"</span>])</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(periodic_table[<span class="st">"C"</span>][<span class="st">"name"</span>])</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; **Note:** Before proceeding, if you are unsure about dictionaries please see the </span><span class="co">[</span><span class="ot">week 1 intermediate notebook</span><span class="co">](../01/week_01_intro_to_data_types_intermediate.qmd)</span><span class="at"> for further detail.</span></span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>For an arbitrary isotope represented as described above, the challenge is to solve the following tasks.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>*Note: If you are not sure how to get started, have a look at the guidance section on [this week's home page](./week_05_home.qmd).*</span>
 <span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; **Important:** For this task, you may only use material covered in the previous 4 week's classes. To solve the challenge problems, you may use any content from the </span><span class="in">`beginner`</span><span class="at">, </span><span class="in">`intermediate`</span><span class="at">, or </span><span class="in">`advanced notebooks`</span><span class="at">. However, every challenge can be completed using only the material in the </span><span class="in">`beginner`</span><span class="at"> notebooks, so don't worry if you haven't looked at the others. The tasks are designed to be accessible to everyone!</span></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1: Verifying Elements</span></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>Write a function that takes two inputs; a string representing an isotope and the <span class="in">`periodic_table`</span> dictionary. The function should verify whether the chemical symbol in the isotope string corresponds to a valid element in the periodic table and print a message indicating the result.</span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
-<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>*Hint: You can convert the keys in dictionary to a list using `list(dict_name.keys())`.*</span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 2: Verifying the Atomic Number</span></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Write a function that takes two inputs; a string representing an isotope and the <span class="in">`periodic_table`</span> dictionary. The function must check whether the number of protons, if provided, matches that in the periodic table.</span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 3: Counting Electrons, Protons and Neutrons</span></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>Update your code from Task 2 so that, unless an incorrect number of protons is provided, it prints the number of protons, neutrons, and electrons in the isotope. Make sure your code outputs these values even if the number of protons is not explicitly included in the isotope string.</span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 4: Group and Period</span></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>Write a function that takes two inputs; a string representing an isotope and the <span class="in">`periodic_table`</span> dictionary. The function must print the group and period of the element in the periodic table.</span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 5: Isotope Names</span></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>Write a function which return a string representing the name of the isotope. For instance, <span class="in">`12_C`</span> should return <span class="in">`"Carbon-12"`</span>. Note that $^1H$,$^2H$ and $^3H$ do not follow the standard convention and are usually referred to as <span class="in">`"Hydrogen"`</span>, <span class="in">`"Deuterium"`</span> and <span class="in">`"Tritium"`</span> rather than <span class="in">`"Hydrogen-1"`</span>, <span class="in">`"Hydrogen-2"`</span> and <span class="in">`"Hydrogen-3"`</span>, respectively.</span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 6: Categorizing Isotopes</span></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a>Write a function which returns a string representing the category the isotope belongs to (e.g. <span class="in">`"Alkali Metals"`</span>, <span class="in">`"Actinides"`</span>,..., etc).</span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a> <span class="at">&gt; **Important:** For this task, you may only use material covered in the previous 4 week's classes. To solve the challenge problems, you may use any content from the </span><span class="in">`beginner`</span><span class="at">, </span><span class="in">`intermediate`</span><span class="at">, or </span><span class="in">`advanced notebooks`</span><span class="at">. However, every challenge can be completed using only the material in the </span><span class="in">`beginner`</span><span class="at"> notebooks, so don't worry if you haven't looked at the others. The tasks are designed to be accessible to everyone!</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 1: Verifying Elements</span></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>Write a function that takes two inputs; a string representing an isotope and the <span class="in">`periodic_table`</span> dictionary. The function should verify whether the chemical symbol in the isotope string corresponds to a valid element in the periodic table and print a message indicating the result.</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>*Hint: You can convert the keys in dictionary to a list using `list(dict_name.keys())`.*</span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 2: Verifying the Atomic Number</span></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>Write a function that takes two inputs; a string representing an isotope and the <span class="in">`periodic_table`</span> dictionary. The function must check whether the number of protons, if provided, matches that in the periodic table.</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 3: Counting Electrons, Protons and Neutrons</span></span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>Update your code from Task 2 so that, unless an incorrect number of protons is provided, it prints the number of protons, neutrons, and electrons in the isotope. Make sure your code outputs these values even if the number of protons is not explicitly included in the isotope string.</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 4: Group and Period</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>Write a function that takes two inputs; a string representing an isotope and the <span class="in">`periodic_table`</span> dictionary. The function must print the group and period of the element in the periodic table.</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 5: Isotope Names</span></span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>Write a function which return a string representing the name of the isotope. For instance, <span class="in">`12_C`</span> should return <span class="in">`"Carbon-12"`</span>. Note that $^1H$,$^2H$ and $^3H$ do not follow the standard convention and are usually referred to as <span class="in">`"Hydrogen"`</span>, <span class="in">`"Deuterium"`</span> and <span class="in">`"Tritium"`</span> rather than <span class="in">`"Hydrogen-1"`</span>, <span class="in">`"Hydrogen-2"`</span> and <span class="in">`"Hydrogen-3"`</span>, respectively.</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a><span class="fu">### Task 6: Categorizing Isotopes</span></span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>Write a function which returns a string representing the category the isotope belongs to (e.g. <span class="in">`"Alkali Metals"`</span>, <span class="in">`"Actinides"`</span>,..., etc).</span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a><span class="co"># Write your code here...</span></span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
