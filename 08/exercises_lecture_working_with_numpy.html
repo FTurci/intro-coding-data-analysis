@@ -889,7 +889,7 @@ y(t) &amp; = R\sin\theta(t)  = R \sin{\omega t}+y_0
 
 </div>
 <script type="pyodide-9-contents">
-eyJhdHRyIjp7ImNhcHRpb24iOiLilrYgQ3RybC9DbWQrRW50ZXIgfCDih6UgQ3RybC9DbWQrXSB8IOKHpCBDdHJsL0NtZCtbIiwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbWF0aFxuUiA9IDEwLjAgI2luIG1ldHJlc1xub21lZ2EgPSAyLjAqMiptYXRoLnBpLzYwLiAjIGluIHJhZGlhbnMgcGVyIHNlY29uZFxueDAgPSBSICMgaW4gbWV0cmVzXG55MCA9IDAgIyBpbiBtZXRyZXNcbmR0ID0gMi4wICMgaW4gc2Vjb25kc1xuZHVyYXRpb24gPSAyMC4wICNpbiBzZWNvbmRzXG5udW1faXRlcmF0aW9ucyAgPSBpbnQoZHVyYXRpb24vZHQpXG54LCB5ID0gW10sIFtdXG50ID0gMFxuZm9yIF8gaW4gcmFuZ2UobnVtX2l0ZXJhdGlvbnMpOlxuICAgIHguYXBwZW5kKFIqbWF0aC5jb3Mob21lZ2EqdCkreDApXG4gICAgeS5hcHBlbmQoUiptYXRoLnNpbihvbWVnYSp0KSt5MClcbiAgICB0ICs9IGR0IFxuXG4jIHBsb3R0aW5nLCBpZ25vcmUgdGhlIGRldGFpbHMgZm9yIG5vdyBzaWNuZSB3ZSB3aWxsIGNvdmVyIHRoaXMgaW4gYSBsYXRlciBsZWN0dXJlXG5pbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0XG5wbHQuc2NhdHRlcih4LHkpXG5wbHQuYXhpcyhcImVxdWFsXCIpXG5wbHQuc2hvdygpIn0=
+eyJhdHRyIjp7ImNhcHRpb24iOiLilrYgQ3RybC9DbWQrRW50ZXIgfCDih6UgQ3RybC9DbWQrXSB8IOKHpCBDdHJsL0NtZCtbIiwiZWRpdCI6dHJ1ZSwiZXZhbCI6dHJ1ZX0sImNvZGUiOiJpbXBvcnQgbWF0aFxuUiA9IDEwLjAgI2luIG1ldHJlc1xub21lZ2EgPSAyLjAqMiptYXRoLnBpLzYwLiAjIGluIHJhZGlhbnMgcGVyIHNlY29uZFxueDAgPSBSICMgaW4gbWV0cmVzXG55MCA9IDAgIyBpbiBtZXRyZXNcbmR0ID0gMi4wICMgaW4gc2Vjb25kc1xuZHVyYXRpb24gPSAzMC4wICNpbiBzZWNvbmRzXG5udW1faXRlcmF0aW9ucyAgPSBpbnQoZHVyYXRpb24vZHQpXG54LCB5ID0gW10sIFtdXG50ID0gMFxuZm9yIF8gaW4gcmFuZ2UobnVtX2l0ZXJhdGlvbnMpOlxuICAgIHguYXBwZW5kKFIqbWF0aC5jb3Mob21lZ2EqdCkreDApXG4gICAgeS5hcHBlbmQoUiptYXRoLnNpbihvbWVnYSp0KSt5MClcbiAgICB0ICs9IGR0IFxuXG4jIHBsb3R0aW5nLCBpZ25vcmUgdGhlIGRldGFpbHMgZm9yIG5vdyBzaWNuZSB3ZSB3aWxsIGNvdmVyIHRoaXMgaW4gYSBsYXRlciBsZWN0dXJlXG5pbXBvcnQgbWF0cGxvdGxpYi5weXBsb3QgYXMgcGx0XG5wbHQuc2NhdHRlcih4LHkpXG5wbHQuYXhpcyhcImVxdWFsXCIpXG5wbHQuc2hvdygpIn0=
 </script>
 </div>
 <p>The question now is: can you simpify this code by using NumPy? Your focus should be on <strong>avoiding for loops</strong> and using NumPy’s array operations instead.</p>
@@ -1558,7 +1558,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>x0 <span class="op">=</span> R <span class="co"># in metres</span></span>
 <span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>y0 <span class="op">=</span> <span class="dv">0</span> <span class="co"># in metres</span></span>
 <span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">2.0</span> <span class="co"># in seconds</span></span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>duration <span class="op">=</span> <span class="fl">20.0</span> <span class="co">#in seconds</span></span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>duration <span class="op">=</span> <span class="fl">30.0</span> <span class="co">#in seconds</span></span>
 <span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>num_iterations  <span class="op">=</span> <span class="bu">int</span>(duration<span class="op">/</span>dt)</span>
 <span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>x, y <span class="op">=</span> [], []</span>
 <span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> <span class="dv">0</span></span>
