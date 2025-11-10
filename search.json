@@ -368,14 +368,14 @@
   {
     "objectID": "08/exercises_lecture_working_with_numpy_solutions.html",
     "href": "08/exercises_lecture_working_with_numpy_solutions.html",
-    "title": "Exercises - Working with NumPy",
+    "title": "Working with NumPy",
     "section": "",
     "text": "Create a 1D NumPy array arr of integers from 10 to 19. Access the element at index 3."
   },
   {
     "objectID": "08/exercises_lecture_working_with_numpy_solutions.html#exercise-9-problem-solving-with-numpy",
     "href": "08/exercises_lecture_working_with_numpy_solutions.html#exercise-9-problem-solving-with-numpy",
-    "title": "Exercises - Working with NumPy",
+    "title": "Working with NumPy",
     "section": "Exercise 9: Problem solving with NumPy",
     "text": "Exercise 9: Problem solving with NumPy\nConsider the following problem:\n\nA panoramic wheel (a Ferris wheel) with a radius of 10 meters rotates anti-clockwise at a constant speed of 2 revolutions per minute. A passenger is seated in a car at the edge of the wheel. Calculate the trajectory of the passenger with respect to the center of the wheel for the duration of 30 seconds, with a time resolution of 2 seconds, assuming they start at the rightmost point of the wheel.\n\nThe problem is a two-dimensional problem. The passenger has coordinates \\(x(t), y(t)\\) and is performing uniform rotational motion, with angular velocity \\(\\omega\\) and radius \\(R\\).\nThe angle formed at which the passenger is located is \\(\\theta(t)\\) and simply evolves as\n\\[\\theta(t) = \\omega t +\\theta_0\\]\nwhere \\(\\theta_0\\) is the initial angle (\\(\\theta_0=0\\) in our case).\nHence, the trajectory is expressed by\n\\[\n\\begin{align}\nx(t) & = R\\cos\\theta(t) = R \\cos{\\omega t}+x_0\\\\\ny(t) & = R\\sin\\theta(t)  = R \\sin{\\omega t}+y_0\n\\end{align}\n\\]\nSo, we have all the theoretical knowledge that we need to solve the problem. How can we translate this into code?\nThe first approach is via using vanilla Python\n\n\n\n\n\n\nThe question now is: can you simpify this code by using NumPy? Your focus should be on avoiding for loops and using NumPy’s array operations instead."
   },
@@ -3870,25 +3870,25 @@
   {
     "objectID": "08/exercises_lecture_working_with_numpy.html",
     "href": "08/exercises_lecture_working_with_numpy.html",
-    "title": "Exercises - Working with NumPy",
+    "title": "Working with NumPy",
     "section": "",
     "text": "Create a 1D NumPy array arr of integers from 10 to 19. Access the element at index 3.",
     "crumbs": [
       "Home",
       "08 Working with NumPy",
-      "Exercises - Working with NumPy"
+      "Working with NumPy"
     ]
   },
   {
     "objectID": "08/exercises_lecture_working_with_numpy.html#exercise-9-problem-solving-with-numpy",
     "href": "08/exercises_lecture_working_with_numpy.html#exercise-9-problem-solving-with-numpy",
-    "title": "Exercises - Working with NumPy",
+    "title": "Working with NumPy",
     "section": "Exercise 9: Problem solving with NumPy",
     "text": "Exercise 9: Problem solving with NumPy\nConsider the following problem:\n\nA panoramic wheel (a Ferris wheel) with a radius of 10 meters rotates anti-clockwise at a constant speed of 2 revolutions per minute. A passenger is seated in a car at the edge of the wheel. Calculate the trajectory of the passenger with respect to the center of the wheel for the duration of 30 seconds, with a time resolution of 2 seconds, assuming they start at the rightmost point of the wheel.\n\nThe problem is a two-dimensional problem. The passenger has coordinates \\(x(t), y(t)\\) and is performing uniform rotational motion, with angular velocity \\(\\omega\\) and radius \\(R\\).\nThe angle formed at which the passenger is located is \\(\\theta(t)\\) and simply evolves as\n\\[\\theta(t) = \\omega t +\\theta_0\\]\nwhere \\(\\theta_0\\) is the initial angle (\\(\\theta_0=0\\) in our case).\nHence, the trajectory is expressed by\n\\[\n\\begin{align}\nx(t) & = R\\cos\\theta(t) = R \\cos{\\omega t}+x_0\\\\\ny(t) & = R\\sin\\theta(t)  = R \\sin{\\omega t}+y_0\n\\end{align}\n\\]\nSo, we have all the theoretical knowledge that we need to solve the problem. How can we translate this into code?\nThe first approach is via using vanilla Python\n\n\n\n\n\n\nThe question now is: can you simpify this code by using NumPy? Your focus should be on avoiding for loops and using NumPy’s array operations instead.",
     "crumbs": [
       "Home",
       "08 Working with NumPy",
-      "Exercises - Working with NumPy"
+      "Working with NumPy"
     ]
   },
   {
