@@ -2,51 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_intro_to_data_types_advanced.html</loc>
-    <lastmod>2025-11-10T17:28:40.752Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.693Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/exercises_intro.html</loc>
-    <lastmod>2025-11-10T17:28:40.751Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.691Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.749Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.690Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_intro_to_data_types_beginner.html</loc>
-    <lastmod>2025-11-10T17:28:40.748Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.689Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/08/slides_working_with_numpy.html</loc>
-    <lastmod>2025-11-10T17:28:40.747Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.687Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/08/exercises_lecture_working_with_numpy_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.746Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.686Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/09/exercises_plotting_data_from_file_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.743Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.684Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/09/fun_matplotlib_decoration.html</loc>
-    <lastmod>2025-11-10T17:28:40.742Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.683Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/07/07_intro_numpy_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.741Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.682Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/07/exercises_numpy_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.740Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.680Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/07_intro_numpy_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.739Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.679Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/09_intro_matplotlib_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.738Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.678Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/test_output.html</loc>
@@ -54,215 +54,215 @@
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/08_working_numpy_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.736Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.676Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/exercises_part2_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.735Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.674Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/lecture_multidimensionalArrays.html</loc>
-    <lastmod>2025-11-10T17:28:40.734Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.673Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/exercises_part2.html</loc>
-    <lastmod>2025-11-10T17:28:40.733Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.672Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/hint2_apply_mask.html</loc>
-    <lastmod>2025-11-10T17:28:40.732Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.671Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/exercises_python_riddles.html</loc>
-    <lastmod>2025-11-10T17:28:40.731Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.670Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/example.html</loc>
-    <lastmod>2025-11-10T17:28:40.730Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.668Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/exercises_python_riddles_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.729Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.667Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/exercises_numpy_riddles_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.728Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.667Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_home.html</loc>
-    <lastmod>2025-11-10T17:28:40.727Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.665Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.726Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.663Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_solutions_demonstrator_version.html</loc>
-    <lastmod>2025-11-10T17:28:40.724Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.662Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_booleans_and_conditionals_intermediate.html</loc>
-    <lastmod>2025-11-10T17:28:40.723Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.660Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.722Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.659Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_chemistry.html</loc>
-    <lastmod>2025-11-10T17:28:40.721Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.657Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_solutions_demonstrator_version.html</loc>
-    <lastmod>2025-11-10T17:28:40.720Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.656Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_data_science.html</loc>
-    <lastmod>2025-11-10T17:28:40.718Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.654Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/exercises_python_on_the_field.html</loc>
-    <lastmod>2025-11-10T17:28:40.717Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.652Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_home.html</loc>
-    <lastmod>2025-11-10T17:28:40.716Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.651Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_solutions_demonstrator_version.html</loc>
-    <lastmod>2025-11-10T17:28:40.715Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.649Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.713Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.648Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/exercises_function.html</loc>
-    <lastmod>2025-11-10T17:28:40.712Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.646Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/exercises_loop.html</loc>
-    <lastmod>2025-11-10T17:28:40.711Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.644Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_loops_intermediate.html</loc>
-    <lastmod>2025-11-10T17:28:40.710Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.643Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_loops_beginner.html</loc>
-    <lastmod>2025-11-10T17:28:40.709Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.642Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_solutions_demonstrator_version.html</loc>
-    <lastmod>2025-11-10T17:28:40.708Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.641Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.708Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.641Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.710Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.642Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_loops_advanced.html</loc>
-    <lastmod>2025-11-10T17:28:40.711Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.644Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/03/week_03_home.html</loc>
-    <lastmod>2025-11-10T17:28:40.711Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.645Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_functions_advanced.html</loc>
-    <lastmod>2025-11-10T17:28:40.713Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.647Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_functions_intermediate.html</loc>
-    <lastmod>2025-11-10T17:28:40.714Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.649Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_functions_beginner.html</loc>
-    <lastmod>2025-11-10T17:28:40.716Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.650Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/04/week_04_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.716Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.652Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.718Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.653Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_data_science_quarto.html</loc>
-    <lastmod>2025-11-10T17:28:40.719Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.655Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_home.html</loc>
-    <lastmod>2025-11-10T17:28:40.720Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.656Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/05/week_05_physics.html</loc>
-    <lastmod>2025-11-10T17:28:40.721Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.658Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/exercises_bool.html</loc>
-    <lastmod>2025-11-10T17:28:40.722Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.660Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.723Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.661Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_booleans_and_conditionals_advanced.html</loc>
-    <lastmod>2025-11-10T17:28:40.725Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.663Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/02/week_02_booleans_and_conditionals_beginner.html</loc>
-    <lastmod>2025-11-10T17:28:40.727Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.665Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/formative/basic_structures.html</loc>
-    <lastmod>2025-11-10T17:28:40.728Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.666Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/exercises_riddles.html</loc>
-    <lastmod>2025-11-10T17:28:40.728Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.667Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/exercises_numpy_riddles.html</loc>
-    <lastmod>2025-11-10T17:28:40.729Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.668Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/11/lecture_beyond_the_notebook.html</loc>
-    <lastmod>2025-11-10T17:28:40.731Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.669Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/exercises_multid.html</loc>
-    <lastmod>2025-11-10T17:28:40.731Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.670Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/exercises_part1.html</loc>
-    <lastmod>2025-11-10T17:28:40.732Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.671Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/exercises_part1_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.733Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.672Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/10/hint1_mask.html</loc>
-    <lastmod>2025-11-10T17:28:40.734Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.674Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/index.html</loc>
-    <lastmod>2025-11-10T17:28:40.735Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.675Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/11_beyond_notebook_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.736Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.676Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/10_multidimensional_arrays_slides.html</loc>
-    <lastmod>2025-11-10T17:28:40.737Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.677Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/slides/tmp.html</loc>
@@ -270,42 +270,42 @@
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/07/exercises_numpy.html</loc>
-    <lastmod>2025-11-10T17:28:40.739Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.679Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/07/lecture_intro_numpy.html</loc>
-    <lastmod>2025-11-10T17:28:40.741Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.681Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/09/lecture_intro_matplotlib.html</loc>
-    <lastmod>2025-11-10T17:28:40.742Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.682Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/09/exercises_plotting_data_from_file.html</loc>
-    <lastmod>2025-11-10T17:28:40.743Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.684Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/08/lecture_working_with_numpy.html</loc>
-    <lastmod>2025-11-10T17:28:40.746Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.686Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/08/exercises_lecture_working_with_numpy.html</loc>
-    <lastmod>2025-11-10T17:28:40.747Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.687Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_solutions.html</loc>
-    <lastmod>2025-11-10T17:28:40.748Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.688Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_home.html</loc>
-    <lastmod>2025-11-10T17:28:40.749Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.690Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_intro_to_data_types_intermediate.html</loc>
-    <lastmod>2025-11-10T17:28:40.750Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.691Z</lastmod>
   </url>
   <url>
     <loc>https://FTurci.github.io/intro-coding-data-analysis/01/week_01_solutions_demonstrator_version.html</loc>
-    <lastmod>2025-11-10T17:28:40.751Z</lastmod>
+    <lastmod>2025-11-11T09:07:52.692Z</lastmod>
   </url>
 </urlset>
