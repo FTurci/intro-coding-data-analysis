@@ -1,6 +1,8 @@
 ---
 title: Plotting data from file
 jupyter: python3
+resources: 
+    - data
 ---
 
 
@@ -13,6 +15,8 @@ As an example, we'll look at a new data file. This contains a simulation of the 
 
 ```{pyodide}
 #| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+import sys
+sys.path.append("./data")
 data_filename = "data/FIRST ORDER_k=0.0005.txt"
 ```
 
