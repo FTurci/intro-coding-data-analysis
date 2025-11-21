@@ -1124,24 +1124,14 @@
     "href": "10/exercises_part1_solutions.html",
     "title": "Answers",
     "section": "",
-    "text": "Create a 100 x 100 square grid containing a circle. The centre of the circle should be at position x = 40, y = 50 and have a radius of 10. Call your output circular_mask.\nBreak this idea down into the different steps: - Start by creating an array - how could you create an array of the right shape? - How would you turn the equation above into code? - How would you evaluate one (x, y) position to start with? - How do you move on to evaluate every position? - …\nImportant note: For numpy remember that the axes are opposite to what you would expect for an x-y grid - they store data as row-major meaning you access the row as the first index (y) and the column as the second index (x). This means position arr[1, 0] would be at position (0, 1) in x, y co-ordinates rather than (1, 0) as you may expect.\nWhen completed, you can use the plotting code below to show your mask. This uses a matplotlib function called imshow (documentation; example from image gallery) which can plot your 2D data on a grid.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtended:\n\nConsider how you could create a mask for a rectangle rather than a circle (or a square)",
-    "crumbs": [
-      "Home",
-      "10 Multidimensional Arrays",
-      "Solutions - Part 1"
-    ]
+    "text": "Create a 100 x 100 square grid containing a circle. The centre of the circle should be at position x = 40, y = 50 and have a radius of 10. Call your output circular_mask.\nBreak this idea down into the different steps: - Start by creating an array - how could you create an array of the right shape? - How would you turn the equation above into code? - How would you evaluate one (x, y) position to start with? - How do you move on to evaluate every position? - …\nImportant note: For numpy remember that the axes are opposite to what you would expect for an x-y grid - they store data as row-major meaning you access the row as the first index (y) and the column as the second index (x). This means position arr[1, 0] would be at position (0, 1) in x, y co-ordinates rather than (1, 0) as you may expect.\nWhen completed, you can use the plotting code below to show your mask. This uses a matplotlib function called imshow (documentation; example from image gallery) which can plot your 2D data on a grid.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtended:\n\nConsider how you could create a mask for a rectangle rather than a circle (or a square)"
   },
   {
     "objectID": "10/exercises_part1_solutions.html#pair-programming-part-1",
     "href": "10/exercises_part1_solutions.html#pair-programming-part-1",
     "title": "Answers",
     "section": "",
-    "text": "Create a 100 x 100 square grid containing a circle. The centre of the circle should be at position x = 40, y = 50 and have a radius of 10. Call your output circular_mask.\nBreak this idea down into the different steps: - Start by creating an array - how could you create an array of the right shape? - How would you turn the equation above into code? - How would you evaluate one (x, y) position to start with? - How do you move on to evaluate every position? - …\nImportant note: For numpy remember that the axes are opposite to what you would expect for an x-y grid - they store data as row-major meaning you access the row as the first index (y) and the column as the second index (x). This means position arr[1, 0] would be at position (0, 1) in x, y co-ordinates rather than (1, 0) as you may expect.\nWhen completed, you can use the plotting code below to show your mask. This uses a matplotlib function called imshow (documentation; example from image gallery) which can plot your 2D data on a grid.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtended:\n\nConsider how you could create a mask for a rectangle rather than a circle (or a square)",
-    "crumbs": [
-      "Home",
-      "10 Multidimensional Arrays",
-      "Solutions - Part 1"
-    ]
+    "text": "Create a 100 x 100 square grid containing a circle. The centre of the circle should be at position x = 40, y = 50 and have a radius of 10. Call your output circular_mask.\nBreak this idea down into the different steps: - Start by creating an array - how could you create an array of the right shape? - How would you turn the equation above into code? - How would you evaluate one (x, y) position to start with? - How do you move on to evaluate every position? - …\nImportant note: For numpy remember that the axes are opposite to what you would expect for an x-y grid - they store data as row-major meaning you access the row as the first index (y) and the column as the second index (x). This means position arr[1, 0] would be at position (0, 1) in x, y co-ordinates rather than (1, 0) as you may expect.\nWhen completed, you can use the plotting code below to show your mask. This uses a matplotlib function called imshow (documentation; example from image gallery) which can plot your 2D data on a grid.\n\n\n\n\n\n\n\n\n\n\n\n\n\nExtended:\n\nConsider how you could create a mask for a rectangle rather than a circle (or a square)"
   },
   {
     "objectID": "10/exercises_part1.html",
