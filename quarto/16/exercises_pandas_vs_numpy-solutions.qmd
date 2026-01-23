@@ -1,0 +1,580 @@
+---
+title: 'Setup: Import libraries and create sample data'
+jupyter: python3
+---
+
+
+First, let's import both libraries and create some sample data to work with.
+
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+import numpy as np
+import pandas as pd
+
+# Create a sample dataset about students
+np.random.seed(42)
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Henry'],
+    'age': [20, 21, 19, 22, 20, 21, 19, 20],
+    'math_score': [85, 78, 92, 88, 76, 95, 82, 79],
+    'physics_score': [88, 72, 89, 85, 70, 90, 78, 82],
+    'chemistry_score': [82, 75, 88, 90, 73, 92, 80, 77]
+}
+
+df = pd.DataFrame(data)
+print("Sample DataFrame:")
+print(df)
+```
+
+## Exercise 1: Accessing NumPy arrays from Pandas
+
+Pandas DataFrames and Series are built on top of NumPy arrays. Learn how to access the underlying NumPy array.
+
+**Tasks:**
+1. Extract the underlying NumPy array from the entire DataFrame using the `.values` or `.to_numpy()` method
+2. Extract the NumPy array from just the 'math_score' column (which is a Series)
+3. Check the type of both extracted arrays using `type()`
+4. Print the shape of the DataFrame array using `.shape`
+
+**Q:** What data type is stored in the arrays?
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+# Extract NumPy array from DataFrame
+df_array = df.to_numpy()
+print(f"DataFrame array: {df_array.shape}, dtype: {df_array.dtype}")
+print(df_array[:2])  # Show first 2 rows
+
+# Extract from single column, this time using .values
+math_array = df['math_score'].values
+print(f"\nMath scores: {math_array.shape}, dtype: {math_array.dtype}")
+print(math_array)
+```
+
+## Exercise 2: Slicing - Pandas vs NumPy
+
+Slicing works differently in pandas and NumPy. Pandas uses `.loc[]` (label-based) and `.iloc[]` (position-based), while NumPy uses integer indexing.
+
+**Tasks:**
+1. Create a NumPy array from the numeric columns only (age, math_score, physics_score, chemistry_score)
+2. Using **pandas `.iloc[]`**, select rows 2 to 4 (exclusive) and columns 1 to 3 (the score columns)
+3. Using **pandas `.loc[]`**, select the same data but using row numbers and column names
+4. Using **NumPy indexing**, select the same slice from the NumPy array
+5. Compare the outputs - what's different?
+
+**Note:** Remember that pandas `.loc[]` is inclusive on both ends, while `.iloc[]` and NumPy are exclusive on the right end.
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+numeric_cols = ['age', 'math_score', 'physics_score', 'chemistry_score']
+numeric_array = df[numeric_cols].to_numpy()
+
+# Pandas position-based
+pandas_iloc = df.iloc[2:4, 2:5]
+print("Pandas .iloc[2:4, 2:5]:")
+print(pandas_iloc)
+
+# Pandas label-based
+pandas_loc = df.loc[2:3, 'math_score':'chemistry_score']
+print("\nPandas .loc[2:3, 'math_score':'chemistry_score']:")
+print(pandas_loc)
+
+# NumPy position-based
+numpy_slice = numeric_array[2:4, 1:4]
+print("\nNumPy [2:4, 1:4]:")
+print(numpy_slice)
+
+print("\n✓ Pandas: preserves labels, .loc[] is inclusive")
+print("✓ NumPy: no labels, exclusive on right end")
+```
+
+## Exercise 3: Boolean indexing - Two approaches
+
+Both pandas and NumPy support boolean indexing, but with different syntax and capabilities.
+
+**Tasks:**
+1. Create a boolean mask in pandas to find students with math_score > 80
+2. Use this mask to filter the DataFrame
+3. Convert the math_score column to a NumPy array
+4. Create a boolean mask in NumPy for scores > 80
+5. Use this mask to filter the NumPy array
+6. Compare: What information is preserved in pandas but lost in NumPy?
+
+**Bonus:** Try combining multiple conditions (e.g., math_score > 80 AND age == 20) in both pandas and NumPy
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+# Pandas boolean indexing
+pandas_mask = df['math_score'] > 80
+high_math_students = df[pandas_mask]
+print("Pandas - Students with math_score > 80:")
+print(high_math_students[['name', 'math_score']])
+
+# NumPy boolean indexing
+math_array = df['math_score'].to_numpy()
+numpy_mask = math_array > 80
+high_math_scores = math_array[numpy_mask]
+print(f"\nNumPy - Scores > 80: {high_math_scores}")
+print("✓ Pandas preserves all columns; NumPy returns only filtered values")
+
+# BONUS: Multiple conditions
+print("\n" + "="*40)
+pandas_multi = df[(df['math_score'] > 80) & (df['age'] == 20)]
+print("Pandas multiple conditions (math>80 AND age=20):")
+print(pandas_multi[['name', 'age', 'math_score']])
+
+age_array = df['age'].to_numpy()
+numpy_multi_mask = (math_array > 80) & (age_array == 20)
+print(f"\nNumPy: {np.where(numpy_multi_mask)[0]} indices match condition")
+```
+
+## Exercise 4: Statistical operations - Similar syntax, different outputs
+
+Both libraries provide similar statistical functions, but with different features.
+
+**Tasks:**
+1. Calculate the mean of all numeric columns using pandas `.mean()`
+2. Calculate the mean of the NumPy array (all scores)
+3. Calculate column-wise means in NumPy using `axis=0`
+4. Calculate row-wise means in NumPy using `axis=1`
+5. Use pandas to calculate the mean score for each student across all three subjects
+6. Compare: Which approach preserves labels? Which is more explicit about axis?
+
+**Functions to try:** `mean()`, `std()`, `median()`, `min()`, `max()`
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+score_cols = ['math_score', 'physics_score', 'chemistry_score']
+scores_array = df[score_cols].to_numpy()
+
+# Pandas mean (column-wise by default)
+pandas_mean = df[score_cols].mean()
+print("Pandas column means:")
+print(pandas_mean)  # Returns labeled Series
+
+# NumPy means
+print(f"\nNumPy all values mean: {np.mean(scores_array):.2f}")
+print(f"NumPy column means (axis=0): {np.mean(scores_array, axis=0)}")
+print(f"NumPy row means (axis=1): {np.mean(scores_array, axis=1)}")
+
+# Pandas row-wise mean
+df['avg_score'] = df[score_cols].mean(axis=1)
+print("\nPandas row means:")
+print(df[['name', 'avg_score']])
+
+print("\n✓ Pandas: preserves labels, axis=0 default")
+print("✓ NumPy: faster, must specify axis")
+```
+
+## Exercise 5: Handling missing data
+
+Pandas has built-in support for missing data (NaN), while NumPy requires more manual handling.
+
+**Tasks:**
+1. Create a copy of the DataFrame and set some values to NaN using `.loc[]`
+2. Count missing values using pandas `.isna().sum()`
+3. Calculate the mean with pandas (it automatically skips NaN)
+4. Convert to NumPy array and try to calculate the mean - what happens?
+5. Use NumPy's `np.nanmean()` to calculate the mean while ignoring NaN values
+6. Fill missing values with the mean using pandas `.fillna()`
+
+**Question:** Why is pandas better suited for real-world datasets with missing data?
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+# Create DataFrame with missing values
+df_missing = df.copy()
+df_missing.loc[[1, 3, 5, 7], 'math_score'] = np.nan
+df_missing.loc[3, 'physics_score'] = np.nan
+
+print("Missing values per column:")
+print(df_missing.isna().sum())
+
+# Pandas automatically handles NaN
+pandas_mean = df_missing[['math_score', 'physics_score', 'chemistry_score']].mean()
+print("\nPandas mean (skips NaN):")
+print(pandas_mean)
+
+# NumPy propagates NaN
+scores_with_nan = df_missing[['math_score', 'physics_score', 'chemistry_score']].to_numpy()
+numpy_mean = np.mean(scores_with_nan, axis=0)
+print(f"\nNumPy mean (NaN propagates): {numpy_mean}")
+
+# Use np.nanmean() to ignore NaN
+numpy_nanmean = np.nanmean(scores_with_nan, axis=0)
+print(f"NumPy nanmean (ignores NaN): {numpy_nanmean}")
+
+# Fill missing values
+df_filled = df_missing.copy()
+for col in ['math_score', 'physics_score', 'chemistry_score']:
+    df_filled[col] = df_filled[col].fillna(df_filled[col].mean())
+
+print("\n✓ Pandas: built-in NaN handling, rich missing data methods")
+print("✓ NumPy: need np.nanmean(), np.nanstd(), etc.")
+```
+
+## Exercise 6: Copying behavior - Views vs Copies
+
+Understanding when operations create views or copies is crucial to avoid bugs and optimize memory usage.
+
+**Tasks:**
+1. Create a DataFrame slice using `.loc[]` and modify it - observe if the original changes
+2. Create a NumPy array slice and modify it - compare the behavior
+3. Demonstrate the `SettingWithCopyWarning` in pandas
+4. Use explicit `.copy()` to create independent copies in both libraries
+5. Check if two arrays/DataFrames share the same memory using `np.shares_memory()` or `_is_view`
+6. Understand when to use views vs copies for performance
+
+**Critical concept:** NumPy slicing usually creates views, while pandas behavior is more complex.
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+# NumPy: slicing creates views
+original = np.array([1, 2, 3, 4, 5])
+sliced = original[1:4]
+sliced[0] = 999
+
+print("NumPy views:")
+print(f"Original: {original}")  # Changed!
+print(f"Sliced: {sliced}")
+print(f"Shares memory: {np.shares_memory(original, sliced)}")
+
+# Use .copy() for independence
+original2 = np.array([1, 2, 3, 4, 5])
+copied = original2[1:4].copy()
+copied[0] = 888
+print(f"\nWith .copy() - Original: {original2}")  # Unchanged
+
+print("\n" + "="*40)
+
+# Pandas: more complex behavior
+df_test = pd.DataFrame({'A': [1, 2, 3, 4], 'B': [10, 20, 30, 40]})
+
+# Chained indexing - triggers warning
+df_subset = df_test[df_test['A'] > 1]
+df_subset['B'] = 0  # May see SettingWithCopyWarning
+
+# Safe approach: explicit .copy()
+df_safe = df_test[df_test['A'] > 1].copy()
+df_safe['B'] = 0
+print("Pandas with .copy():")
+print(df_safe)
+
+# Or use .loc[] directly
+df_test.loc[df_test['A'] > 1, 'B'] = 0
+print("\nDirect .loc[] (modifies original):")
+print(df_test)
+
+print("\n✓ NumPy: slicing creates views (fast but risky)")
+print("✓ Pandas: use .copy() or .loc[] to avoid warnings")
+print("✓ Views: fast, shared memory; Copies: safe, independent")
+print("=" * 60)
+
+# What if the Series has different order?
+bonuses_reordered = pd.Series({'chemistry_score': 4, 'math_score': 5, 'physics_score': 3})
+df_test = df.copy()
+df_test[score_cols] = df_test[score_cols] + bonuses_reordered
+
+print("Even with reordered bonus Series, pandas aligns by label:")
+print(df_test[['name'] + score_cols])
+print("\nWith NumPy, you must ensure the order matches manually!")
+
+# Additional broadcasting examples
+print("\nMore broadcasting examples:")
+# Multiply all scores by a factor
+df_scaled = df.copy()
+df_scaled[score_cols] = df_scaled[score_cols] * 1.1  # 10% bonus
+print("All scores scaled by 1.1:")
+print(df_scaled[['name'] + score_cols].head(3))
+```
+
+## Exercise 7: Reshaping data
+
+Both libraries offer reshaping capabilities, but with different methods.
+
+**Tasks:**
+1. Use pandas `.melt()` to convert the DataFrame from wide to long format (unpivot the score columns)
+2. Extract the scores as a NumPy array and reshape it to (8, 3) using `.reshape()`
+3. Use pandas `.pivot()` or `.pivot_table()` to convert back from long to wide format
+4. Transpose the DataFrame using `.T` and compare with NumPy's `.T`
+
+**Question:** When would you use pandas reshaping vs NumPy reshaping?
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+# Pandas: melt (wide to long)
+df_long = df.melt(id_vars=['name', 'age'], 
+                  value_vars=['math_score', 'physics_score', 'chemistry_score'],
+                  var_name='subject', value_name='score')
+
+print("Melted DataFrame (wide → long):")
+print(df_long.head(9))
+
+# Pandas: pivot (long to wide)
+df_wide = df_long.pivot(index='name', columns='subject', values='score').reset_index()
+
+print("\nPivoted back (long → wide):")
+print(df_wide.head())
+
+print("\n" + "="*40)
+
+# NumPy: reshape requires specific dimensions
+scores_array = df[['math_score', 'physics_score', 'chemistry_score']].to_numpy()
+print(f"Original shape: {scores_array.shape}")
+
+# Flatten and reshape
+flattened = scores_array.flatten()
+print(f"Flattened shape: {flattened.shape}")
+
+reshaped = flattened.reshape(3, 8)  # 3 rows, 8 columns
+print(f"\nReshaped to (3, 8):")
+print(reshaped)
+
+# Transpose
+df_transposed = df[['math_score', 'physics_score', 'chemistry_score']].T
+print(f"\nPandas .T preserves labels:")
+print(df_transposed.iloc[:, :3])  # First 3 students
+
+print("\n✓ Pandas: label-aware reshaping (.melt, .pivot)")
+print("✓ NumPy: dimension-specific reshaping (.reshape, .flatten)")
+```
+
+## Exercise 8: Performance comparison
+
+NumPy is generally faster for pure numerical operations, while pandas adds overhead for labels and features.
+
+**Tasks:**
+1. Create a large pandas DataFrame with 100,000 rows and 5 numeric columns
+2. Time the calculation of mean using pandas `.mean()`
+3. Convert to NumPy and time the calculation using `np.mean()`
+4. Time a simple arithmetic operation (multiply all values by 2) in both libraries
+5. Use the `%%timeit` magic command in Jupyter or write a timing function
+
+**Expected result:** NumPy should be faster, but pandas isn't much slower for most operations
+
+**Code template for timing:**
+```python
+import time
+start = time.time()
+# your operation here
+end = time.time()
+print(f"Time taken: {end - start:.6f} seconds")
+```
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+import time
+
+# Create large DataFrame
+n_rows = 100_000
+large_df = pd.DataFrame({
+    f'col{i}': np.random.randn(n_rows) for i in range(1, 6)
+})
+
+print(f"Created DataFrame: {large_df.shape}\n")
+
+# Test 1: Mean calculation
+start = time.time()
+pandas_result = large_df.mean()
+pandas_time = time.time() - start
+
+large_array = large_df.to_numpy()
+start = time.time()
+numpy_result = np.mean(large_array, axis=0)
+numpy_time = time.time() - start
+
+print(f"Mean calculation:")
+print(f"  Pandas: {pandas_time:.6f}s")
+print(f"  NumPy:  {numpy_time:.6f}s")
+print(f"  NumPy is {pandas_time/numpy_time:.1f}x faster")
+
+# Test 2: Arithmetic operation
+start = time.time()
+pandas_mult = large_df * 2
+pandas_mult_time = time.time() - start
+
+start = time.time()
+numpy_mult = large_array * 2
+numpy_mult_time = time.time() - start
+
+print(f"\nMultiplication (*2):")
+print(f"  Pandas: {pandas_mult_time:.6f}s")
+print(f"  NumPy:  {numpy_mult_time:.6f}s")
+print(f"  NumPy is {pandas_mult_time/numpy_mult_time:.1f}x faster")
+
+# Test 3: Complex operation
+start = time.time()
+pandas_complex = (large_df + 10) * 2 - 5
+pandas_complex_time = time.time() - start
+
+start = time.time()
+numpy_complex = (large_array + 10) * 2 - 5
+numpy_complex_time = time.time() - start
+
+print(f"\nComplex operation:")
+print(f"  Pandas: {pandas_complex_time:.6f}s")
+print(f"  NumPy:  {numpy_complex_time:.6f}s")
+print(f"  NumPy is {pandas_complex_time/numpy_complex_time:.1f}x faster")
+
+print("\n✓ NumPy: 1.5-3x faster for pure numerical ops")
+print("✓ Pandas: overhead reasonable for data manipulation")
+```
+
+## Exercise 9: When to use which - Practical scenarios
+
+Understanding when to use pandas vs NumPy is crucial for efficient data analysis.
+
+**Tasks:**
+1. **Scenario 1:** You have a CSV file with labeled columns and some missing data. Which library should you use to load and analyze it? Demonstrate by loading data with `pd.read_csv()` and exploring it.
+
+2. **Scenario 2:** You need to perform matrix multiplication on two 2D arrays. Which library is better? Create two NumPy arrays and multiply them using `@` or `np.dot()`.
+
+3. **Scenario 3:** You need to group data by a category and calculate statistics. Use pandas `.groupby()` on the student data (group by age and calculate mean scores).
+
+4. **Scenario 4:** You need to perform element-wise mathematical operations on large arrays without labels. Create a NumPy array and perform operations like `np.sin()`, `np.exp()`, etc.
+
+**Guideline:** 
+- Use **pandas** for: labeled data, heterogeneous data types, missing data, data from files, group operations
+- Use **NumPy** for: pure numerical computation, matrix operations, mathematical functions, when labels aren't needed
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+import io
+
+print("Scenario 1: CSV with missing data")
+print("="*40)
+
+csv_data = """name,age,score,grade
+Alice,20,85,A
+Bob,21,,B
+Charlie,19,92,A
+David,22,88,
+Eve,20,76,B"""
+
+df_from_csv = pd.read_csv(io.StringIO(csv_data))
+print(df_from_csv)
+print(f"\nMissing: {df_from_csv.isna().sum().sum()} values")
+print("✓ Pandas: automatic CSV reading, handles mixed types & NaN\n")
+
+print("Scenario 2: Matrix multiplication")
+print("="*40)
+
+A = np.array([[1, 2, 3], [4, 5, 6]])
+B = np.array([[7, 8], [9, 10], [11, 12]])
+C = A @ B
+
+print(f"A{A.shape} @ B{B.shape} = C{C.shape}")
+print(C)
+print("✓ NumPy: optimized for linear algebra\n")
+
+print("Scenario 3: Group-by operations")
+print("="*40)
+
+grouped = df.groupby('age')[['math_score', 'physics_score', 'chemistry_score']].mean()
+print("Mean scores by age:")
+print(grouped)
+print("✓ Pandas: powerful grouping with labels\n")
+
+print("Scenario 4: Mathematical functions")
+print("="*40)
+
+x = np.linspace(0, 2*np.pi, 100)
+result = np.sin(x) * np.exp(-x/2) + np.cos(2*x)
+
+print(f"Computed: sin(x)*exp(-x/2) + cos(2x)")
+print(f"First 5 values: {result[:5]}")
+print(f"Stats: mean={np.mean(result):.3f}, std={np.std(result):.3f}")
+print("✓ NumPy: extensive math functions")
+
+print("\nDecision guide:")
+print("✓ Pandas: files, labels, missing data, grouping")
+print("✓ NumPy: computation, linear algebra, performance")
+```
+
+## Exercise 10: Working with both together
+
+In practice, you'll often use both libraries together, leveraging each one's strengths.
+
+**Tasks:**
+1. Start with the student DataFrame
+2. Extract the score columns as a NumPy array
+3. Use NumPy to calculate z-scores: `z = (x - mean) / std` for each column
+4. Create a new DataFrame with the z-scores, preserving the original column names
+5. Add a new column to the original DataFrame showing the average z-score per student
+6. Use NumPy's `np.where()` to create a pandas column categorizing students: 'High' if average score > 85, 'Medium' if > 75, else 'Low'
+
+**This demonstrates:**
+- Extracting NumPy arrays for computation
+- Using NumPy's efficient numerical operations
+- Creating new pandas objects with labels
+- Combining results back into pandas for analysis
+
+**Formula for z-score:** 
+$$z = \frac{x - \mu}{\sigma}$$
+
+where $\mu$ is the mean and $\sigma$ is the standard deviation.
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+# SOLUTION
+
+# Extract scores as NumPy array
+score_cols = ['math_score', 'physics_score', 'chemistry_score']
+scores_array = df[score_cols].to_numpy()
+
+# Calculate z-scores using NumPy: z = (x - mean) / std
+means = np.mean(scores_array, axis=0)
+stds = np.std(scores_array, axis=0, ddof=1)
+
+print(f"Means: {means}")
+print(f"Stds: {stds}")
+
+z_scores = (scores_array - means) / stds
+print(f"\nZ-scores (first 3 students):")
+print(z_scores[:3])
+
+# Create DataFrame with z-scores
+df_zscores = pd.DataFrame(z_scores, columns=[f'{c}_zscore' for c in score_cols])
+print("\nZ-scores DataFrame:")
+print(df_zscores.head())
+
+# Add average z-score per student
+avg_zscore = np.mean(z_scores, axis=1)
+df['avg_zscore'] = avg_zscore
+
+# Categorize using np.where()
+avg_scores = np.mean(scores_array, axis=1)
+categories = np.where(avg_scores > 85, 'High',
+                     np.where(avg_scores > 75, 'Medium', 'Low'))
+df['performance'] = categories
+df['avg_score'] = avg_scores
+
+print("\nFinal result:")
+print(df[['name', 'avg_score', 'avg_zscore', 'performance']])
+
+# Group by NumPy-derived categories
+print("\nStats by performance:")
+print(df.groupby('performance')['avg_score'].agg(['count', 'mean']))
+
+print("\n✓ Best practice: pandas structure + NumPy computation")
+print("✓ Extract arrays → compute → return to DataFrames")
+```
+
+

@@ -1,0 +1,218 @@
+---
+title: 'Setup: Import libraries and create sample data'
+jupyter: python3
+---
+
+
+First, let's import both libraries and create some sample data to work with.
+
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+import numpy as np
+import pandas as pd
+
+# Create a sample dataset about students
+np.random.seed(42)
+data = {
+    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Henry'],
+    'age': [20, 21, 19, 22, 20, 21, 19, 20],
+    'math_score': [85, 78, 92, 88, 76, 95, 82, 79],
+    'physics_score': [88, 72, 89, 85, 70, 90, 78, 82],
+    'chemistry_score': [82, 75, 88, 90, 73, 92, 80, 77]
+}
+
+df = pd.DataFrame(data)
+print("Sample DataFrame:")
+print(df)
+```
+
+## Exercise 1: Accessing NumPy arrays from Pandas
+
+Pandas DataFrames and Series are built on top of NumPy arrays. Learn how to access the underlying NumPy array.
+
+**Tasks:**
+1. Extract the underlying NumPy array from the entire DataFrame using the `.values` or `.to_numpy()` method
+2. Extract the NumPy array from just the 'math_score' column (which is a Series)
+3. Check the type of both extracted arrays using `type()`
+4. Print the shape of the DataFrame array using `.shape`
+
+**Questions to consider:**
+- What's the difference between `.values` and `.to_numpy()`? (Hint: `.to_numpy()` is newer and more explicit)
+- What data type is stored in the arrays?
+
+
+## Exercise 2: Slicing - Pandas vs NumPy
+
+Slicing works differently in pandas and NumPy. Pandas uses `.loc[]` (label-based) and `.iloc[]` (position-based), while NumPy uses integer indexing.
+
+**Tasks:**
+1. Create a NumPy array from the numeric columns only (age, math_score, physics_score, chemistry_score)
+2. Using **pandas `.iloc[]`**, select rows 2 to 4 (exclusive) and columns 1 to 3 (the score columns)
+3. Using **pandas `.loc[]`**, select the same data but using row numbers and column names
+4. Using **NumPy indexing**, select the same slice from the NumPy array
+5. Compare the outputs - what's different?
+
+**Note:** Remember that pandas `.loc[]` is inclusive on both ends, while `.iloc[]` and NumPy are exclusive on the right end.
+
+
+## Exercise 3: Boolean indexing - Two approaches
+
+Both pandas and NumPy support boolean indexing, but with different syntax and capabilities.
+
+**Tasks:**
+1. Create a boolean mask in pandas to find students with math_score > 80
+2. Use this mask to filter the DataFrame
+3. Convert the math_score column to a NumPy array
+4. Create a boolean mask in NumPy for scores > 80
+5. Use this mask to filter the NumPy array
+6. Compare: What information is preserved in pandas but lost in NumPy?
+
+**Bonus:** Try combining multiple conditions (e.g., math_score > 80 AND age == 20) in both pandas and NumPy
+
+
+## Exercise 4: Statistical operations - Similar syntax, different outputs
+
+Both libraries provide similar statistical functions, but with different features.
+
+**Tasks:**
+1. Calculate the mean of all numeric columns using pandas `.mean()`
+2. Calculate the mean of the NumPy array (all scores)
+3. Calculate column-wise means in NumPy using `axis=0`
+4. Calculate row-wise means in NumPy using `axis=1`
+5. Use pandas to calculate the mean score for each student across all three subjects
+6. Compare: Which approach preserves labels? Which is more explicit about axis?
+
+**Functions to try:** `mean()`, `std()`, `median()`, `min()`, `max()`
+
+
+## Exercise 5: Handling missing data
+
+Pandas has built-in support for missing data (NaN), while NumPy requires more manual handling.
+
+**Tasks:**
+1. Create a copy of the DataFrame and set some values to NaN using `.loc[]`
+2. Count missing values using pandas `.isna().sum()`
+3. Calculate the mean with pandas (it automatically skips NaN)
+4. Convert to NumPy array and try to calculate the mean - what happens?
+5. Use NumPy's `np.nanmean()` to calculate the mean while ignoring NaN values
+6. Fill missing values with the mean using pandas `.fillna()`
+
+**Question:** Why is pandas better suited for real-world datasets with missing data?
+
+
+## Exercise 6: Broadcasting and vectorized operations
+
+Both libraries support broadcasting, but pandas adds label alignment.
+
+**Tasks:**
+1. Add 5 points to all math scores using pandas (bonus points!)
+2. Create a NumPy array of the scores and add 5 to all values
+3. In pandas, create a Series with bonus points per subject: {'math_score': 5, 'physics_score': 3, 'chemistry_score': 4}
+4. Add these bonuses to the respective columns (pandas will align by label!)
+5. Try to do the same in NumPy - you'll need to specify which columns get which bonus
+
+**Observe:** Pandas automatic label alignment vs NumPy's position-based operations
+
+
+## Exercise 7: Reshaping data
+
+Both libraries offer reshaping capabilities, but with different methods.
+
+**Tasks:**
+1. Use pandas `.melt()` to convert the DataFrame from wide to long format (unpivot the score columns)
+2. Extract the scores as a NumPy array and reshape it to (8, 3) using `.reshape()`
+3. Use pandas `.pivot()` or `.pivot_table()` to convert back from long to wide format
+4. Transpose the DataFrame using `.T` and compare with NumPy's `.T`
+
+**Question:** When would you use pandas reshaping vs NumPy reshaping?
+
+
+## Exercise 8: Performance comparison
+
+NumPy is generally faster for pure numerical operations, while pandas adds overhead for labels and features.
+
+**Tasks:**
+1. Create a large pandas DataFrame with 100,000 rows and 5 numeric columns
+2. Time the calculation of mean using pandas `.mean()`
+3. Convert to NumPy and time the calculation using `np.mean()`
+4. Time a simple arithmetic operation (multiply all values by 2) in both libraries
+5. Use the `%%timeit` magic command in Jupyter or write a timing function
+
+**Expected result:** NumPy should be faster, but pandas isn't much slower for most operations
+
+**Code template for timing:**
+```python
+import time
+start = time.time()
+# your operation here
+end = time.time()
+print(f"Time taken: {end - start:.6f} seconds")
+```
+
+
+## Exercise 9: When to use which - Practical scenarios
+
+Understanding when to use pandas vs NumPy is crucial for efficient data analysis.
+
+**Tasks:**
+1. **Scenario 1:** You have a CSV file with labeled columns and some missing data. Which library should you use to load and analyze it? Demonstrate by loading data with `pd.read_csv()` and exploring it.
+
+2. **Scenario 2:** You need to perform matrix multiplication on two 2D arrays. Which library is better? Create two NumPy arrays and multiply them using `@` or `np.dot()`.
+
+3. **Scenario 3:** You need to group data by a category and calculate statistics. Use pandas `.groupby()` on the student data (group by age and calculate mean scores).
+
+4. **Scenario 4:** You need to perform element-wise mathematical operations on large arrays without labels. Create a NumPy array and perform operations like `np.sin()`, `np.exp()`, etc.
+
+**Guideline:** 
+- Use **pandas** for: labeled data, heterogeneous data types, missing data, data from files, group operations
+- Use **NumPy** for: pure numerical computation, matrix operations, mathematical functions, when labels aren't needed
+
+
+## Exercise 10: Working with both together
+
+In practice, you'll often use both libraries together, leveraging each one's strengths.
+
+**Tasks:**
+1. Start with the student DataFrame
+2. Extract the score columns as a NumPy array
+3. Use NumPy to calculate z-scores: `z = (x - mean) / std` for each column
+4. Create a new DataFrame with the z-scores, preserving the original column names
+5. Add a new column to the original DataFrame showing the average z-score per student
+6. Use NumPy's `np.where()` to create a pandas column categorizing students: 'High' if average score > 85, 'Medium' if > 75, else 'Low'
+
+**This demonstrates:**
+- Extracting NumPy arrays for computation
+- Using NumPy's efficient numerical operations
+- Creating new pandas objects with labels
+- Combining results back into pandas for analysis
+
+**Formula for z-score:** 
+$$z = \frac{x - \mu}{\sigma}$$
+
+where $\mu$ is the mean and $\sigma$ is the standard deviation.
+
+
+## Summary: Key Takeaways
+
+### Pandas Strengths:
+- ✅ Labeled data (row and column names)
+- ✅ Handling missing data
+- ✅ Reading/writing various file formats
+- ✅ Group-by operations
+- ✅ Time series functionality
+- ✅ Easy data alignment by labels
+- ✅ Mixed data types in same structure
+
+### NumPy Strengths:
+- ✅ Raw computational speed
+- ✅ Mathematical and linear algebra operations
+- ✅ Broadcasting for vectorized operations
+- ✅ Memory efficiency
+- ✅ Foundation for other libraries
+- ✅ Multi-dimensional arrays
+- ✅ Rich collection of mathematical functions
+
+### Best Practice:
+Use **pandas** for data manipulation and analysis, but don't hesitate to drop down to **NumPy** when you need pure numerical performance or specific mathematical operations. Pandas DataFrames are built on NumPy arrays, so they work seamlessly together!
+
