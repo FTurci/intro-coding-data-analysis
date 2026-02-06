@@ -1,218 +1,230 @@
 ---
-title: 'Setup: Import libraries and create sample data'
-jupyter: python3
+title: 'Numpy vs Pandas: Exercises'
+jupyter:
+  kernelspec:
+    display_name: 3.12.7
+    language: python
+    name: python3
 ---
 
 
-First, let's import both libraries and create some sample data to work with.
 
+We explore a numerical dataset freely avaible under MIT license on Kaggle, a platform for data science competitions and datasets. 
+
+The dataset focuses on solar system objects and contains several attributes.
 
 ```{pyodide}
 #| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
-import numpy as np
-import pandas as pd
+import pandas as pd 
 
-# Create a sample dataset about students
-np.random.seed(42)
-data = {
-    'name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve', 'Frank', 'Grace', 'Henry'],
-    'age': [20, 21, 19, 22, 20, 21, 19, 20],
-    'math_score': [85, 78, 92, 88, 76, 95, 82, 79],
-    'physics_score': [88, 72, 89, 85, 70, 90, 78, 82],
-    'chemistry_score': [82, 75, 88, 90, 73, 92, 80, 77]
-}
-
-df = pd.DataFrame(data)
-print("Sample DataFrame:")
-print(df)
+df = pd.read_csv("kaggle_solar/sol_data.csv")
+df
 ```
 
-## Exercise 1: Accessing NumPy arrays from Pandas
+## Exercise 1: Extracting numpy arrays 
 
-Pandas DataFrames and Series are built on top of NumPy arrays. Learn how to access the underlying NumPy array.
-
-**Tasks:**
-1. Extract the underlying NumPy array from the entire DataFrame using the `.values` or `.to_numpy()` method
-2. Extract the NumPy array from just the 'math_score' column (which is a Series)
-3. Check the type of both extracted arrays using `type()`
-4. Print the shape of the DataFrame array using `.shape`
-
-**Questions to consider:**
-- What's the difference between `.values` and `.to_numpy()`? (Hint: `.to_numpy()` is newer and more explicit)
-- What data type is stored in the arrays?
+- Select the columns `semimajorAxis`, `density`, and `gravity` from the DataFrame `df` and convert them into a `numpy` array named `np_solar_data`. 
+- Then, design a **test** (e.g. using an `if/else` statement or an `assert` statement) to verify that `np_solar_data` is indeed a `numpy` array. Notice that simply printing the type of `np_solar_data` is not a test!
 
 
-## Exercise 2: Slicing - Pandas vs NumPy
+**Reminder.** An `assert` statement is a way to test if a condition in your code returns `True`. If not, the program will raise an `AssertionError`. 
 
-Slicing works differently in pandas and NumPy. Pandas uses `.loc[]` (label-based) and `.iloc[]` (position-based), while NumPy uses integer indexing.
+It uses the keyword `assert` followed by the condition to test and an optional error message.
 
-**Tasks:**
-1. Create a NumPy array from the numeric columns only (age, math_score, physics_score, chemistry_score)
-2. Using **pandas `.iloc[]`**, select rows 2 to 4 (exclusive) and columns 1 to 3 (the score columns)
-3. Using **pandas `.loc[]`**, select the same data but using row numbers and column names
-4. Using **NumPy indexing**, select the same slice from the NumPy array
-5. Compare the outputs - what's different?
-
-**Note:** Remember that pandas `.loc[]` is inclusive on both ends, while `.iloc[]` and NumPy are exclusive on the right end.
-
-
-## Exercise 3: Boolean indexing - Two approaches
-
-Both pandas and NumPy support boolean indexing, but with different syntax and capabilities.
-
-**Tasks:**
-1. Create a boolean mask in pandas to find students with math_score > 80
-2. Use this mask to filter the DataFrame
-3. Convert the math_score column to a NumPy array
-4. Create a boolean mask in NumPy for scores > 80
-5. Use this mask to filter the NumPy array
-6. Compare: What information is preserved in pandas but lost in NumPy?
-
-**Bonus:** Try combining multiple conditions (e.g., math_score > 80 AND age == 20) in both pandas and NumPy
-
-
-## Exercise 4: Statistical operations - Similar syntax, different outputs
-
-Both libraries provide similar statistical functions, but with different features.
-
-**Tasks:**
-1. Calculate the mean of all numeric columns using pandas `.mean()`
-2. Calculate the mean of the NumPy array (all scores)
-3. Calculate column-wise means in NumPy using `axis=0`
-4. Calculate row-wise means in NumPy using `axis=1`
-5. Use pandas to calculate the mean score for each student across all three subjects
-6. Compare: Which approach preserves labels? Which is more explicit about axis?
-
-**Functions to try:** `mean()`, `std()`, `median()`, `min()`, `max()`
-
-
-## Exercise 5: Handling missing data
-
-Pandas has built-in support for missing data (NaN), while NumPy requires more manual handling.
-
-**Tasks:**
-1. Create a copy of the DataFrame and set some values to NaN using `.loc[]`
-2. Count missing values using pandas `.isna().sum()`
-3. Calculate the mean with pandas (it automatically skips NaN)
-4. Convert to NumPy array and try to calculate the mean - what happens?
-5. Use NumPy's `np.nanmean()` to calculate the mean while ignoring NaN values
-6. Fill missing values with the mean using pandas `.fillna()`
-
-**Question:** Why is pandas better suited for real-world datasets with missing data?
-
-
-## Exercise 6: Broadcasting and vectorized operations
-
-Both libraries support broadcasting, but pandas adds label alignment.
-
-**Tasks:**
-1. Add 5 points to all math scores using pandas (bonus points!)
-2. Create a NumPy array of the scores and add 5 to all values
-3. In pandas, create a Series with bonus points per subject: {'math_score': 5, 'physics_score': 3, 'chemistry_score': 4}
-4. Add these bonuses to the respective columns (pandas will align by label!)
-5. Try to do the same in NumPy - you'll need to specify which columns get which bonus
-
-**Observe:** Pandas automatic label alignment vs NumPy's position-based operations
-
-
-## Exercise 7: Reshaping data
-
-Both libraries offer reshaping capabilities, but with different methods.
-
-**Tasks:**
-1. Use pandas `.melt()` to convert the DataFrame from wide to long format (unpivot the score columns)
-2. Extract the scores as a NumPy array and reshape it to (8, 3) using `.reshape()`
-3. Use pandas `.pivot()` or `.pivot_table()` to convert back from long to wide format
-4. Transpose the DataFrame using `.T` and compare with NumPy's `.T`
-
-**Question:** When would you use pandas reshaping vs NumPy reshaping?
-
-
-## Exercise 8: Performance comparison
-
-NumPy is generally faster for pure numerical operations, while pandas adds overhead for labels and features.
-
-**Tasks:**
-1. Create a large pandas DataFrame with 100,000 rows and 5 numeric columns
-2. Time the calculation of mean using pandas `.mean()`
-3. Convert to NumPy and time the calculation using `np.mean()`
-4. Time a simple arithmetic operation (multiply all values by 2) in both libraries
-5. Use the `%%timeit` magic command in Jupyter or write a timing function
-
-**Expected result:** NumPy should be faster, but pandas isn't much slower for most operations
-
-**Code template for timing:**
 ```python
-import time
-start = time.time()
-# your operation here
-end = time.time()
-print(f"Time taken: {end - start:.6f} seconds")
+assert condition, "Error message if condition is False"
+```
+**Hint.** If the conversion to `numpy` array is correct, then the type of `np_solar_data` should be `np.ndarray`
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
 ```
 
+## Exercise 2: Extracting basic statistics
 
-## Exercise 9: When to use which - Practical scenarios
+- Using the `numpy` array `np_solar_data` created in Exercise 1, compute the mean and standard deviation for each of the three columns: `semimajorAxis`, `density`, and `gravity`. Store the results in two separate `numpy` arrays named `mean_values` and `std_values`.
+- Can you find  way to compute these same statistics from the original DataFrame `df` without converting it to a `numpy` array? Store these results in two separate `pandas` Series named `mean_series` and `std_series`.
+- Inspect the stand deviations in the numpy and pandas result. Can you choose parameters such that the results are identical? 
 
-Understanding when to use pandas vs NumPy is crucial for efficient data analysis.
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
 
-**Tasks:**
-1. **Scenario 1:** You have a CSV file with labeled columns and some missing data. Which library should you use to load and analyze it? Demonstrate by loading data with `pd.read_csv()` and exploring it.
+## Exercise 3: Understanding Pandas `SettingWithCopyWarning`
 
-2. **Scenario 2:** You need to perform matrix multiplication on two 2D arrays. Which library is better? Create two NumPy arrays and multiply them using `@` or `np.dot()`.
+You want to analyze only the rocky planets by creating a subset and adding a calculated column.
 
-3. **Scenario 3:** You need to group data by a category and calculate statistics. Use pandas `.groupby()` on the student data (group by age and calculate mean scores).
+**Task:** 
+- Create a subset `rocky_planets` from `df` filtering for `isPlanet == True` and `density > 3`
+- Add a new column `mass_estimate` to `rocky_planets` calculated as `density * gravity` 
+- Observe any warnings that pandas displays
+- What does the warning mean? Why did it appear?
 
-4. **Scenario 4:** You need to perform element-wise mathematical operations on large arrays without labels. Create a NumPy array and perform operations like `np.sin()`, `np.exp()`, etc.
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
 
-**Guideline:** 
-- Use **pandas** for: labeled data, heterogeneous data types, missing data, data from files, group operations
-- Use **NumPy** for: pure numerical computation, matrix operations, mathematical functions, when labels aren't needed
+## Exercise 4: When Views and Copies Actually Break Your Code
 
+The warning is nice, but let's see actual unexpected behavior! You'll try to add a column categorizing planets as inner or outer solar system objects, but the code won't work as expected.
 
-## Exercise 10: Working with both together
+**Note.** There are two types of chained indexing, both problematic:
 
-In practice, you'll often use both libraries together, leveraging each one's strengths.
+1. **Column-then-row**: `df['column'][condition] = value` (select column, then filter)
+2. **Row-then-column**: `df[condition]['column'] = value` (filter rows, then select column)
 
-**Tasks:**
-1. Start with the student DataFrame
-2. Extract the score columns as a NumPy array
-3. Use NumPy to calculate z-scores: `z = (x - mean) / std` for each column
-4. Create a new DataFrame with the z-scores, preserving the original column names
-5. Add a new column to the original DataFrame showing the average z-score per student
-6. Use NumPy's `np.where()` to create a pandas column categorizing students: 'High' if average score > 85, 'Medium' if > 75, else 'Low'
-
-**This demonstrates:**
-- Extracting NumPy arrays for computation
-- Using NumPy's efficient numerical operations
-- Creating new pandas objects with labels
-- Combining results back into pandas for analysis
-
-**Formula for z-score:** 
-$$z = \frac{x - \mu}{\sigma}$$
-
-where $\mu$ is the mean and $\sigma$ is the standard deviation.
+Both create intermediate objects (potential copies) before assignment, so modifications may be lost!
 
 
-## Summary: Key Takeaways
+- Reload the DataFrame: `df = pd.read_csv("kaggle_solar/sol_data.csv")`
+- Filter for planets: `planets = df[df['isPlanet'] == True].copy()`
+- Initialize a column: `planets['outer_planet'] = False`
 
-### Pandas Strengths:
-- ✅ Labeled data (row and column names)
-- ✅ Handling missing data
-- ✅ Reading/writing various file formats
-- ✅ Group-by operations
-- ✅ Time series functionality
-- ✅ Easy data alignment by labels
-- ✅ Mixed data types in same structure
+- Try row-then-column chained indexing: `planets[planets['semimajorAxis'] > 5]['outer_planet'] = True`**Note:** Objects with semimajorAxis > 5 AU are beyond Jupiter's orbit (outer solar system).
 
-### NumPy Strengths:
-- ✅ Raw computational speed
-- ✅ Mathematical and linear algebra operations
-- ✅ Broadcasting for vectorized operations
-- ✅ Memory efficiency
-- ✅ Foundation for other libraries
-- ✅ Multi-dimensional arrays
-- ✅ Rich collection of mathematical functions
+- Check if it worked, then use `.loc[]` to do it correctly
 
-### Best Practice:
-Use **pandas** for data manipulation and analysis, but don't hesitate to drop down to **NumPy** when you need pure numerical performance or specific mathematical operations. Pandas DataFrames are built on NumPy arrays, so they work seamlessly together!
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+planets.columns
+```
+
+## Exercise 5: extracting data and processing it with `numpy` and `matpltolib`
+
+We now want to extract data and process it with `numpy` functions.
+
+- Using `numpy` or `pandas` extract the escape velocity and the mass in kg for all the objects and plot them in a scatter plot using `matplotlib`.
+
+- Consider that th escape velocity can be calculated as follows:
+
+$$
+v_{e s c}=\sqrt{2 g R}
+$$
+
+where:
+- $g$ is the surface gravity
+- $R$ is the radius of the object in 
+
+
+- Improve your plotting to illustrate this relationship explicitly (e.g. by changing the scales, plotting guides to the eye, etc.). Note that the radius is in km, the escape veclocity is in m/s, and the gravity is in m/s².
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
+
+## Exercise 6: String Operations - Pandas vs NumPy
+
+Extract planet names and convert them to uppercase using both pandas and numpy approaches.
+
+**Task:**
+- Filter the DataFrame to get only planets (where `isPlanet == True`)
+- Extract the planet names (column `eName`) using pandas methods and convert them to uppercase (UPPERCASE). Store this in a variable named `pandas_upper_names`
+- Now try to do the same using `numpy`: convert the `eName` column to a numpy array and apply string operations:
+
+    - you can use a for loop to iterate through the names and convert them to uppercase (e.g. via list comprehension)
+    - or use `numpy.char` sub module for vectorized string operations
+ 
+- Which approach is easier for string operations?
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
+
+## Exercise 7: Grouping and Aggregation - Pandas vs NumPy
+
+Calculate the mean density for planets vs non-planets using pandas groupby, then try to replicate this in numpy.
+
+**Task:**
+- Use pandas `groupby()` to compute the mean density grouped by `isPlanet` (True/False)
+- Now try to replicate this result using only numpy arrays:
+  - Convert the relevant columns to numpy arrays
+  - Manually separate the data into two groups (planets and non-planets)
+  - Calculate the mean for each group
+  
+- Which approach is more convenient? What happens if you need to group by multiple columns?
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
+
+## Exercise 8: Correlation Matrix - Pandas vs NumPy
+
+Calculate the correlation matrix for physical properties using pandas and numpy.
+
+**Background:** 
+
+The **covariance** between two variables $X$ and $Y$ measures how they vary together:
+$$\text{cov}(X,Y) = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})$$
+
+The **correlation coefficient** normalizes covariance by the standard deviations:
+$$r_{XY} = \frac{\text{cov}(X,Y)}{\sigma_X \sigma_Y}$$
+where $\sigma_X = \sqrt{\frac{1}{n-1}\sum(x_i - \bar{x})^2}$ is the standard deviation.
+
+Correlation ranges from -1 (perfect negative) to +1 (perfect positive), with 0 meaning no linear relationship.
+
+**Standardization:** Transform each variable to have mean = 0 and standard deviation = 1:
+$$z_i = \frac{x_i - \bar{x}}{\sigma_x}$$
+
+After standardization, the correlation matrix can be computed using matrix multiplication.
+
+**Task:**
+
+- Use pandas `.corr()` to compute the correlation matrix for `density`, `gravity`, and `meanRadius`
+- Now replicate this using `numpy` by following these steps:
+  1. **Extract data**: Get the three columns as an $n \times 3$ matrix $X$ (n rows/objects, 3 columns/variables)
+  2. **Center the data**: Subtract the mean of each column to get $X_{\text{centered}}$ (remember that you can use the `axis` parameter in `numpy` functions)
+  3. **Standardize**: Divide each centered column by its standard deviation to get $Z$ (the standardized matrix)
+  4. **Compute correlation**: The correlation matrix is $R = \frac{1}{n-1} Z^T Z$ (a $3 \times 3$ matrix)
+  5. Compare with the pandas result
+  
+**Note:** The matrix $Z$ has shape $(n \times 3)$, so $Z^T$ has shape $(3 \times n)$, and their product gives a $(3 \times 3)$ correlation matrix.
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
+
+## Exercise 9: Creating a Theoretical Model Visualization with NumPy
+
+Create a contour plot showing how escape velocity varies with surface gravity and radius, then overlay real solar system objects.
+
+**Scientific Background:** 
+
+From $v_{esc} = \sqrt{2gR}$, we can predict escape velocity for any combination of surface gravity $g$ and radius $R$. This creates a "phase space" showing where different types of objects fall.
+
+**Task:**
+
+1. **Create a grid of theoretical values using numpy:**
+   - Use `np.linspace()` to create arrays of gravity values (0.1 to 30 m/s²) and radius values (100 to 100,000 km)
+   - Use `np.meshgrid()` to create 2D grids for both variables
+   - Calculate theoretical escape velocity on this grid using the formula (remember unit conversions!)
+
+2. **Create a contour plot:**
+   - Use `plt.contourf()` or `plt.contour()` to plot the theoretical escape velocity
+   - Add contour labels showing escape velocity values
+   - Filter the dataset for the 8 true planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune
+   - Overlay these planets on the contour plot using `plt.scatter()`
+
+3. **Interpretation:**
+   - Do the 8 planets fall on the theoretical contours?
+   - Can you identify different groups among the planets (rocky vs gas/ice giants)?
+
+Use the `matplotlib` documentation at https://matplotlib.org/stable/contents.html if needed.
+
+```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
+## YOUR SOLUTION HERE
+```
+
 

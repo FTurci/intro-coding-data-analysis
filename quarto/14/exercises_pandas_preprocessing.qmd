@@ -1,6 +1,10 @@
 ---
 title: Pandas Data Preprocessing - Exercises
-jupyter: python3
+jupyter:
+  kernelspec:
+    display_name: diffusion
+    language: python
+    name: python3
 ---
 
 
@@ -23,7 +27,6 @@ Through these exercises, you'll learn:
 
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # Import required libraries
 import pandas as pd
 import numpy as np
@@ -63,7 +66,6 @@ The Met Office weather data contains monthly measurements from Yeovilton station
 - `.shape` Returns `(rows, columns)` showing DataFrame dimensions 
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -76,6 +78,7 @@ Raw data requires transformation before analysis. The Met Office data uses separ
 **Expected columns**: `yyyy` (year), `mm` (month), `tmax` (max temp °C), `tmin` (min temp °C), `af` (air frost days), `rain` (mm), `sun` (hours)
 
 **Hints:**
+
 - Use `.dtypes` to check tha data type
 - **`df.info()`**: Shows columns, data types, and non-null counts
 - **`pd.to_datetime({'year': df['yyyy'], 'month': df['mm'], 'day': 1})`**: Creates datetime from a dictionary with data from multiple columns
@@ -85,7 +88,6 @@ Raw data requires transformation before analysis. The Met Office data uses separ
 - **`df.sort_index(inplace=True)`**: Sorts by index to ensure chronological order
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -101,6 +103,7 @@ Historical weather records often have gaps due to equipment failures or missing 
 - **Sunshine/frost**: Could be 0 (none) or missing (not recorded)
 
 **Hints:**
+
 - **`df.isnull().sum()`**: Counts missing (NaN) values per column
 - **`.interpolate(method='linear')`**: Estimates missing values from surrounding values (good for gradual changes)
 - **`.fillna(0)`**: Replaces NaN with 0 (use carefully—only when 0 is plausible or to mark a period where data is missing)
@@ -111,7 +114,6 @@ Historical weather records often have gaps due to equipment failures or missing 
 **Reflect**: Why is interpolation better for temperature than rainfall?
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -129,12 +131,12 @@ Feature engineering creates new variables to reveal patterns. Extract date compo
 - hot months (the maximum temp > 25)
 
 **Hints:**
+
 - **`df.index.year`**, **`df.index.month`**, **`df.index.quarter`**: Extract year, month (1-12), or quarter (1-4)
 - **`df.index.month_name()`**: Returns full month name ('January', etc.)
 - **Custom function + `.apply()`**: Create season mapper: `def get_season(month): ...` then `df['season'] = df['month'].apply(get_season)`
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -148,6 +150,7 @@ You can group by month, season, year, or decade to analyze climate patterns.
 
 
 **Hints:**
+
 - **`df.groupby('column')['measurement1'].mean()`**: Groups and calculates mean for one column
 - **`df.groupby('column')[['col1', 'col2']].mean()`**: Groups and calculates means for multiple columns
 
@@ -155,14 +158,12 @@ You can group by month, season, year, or decade to analyze climate patterns.
 **More advanced question**: Can you define decades and analyze trends over decades?
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
 To analyse over decades, we need a new column for the 1960s, 1970s, etc etc. We can create this by integer division of the year by 10, then multiplying back by 10. For example, for year 1964:`(1964 // 10) * 10 = 1960`.
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -178,6 +179,7 @@ Shift from time series to cross-sectional data. This UCI dataset contains physic
 **Dataset**: 11 chemical properties + 1 quality score (0-10). 
 
 **Features** (chemical properties, units in parentheses):
+
 - `fixed acidity` (g/L tartaric acid)
 - `volatile acidity` (g/L acetic acid) 
 - `citric acid` (g/L)
@@ -191,6 +193,7 @@ Shift from time series to cross-sectional data. This UCI dataset contains physic
 - `alcohol` (% vol)
 
 **Target**: 
+
 - `quality` (score 0-10, median expert ratings)
 
 Each row = different wine sample.
@@ -203,6 +206,7 @@ Each row = different wine sample.
 **Goal**: Load data correctly and look at its shape and summary statistics.
 
 **Hints:**
+
 - **`pd.read_csv(url, sep=';')`**: Specify semicolon delimiter
 - **`.head()`**, **`.tail()`**: Show first/last rows
 - **`.shape`**: Returns `(n_rows, n_columns)`
@@ -211,7 +215,6 @@ Each row = different wine sample.
 - **`.isnull().sum()`**: Count missing values per column
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -220,12 +223,14 @@ Each row = different wine sample.
 Convert continuous variables into categorical groupings for easier pattern recognition. This is called **binning** or **discretization**.
 
 **Goal**: We will create three categorical columns:
+
 - `quality_cat`: 'Poor' (0-4), 'Average' (5-6), 'Good' (7-10)
 - `sugar_level`: which is 'Dry' (<9g/L), 'Medium-Dry' (9-18g/L), 'Sweet' (>18g/L)
 
 We then construct a table showing counts of wines in each quality category by sugar level. This is called a contingency table. and can be produced with `pd.crosstab()`.
 
 **Hints:**
+
 - **`pd.cut(series, bins=[...], labels=[...])`**: Bins continuous data into categories
 - `bins=[0, 4, 6, 10]` creates bins: 0-4, 4-6, 6-10
 - **`.value_counts()`**: Shows how many items in each category
@@ -233,7 +238,6 @@ We then construct a table showing counts of wines in each quality category by su
 
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -242,6 +246,7 @@ We then construct a table showing counts of wines in each quality category by su
 Combine existing variables to create more informative features.
 
 **Goal**: Engineer new features by combining chemical measurements:
+
 1. **Total Acidity**: Sum fixed + volatile acidity for total acidity
 2. **Acidity ratio**: fixed divided by volatile acidity
 3. **Balance ratios**: Create sweetness-to-total-acidity ratio to measure wine balance
@@ -250,11 +255,12 @@ Combine existing variables to create more informative features.
 Then analyze which derived features correlate most strongly with wine quality.
 
 **Hints:**
+
 - The `df[selected_cols].corr()` method can help identify strong relationships between selected columns
 - The `.describe()` method allows you to check derived features have reasonable values
 
+
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -271,13 +277,13 @@ Print the top 5 results for each query, sorted by quality descending. In particu
 
 
 **Hints**:
+
 - `df[df['column'] > value]` filters rows where condition is true
 - Combine conditions: `df[(condition1) & (condition2)]` (AND), `df[(condition1) | (condition2)]` (OR)
 - `.sort_values('column', ascending=False)` sorts by a column
 - `.head(n)` shows top n results
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
@@ -288,6 +294,7 @@ Print the top 5 results for each query, sorted by quality descending. In particu
 Preserve your work by exporting cleaned data and documenting your process. Specifically, export your data in at least **two different formats**.
 
 **Hints:**
+
 - **`.to_csv('file.csv')`**: Exports to CSV. Use `index=False` to exclude index (wine) or `index=True` to include it (weather)
 - **`.to_excel('file.xlsx')`**: Exports to Excel (requires `openpyxl`)
 - **`.to_json('file.json', orient='index')`**: Exports to JSON (`orient='records'` or `orient='index'`)
@@ -295,7 +302,6 @@ Preserve your work by exporting cleaned data and documenting your process. Speci
 - **`pd.DataFrame(dict)`**: Create documentation tables from dictionaries
 
 ```{pyodide}
-#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # YOUR ANSWER HERE
 ```
 
