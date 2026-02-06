@@ -3752,7 +3752,7 @@
     "href": "snippets.html",
     "title": "To force rendering in pyodide",
     "section": "",
-    "text": "Add the following to quarto"
+    "text": "Add the following to quarto\n\n\n\n\n\n\nremember to add\n\nresources:\n    - src"
   },
   {
     "objectID": "05/week_05_solutions.html",
