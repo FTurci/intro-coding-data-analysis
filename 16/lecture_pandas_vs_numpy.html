@@ -1393,7 +1393,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTQxIiwiaW5saW5lIjpmYWxzZSwibWV0aG9k
 </div>
 </div>
 <script type="vfs-file">
-WyJzcmMiXQ==
+W10=
 </script>
 </section>
 </section>
@@ -1868,517 +1868,516 @@ window._ojs.runtime.interpretFromScriptTags();
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> Pandas vs Numpy</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">resources:</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">    - src</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>If we look back at our trajectory in Python, we should see that building from the lementary data structures we have progressed into m,ore complex data types exploited buy varous libraries.</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>In particular, we have seen how the efficient handling of numerical data types is perfomed in Python using the <span class="in">`numpy`</span> numerical library and how this is further extended to handle tabular data using the <span class="in">`pandas`</span> library.</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="in">`pandas`</span> is built **on top** of <span class="in">`numpy`</span> and provides high-level data structures and functions designed to make data analysis and manipulation easier and more intuitive.</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>Pandas chiefly operates with tabulated data stuctures called DataFrames, which are essentially 2-dimensional labeled data structures with columns of potentially different types. This makes <span class="in">`pandas`</span> particularly well-suited for handling structured data, such as CSV files, SQL tables, and Excel spreadsheets.</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>On the other hand the building block of <span class="in">`numpy`</span> is the <span class="in">`ndarray`</span>, which is a powerful n-dimensional array, of which tables are just a particular instance (2-dimensional arrays). <span class="in">`numpy`</span> is optimized for numerical computations and provides a wide range of mathematical functions to operate on these arrays efficiently.</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>In this lecture we will explore similarities and differences between <span class="in">`pandas`</span> and <span class="in">`numpy`</span>, and how to make them interoperate effectively.</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>If we look back at our trajectory in Python, we should see that building from the lementary data structures we have progressed into m,ore complex data types exploited buy varous libraries.</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>In particular, we have seen how the efficient handling of numerical data types is perfomed in Python using the <span class="in">`numpy`</span> numerical library and how this is further extended to handle tabular data using the <span class="in">`pandas`</span> library.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="in">`pandas`</span> is built **on top** of <span class="in">`numpy`</span> and provides high-level data structures and functions designed to make data analysis and manipulation easier and more intuitive.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Pandas chiefly operates with tabulated data stuctures called DataFrames, which are essentially 2-dimensional labeled data structures with columns of potentially different types. This makes <span class="in">`pandas`</span> particularly well-suited for handling structured data, such as CSV files, SQL tables, and Excel spreadsheets.</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>On the other hand the building block of <span class="in">`numpy`</span> is the <span class="in">`ndarray`</span>, which is a powerful n-dimensional array, of which tables are just a particular instance (2-dimensional arrays). <span class="in">`numpy`</span> is optimized for numerical computations and provides a wide range of mathematical functions to operate on these arrays efficiently.</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>In this lecture we will explore similarities and differences between <span class="in">`pandas`</span> and <span class="in">`numpy`</span>, and how to make them interoperate effectively.</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading data in </span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>We have seen that both <span class="in">`pandas`</span> and <span class="in">`numpy`</span> provide functions to read data from various file formats, but they do so in different ways.</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>In <span class="in">`numpy`</span> we have functions like <span class="in">`numpy.loadtxt()`</span> and <span class="in">`numpy.genfromtxt()`</span> to read data from text files, while <span class="in">`pandas`</span> offers more versatile functions like <span class="in">`pandas.read_csv()`</span>, <span class="in">`pandas.read_excel()`</span>, and <span class="in">`pandas.read_sql()`</span> to read data from a variety of sources.</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Reading data in </span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>We have seen that both <span class="in">`pandas`</span> and <span class="in">`numpy`</span> provide functions to read data from various file formats, but they do so in different ways.</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>In <span class="in">`numpy`</span> we have functions like <span class="in">`numpy.loadtxt()`</span> and <span class="in">`numpy.genfromtxt()`</span> to read data from text files, while <span class="in">`pandas`</span> offers more versatile functions like <span class="in">`pandas.read_csv()`</span>, <span class="in">`pandas.read_excel()`</span>, and <span class="in">`pandas.read_sql()`</span> to read data from a variety of sources.</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>Consider a <span class="in">`CSV`</span> file named <span class="in">`sample_data.csv`</span> with the following content:</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="in">```csv</span></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>id<span class="op">,</span>age<span class="op">,</span>score<span class="op">,</span>grade</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">85</span><span class="op">,</span><span class="fl">4.0</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="op">,</span><span class="dv">21</span><span class="op">,,</span><span class="fl">3.0</span></span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">,</span><span class="dv">19</span><span class="op">,</span><span class="dv">92</span><span class="op">,</span><span class="fl">4.0</span></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="op">,</span><span class="dv">22</span><span class="op">,</span><span class="dv">88</span><span class="op">,</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">76</span><span class="op">,</span><span class="fl">3.0</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span><span class="op">,,</span><span class="dv">91</span><span class="op">,</span><span class="fl">4.0</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span><span class="op">,</span><span class="dv">21</span><span class="op">,</span><span class="dv">79</span><span class="op">,</span><span class="fl">3.0</span></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">,</span><span class="dv">23</span><span class="op">,,</span><span class="fl">2.0</span></span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">95</span><span class="op">,</span><span class="fl">4.0</span></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="op">,</span><span class="dv">22</span><span class="op">,</span><span class="dv">82</span><span class="op">,</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>Notice that it contains some missing values.</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co"># using a bash command to display the contents of a file</span></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> cat sample_data.csv</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>We can read it in <span class="in">`numpy`</span> simply with <span class="in">`genfromtxt`</span></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.genfromtxt(<span class="st">'sample_data.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>, skip_header<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="in">`numpy`</span> by default reads data directly into ndarrays, which contain homogeneous data types (the same <span class="in">`dtype`</span>) </span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>data.dtype</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>Notice that the headers have been lost and the missing values interpreted as <span class="in">`nan`</span> which is a value that exists in <span class="in">`numpy`</span></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>np.nan</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>In <span class="in">`pandas`</span>, we can read the same file using <span class="in">`read_csv()`</span></span>
-<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'sample_data.csv'</span>)</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>df</span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>This produces a <span class="in">`DataFrame`</span> object, whidh is a bit richer: it contains the headers, the explicit indices and the data types of each column are inferred separately.</span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>Cleaning the data from the missing values in <span class="in">`numpy`</span> requires some ad hoc work: for example, we could decide to remove any row that contains a <span class="in">`nan`</span> value using <span class="in">`numpy.isnan()`</span> and boolean indexing:</span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a><span class="co"># check that an entry is NaN</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>np.isnan(data)</span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a><span class="co"># check that a row contains any NaN values</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>np.isnan(data).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a><span class="co"># negate the above to get rows without NaN values</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>data_clean <span class="op">=</span> data[<span class="op">~</span>np.isnan(data).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)]</span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co"># one can do the same with np.logical_not</span></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a><span class="co"># data_clean = data[np.logical_not(np.isnan(data).any(axis=1))]</span></span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>data_clean</span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>The same is a bit more immediate in <span class="in">`pandas`</span>, where we can use the <span class="in">`dropna()`</span> method to remove rows with any missing values:</span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>df_clean <span class="op">=</span> df.dropna()</span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>df_clean</span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>Notice that the resulting <span class="in">`DataFrame`</span> still retains the column names and indices.</span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>To completely forget the indices of the original data, we can reset them using the <span class="in">`reset_index()`</span> method:</span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>df_clean <span class="op">=</span> df.dropna().reset_index(drop<span class="op">=</span><span class="va">True</span>) <span class="co"># the drop=True avoids adding the old index as a new column</span></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>df_clean</span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>From the pandas DataFrame, we can easily convert it back to a numpy ndarray using the <span class="in">`to_numpy()`</span> method:</span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>df_clean.to_numpy()</span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>This is also equivalent to accessing the <span class="in">`values`</span> attribute of the DataFrame:</span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>df_clean.values</span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>The <span class="in">`to_numpy()`</span> method is preferred as it provides more options for controlling the conversion process. It is also a particular instance of the many <span class="in">`to_...()`</span> methods that allow you to convert DataFrames in various formats:</span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all methods that start with 'to_'</span></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> method <span class="kw">in</span> <span class="bu">dir</span>(df_clean):</span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> method.startswith(<span class="st">'to_'</span>):</span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(method)</span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>Useful methods that you may immediately recognise in their utility are:</span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_dict()`</span>: Converts the DataFrame to a dictionary.</span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_json()`</span>: Converts the DataFrame to a JSON string.</span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_excel()`</span>: Writes the DataFrame to an Excel file.    </span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_csv()`</span>: Writes the DataFrame to a CSV file.</span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>We can also operate in the **opposite direction**, converting a <span class="in">`numpy`</span> ndarray to a <span class="in">`pandas`</span> DataFrame using the <span class="in">`pandas.DataFrame()`</span> constructor: for this purpose, we may want to specify the column names explicitly using the <span class="in">`columns`</span> parameter.</span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a><span class="co"># using the numpy data_clean array to reconstruct a DataFrame</span></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>df_reconstructed <span class="op">=</span> pd.DataFrame(data_clean, columns<span class="op">=</span>[<span class="st">'id'</span>, <span class="st">'age'</span>, <span class="st">'score'</span>, <span class="st">'grade'</span>])</span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>df_reconstructed</span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a><span class="fu">## Indexing and Slicing</span></span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a><span class="in">`numpy`</span> uses the familiar zero-based integer indexing that we have seen in lists and arrays. We can access elements using integer indices, and we can slice arrays using the colon (<span class="in">`:`</span>) operator.</span>
-<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a>For the given array</span>
-<span id="cb2-189"><a href="#cb2-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a>data_clean</span>
-<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a>We can pick various elements and slices:</span>
-<span id="cb2-197"><a href="#cb2-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element of the first row:"</span>, data_clean[<span class="dv">0</span>,<span class="dv">0</span>]) </span>
-<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element of the second row"</span>, data_clean[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data in the first column"</span>, data_clean[:,<span class="dv">0</span>] )</span>
-<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data after the second column (included)</span><span class="ch">\n</span><span class="st">"</span>, data_clean[: ,<span class="dv">1</span>:] )</span>
-<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a>Pandas dataframes have (as we have seen it) a quite different syntax for indexing and slicing. </span>
-<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a>The closest to <span class="in">`numpy`</span>'s indexing is the <span class="in">`.iloc[]`</span> method (*integer locator*), which allows integer-based indexing similar to <span class="in">`numpy`</span> arrays.</span>
-<span id="cb2-210"><a href="#cb2-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element of the first row:"</span>, df_clean.iloc[<span class="dv">0</span>,<span class="dv">0</span>]) </span>
-<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element of the second row"</span>, df_clean.iloc[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data in the first column</span><span class="ch">\n</span><span class="st">"</span>, df_clean.iloc[:,<span class="dv">0</span>])</span>
-<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data after the second column (included)</span><span class="ch">\n</span><span class="st">"</span>, df_clean.iloc[: ,<span class="dv">1</span>:] )</span>
-<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a>More in general, pandas provides label based indexing using the <span class="in">`.loc[]`</span> method, which allows us to access data using row and column labels.</span>
-<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a>In this case the index is numerical:</span>
-<span id="cb2-223"><a href="#cb2-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a>df.index</span>
-<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a>And the columns are labelled with strings:</span>
-<span id="cb2-231"><a href="#cb2-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a>df.columns</span>
-<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a>So we we can do the following:</span>
-<span id="cb2-239"><a href="#cb2-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element of the first row:"</span>, df_clean.loc[<span class="dv">0</span>,<span class="st">"id"</span>]) </span>
-<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element of the second row"</span>, df_clean.loc[<span class="dv">1</span>,<span class="st">'grade'</span>])</span>
-<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data in the first column</span><span class="ch">\n</span><span class="st">"</span>, df_clean.loc[:,<span class="st">"id"</span>])</span>
-<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data after the second column (included)</span><span class="ch">\n</span><span class="st">"</span>, df_clean.loc[: ,<span class="st">"age"</span>:] )</span>
-<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using  `[]` in pandas without `loc` or `iloc`</span></span>
-<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a>Some care needs to be taken when using the square brackets <span class="in">`[]`</span> operator in <span class="in">`pandas`</span>, as it can behave differently based on the context.</span>
-<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a>When we use <span class="in">`[]`</span> direftly with a DataFrame, it primarily serves two purposes: selecting columns and filtering rows.</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>Consider a <span class="in">`CSV`</span> file named <span class="in">`sample_data.csv`</span> with the following content:</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="in">```csv</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>id<span class="op">,</span>age<span class="op">,</span>score<span class="op">,</span>grade</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">85</span><span class="op">,</span><span class="fl">4.0</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="op">,</span><span class="dv">21</span><span class="op">,,</span><span class="fl">3.0</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="op">,</span><span class="dv">19</span><span class="op">,</span><span class="dv">92</span><span class="op">,</span><span class="fl">4.0</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="op">,</span><span class="dv">22</span><span class="op">,</span><span class="dv">88</span><span class="op">,</span></span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">76</span><span class="op">,</span><span class="fl">3.0</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="dv">6</span><span class="op">,,</span><span class="dv">91</span><span class="op">,</span><span class="fl">4.0</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span><span class="op">,</span><span class="dv">21</span><span class="op">,</span><span class="dv">79</span><span class="op">,</span><span class="fl">3.0</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="dv">8</span><span class="op">,</span><span class="dv">23</span><span class="op">,,</span><span class="fl">2.0</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="dv">9</span><span class="op">,</span><span class="dv">20</span><span class="op">,</span><span class="dv">95</span><span class="op">,</span><span class="fl">4.0</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="dv">10</span><span class="op">,</span><span class="dv">22</span><span class="op">,</span><span class="dv">82</span><span class="op">,</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>Notice that it contains some missing values.</span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a><span class="co"># using a bash command to display the contents of a file</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="op">!</span> cat sample_data.csv</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>We can read it in <span class="in">`numpy`</span> simply with <span class="in">`genfromtxt`</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.genfromtxt(<span class="st">'sample_data.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>, skip_header<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a><span class="in">`numpy`</span> by default reads data directly into ndarrays, which contain homogeneous data types (the same <span class="in">`dtype`</span>) </span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>data.dtype</span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>Notice that the headers have been lost and the missing values interpreted as <span class="in">`nan`</span> which is a value that exists in <span class="in">`numpy`</span></span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>np.nan</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>In <span class="in">`pandas`</span>, we can read the same file using <span class="in">`read_csv()`</span></span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'sample_data.csv'</span>)</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>This produces a <span class="in">`DataFrame`</span> object, whidh is a bit richer: it contains the headers, the explicit indices and the data types of each column are inferred separately.</span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>Cleaning the data from the missing values in <span class="in">`numpy`</span> requires some ad hoc work: for example, we could decide to remove any row that contains a <span class="in">`nan`</span> value using <span class="in">`numpy.isnan()`</span> and boolean indexing:</span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a><span class="co"># check that an entry is NaN</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>np.isnan(data)</span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a><span class="co"># check that a row contains any NaN values</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>np.isnan(data).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a><span class="co"># negate the above to get rows without NaN values</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>data_clean <span class="op">=</span> data[<span class="op">~</span>np.isnan(data).<span class="bu">any</span>(axis<span class="op">=</span><span class="dv">1</span>)]</span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a><span class="co"># one can do the same with np.logical_not</span></span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a><span class="co"># data_clean = data[np.logical_not(np.isnan(data).any(axis=1))]</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>data_clean</span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>The same is a bit more immediate in <span class="in">`pandas`</span>, where we can use the <span class="in">`dropna()`</span> method to remove rows with any missing values:</span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>df_clean <span class="op">=</span> df.dropna()</span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>df_clean</span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>Notice that the resulting <span class="in">`DataFrame`</span> still retains the column names and indices.</span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>To completely forget the indices of the original data, we can reset them using the <span class="in">`reset_index()`</span> method:</span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a>df_clean <span class="op">=</span> df.dropna().reset_index(drop<span class="op">=</span><span class="va">True</span>) <span class="co"># the drop=True avoids adding the old index as a new column</span></span>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>df_clean</span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>From the pandas DataFrame, we can easily convert it back to a numpy ndarray using the <span class="in">`to_numpy()`</span> method:</span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>df_clean.to_numpy()</span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>This is also equivalent to accessing the <span class="in">`values`</span> attribute of the DataFrame:</span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>df_clean.values</span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>The <span class="in">`to_numpy()`</span> method is preferred as it provides more options for controlling the conversion process. It is also a particular instance of the many <span class="in">`to_...()`</span> methods that allow you to convert DataFrames in various formats:</span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a><span class="co"># printing all methods that start with 'to_'</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> method <span class="kw">in</span> <span class="bu">dir</span>(df_clean):</span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> method.startswith(<span class="st">'to_'</span>):</span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(method)</span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>Useful methods that you may immediately recognise in their utility are:</span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_dict()`</span>: Converts the DataFrame to a dictionary.</span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_json()`</span>: Converts the DataFrame to a JSON string.</span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_excel()`</span>: Writes the DataFrame to an Excel file.    </span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`DataFrame.to_csv()`</span>: Writes the DataFrame to a CSV file.</span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>We can also operate in the **opposite direction**, converting a <span class="in">`numpy`</span> ndarray to a <span class="in">`pandas`</span> DataFrame using the <span class="in">`pandas.DataFrame()`</span> constructor: for this purpose, we may want to specify the column names explicitly using the <span class="in">`columns`</span> parameter.</span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a><span class="co"># using the numpy data_clean array to reconstruct a DataFrame</span></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>df_reconstructed <span class="op">=</span> pd.DataFrame(data_clean, columns<span class="op">=</span>[<span class="st">'id'</span>, <span class="st">'age'</span>, <span class="st">'score'</span>, <span class="st">'grade'</span>])</span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>df_reconstructed</span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a><span class="fu">## Indexing and Slicing</span></span>
+<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a><span class="in">`numpy`</span> uses the familiar zero-based integer indexing that we have seen in lists and arrays. We can access elements using integer indices, and we can slice arrays using the colon (<span class="in">`:`</span>) operator.</span>
+<span id="cb2-186"><a href="#cb2-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-187"><a href="#cb2-187" aria-hidden="true" tabindex="-1"></a>For the given array</span>
+<span id="cb2-188"><a href="#cb2-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-191"><a href="#cb2-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-192"><a href="#cb2-192" aria-hidden="true" tabindex="-1"></a>data_clean</span>
+<span id="cb2-193"><a href="#cb2-193" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-194"><a href="#cb2-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-195"><a href="#cb2-195" aria-hidden="true" tabindex="-1"></a>We can pick various elements and slices:</span>
+<span id="cb2-196"><a href="#cb2-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-199"><a href="#cb2-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-200"><a href="#cb2-200" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element of the first row:"</span>, data_clean[<span class="dv">0</span>,<span class="dv">0</span>]) </span>
+<span id="cb2-201"><a href="#cb2-201" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element of the second row"</span>, data_clean[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb2-202"><a href="#cb2-202" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data in the first column"</span>, data_clean[:,<span class="dv">0</span>] )</span>
+<span id="cb2-203"><a href="#cb2-203" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data after the second column (included)</span><span class="ch">\n</span><span class="st">"</span>, data_clean[: ,<span class="dv">1</span>:] )</span>
+<span id="cb2-204"><a href="#cb2-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-205"><a href="#cb2-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-206"><a href="#cb2-206" aria-hidden="true" tabindex="-1"></a>Pandas dataframes have (as we have seen it) a quite different syntax for indexing and slicing. </span>
+<span id="cb2-207"><a href="#cb2-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-208"><a href="#cb2-208" aria-hidden="true" tabindex="-1"></a>The closest to <span class="in">`numpy`</span>'s indexing is the <span class="in">`.iloc[]`</span> method (*integer locator*), which allows integer-based indexing similar to <span class="in">`numpy`</span> arrays.</span>
+<span id="cb2-209"><a href="#cb2-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-212"><a href="#cb2-212" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-213"><a href="#cb2-213" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element of the first row:"</span>, df_clean.iloc[<span class="dv">0</span>,<span class="dv">0</span>]) </span>
+<span id="cb2-214"><a href="#cb2-214" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element of the second row"</span>, df_clean.iloc[<span class="dv">1</span>,<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb2-215"><a href="#cb2-215" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data in the first column</span><span class="ch">\n</span><span class="st">"</span>, df_clean.iloc[:,<span class="dv">0</span>])</span>
+<span id="cb2-216"><a href="#cb2-216" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data after the second column (included)</span><span class="ch">\n</span><span class="st">"</span>, df_clean.iloc[: ,<span class="dv">1</span>:] )</span>
+<span id="cb2-217"><a href="#cb2-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-218"><a href="#cb2-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-219"><a href="#cb2-219" aria-hidden="true" tabindex="-1"></a>More in general, pandas provides label based indexing using the <span class="in">`.loc[]`</span> method, which allows us to access data using row and column labels.</span>
+<span id="cb2-220"><a href="#cb2-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-221"><a href="#cb2-221" aria-hidden="true" tabindex="-1"></a>In this case the index is numerical:</span>
+<span id="cb2-222"><a href="#cb2-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-225"><a href="#cb2-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-226"><a href="#cb2-226" aria-hidden="true" tabindex="-1"></a>df.index</span>
+<span id="cb2-227"><a href="#cb2-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-228"><a href="#cb2-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-229"><a href="#cb2-229" aria-hidden="true" tabindex="-1"></a>And the columns are labelled with strings:</span>
+<span id="cb2-230"><a href="#cb2-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-233"><a href="#cb2-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-234"><a href="#cb2-234" aria-hidden="true" tabindex="-1"></a>df.columns</span>
+<span id="cb2-235"><a href="#cb2-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-236"><a href="#cb2-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-237"><a href="#cb2-237" aria-hidden="true" tabindex="-1"></a>So we we can do the following:</span>
+<span id="cb2-238"><a href="#cb2-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-241"><a href="#cb2-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-242"><a href="#cb2-242" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"First element of the first row:"</span>, df_clean.loc[<span class="dv">0</span>,<span class="st">"id"</span>]) </span>
+<span id="cb2-243"><a href="#cb2-243" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Last element of the second row"</span>, df_clean.loc[<span class="dv">1</span>,<span class="st">'grade'</span>])</span>
+<span id="cb2-244"><a href="#cb2-244" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data in the first column</span><span class="ch">\n</span><span class="st">"</span>, df_clean.loc[:,<span class="st">"id"</span>])</span>
+<span id="cb2-245"><a href="#cb2-245" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"All data after the second column (included)</span><span class="ch">\n</span><span class="st">"</span>, df_clean.loc[: ,<span class="st">"age"</span>:] )</span>
+<span id="cb2-246"><a href="#cb2-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-247"><a href="#cb2-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-248"><a href="#cb2-248" aria-hidden="true" tabindex="-1"></a><span class="fu">### Using  `[]` in pandas without `loc` or `iloc`</span></span>
+<span id="cb2-249"><a href="#cb2-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-250"><a href="#cb2-250" aria-hidden="true" tabindex="-1"></a>Some care needs to be taken when using the square brackets <span class="in">`[]`</span> operator in <span class="in">`pandas`</span>, as it can behave differently based on the context.</span>
+<span id="cb2-251"><a href="#cb2-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-252"><a href="#cb2-252" aria-hidden="true" tabindex="-1"></a>When we use <span class="in">`[]`</span> direftly with a DataFrame, it primarily serves two purposes: selecting columns and filtering rows.</span>
+<span id="cb2-253"><a href="#cb2-253" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-254"><a href="#cb2-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a>**Selecting columns**: When we pass a single string or a list of strings to <span class="in">`[]`</span>, it selects the corresponding columns from the DataFrame.</span>
-<span id="cb2-257"><a href="#cb2-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="st">"age"</span>]</span>
-<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-263"><a href="#cb2-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a><span class="co"># passing a list of strings</span></span>
-<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a>df_clean[ [<span class="st">"id"</span>, <span class="st">"age"</span>] ]</span>
-<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a>**Filtering rows**: When we pass a boolean array or Series to <span class="in">`[]`</span>, it filters the rows based on the boolean values.</span>
-<span id="cb2-272"><a href="#cb2-272" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="dv">0</span>:<span class="dv">2</span>]</span>
-<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a>Oddly enough, if we pass an single integer pandas will interpret it as a column selection, not as a row selection as one might expect, and this will raise an error if there is no column with that name.</span>
-<span id="cb2-280"><a href="#cb2-280" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="dv">0</span>]</span>
-<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a>**Important.** These inconsistencies should motivate you to prefer .loc and .iloc for DataFrame indexing.</span>
-<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mathematical operations on data tables</span></span>
-<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic statistics</span></span>
-<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a>Numpy arrays readily have a few mathematicla methods that operate element-wise on the array data, such as <span class="in">`sum()`</span>, <span class="in">`mean()`</span>, <span class="in">`std()`</span>, etc.</span>
-<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a>They operate on rows or columns depending on the <span class="in">`axis`</span> parameter:</span>
-<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>axis=0 indicates that the operation is performed column-wise (i.e., along rows).</span>
-<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>axis=1 indicates that the operation is performed row-wise (i.e., along columns).</span>
-<span id="cb2-299"><a href="#cb2-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a><span class="co"># column wise mean</span></span>
-<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a>data_clean.mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a>Similar operations exist in pandas and work column-wise (default) or row-wise depending on the <span class="in">`axis`</span> parameter as well.</span>
-<span id="cb2-308"><a href="#cb2-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a>df_clean.mean()</span>
-<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-314"><a href="#cb2-314" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a>df_clean.mean(axis<span class="op">=</span><span class="dv">1</span>) <span class="co">#averaging across columns, which makes little sense fir this dataset</span></span>
-<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a>We can also compute standard devations:</span>
-<span id="cb2-322"><a href="#cb2-322" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to numpy:</span><span class="ch">\n</span><span class="st">"</span>, data_clean.std(axis<span class="op">=</span><span class="dv">0</span>))</span>
-<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to pandas:</span><span class="ch">\n</span><span class="st">"</span>, df_clean.std())</span>
-<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a>Oh, the two appear to provide quantitatively different results! This may come to a surprise, but it is an example of how different libraries may implement similar functions with slightly different conventions, and how important it is to read the documentation carefully.</span>
+<span id="cb2-255"><a href="#cb2-255" aria-hidden="true" tabindex="-1"></a>**Selecting columns**: When we pass a single string or a list of strings to <span class="in">`[]`</span>, it selects the corresponding columns from the DataFrame.</span>
+<span id="cb2-256"><a href="#cb2-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-259"><a href="#cb2-259" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-260"><a href="#cb2-260" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="st">"age"</span>]</span>
+<span id="cb2-261"><a href="#cb2-261" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-262"><a href="#cb2-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-265"><a href="#cb2-265" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-266"><a href="#cb2-266" aria-hidden="true" tabindex="-1"></a><span class="co"># passing a list of strings</span></span>
+<span id="cb2-267"><a href="#cb2-267" aria-hidden="true" tabindex="-1"></a>df_clean[ [<span class="st">"id"</span>, <span class="st">"age"</span>] ]</span>
+<span id="cb2-268"><a href="#cb2-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-269"><a href="#cb2-269" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-270"><a href="#cb2-270" aria-hidden="true" tabindex="-1"></a>**Filtering rows**: When we pass a boolean array or Series to <span class="in">`[]`</span>, it filters the rows based on the boolean values.</span>
+<span id="cb2-271"><a href="#cb2-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-274"><a href="#cb2-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-275"><a href="#cb2-275" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="dv">0</span>:<span class="dv">2</span>]</span>
+<span id="cb2-276"><a href="#cb2-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-277"><a href="#cb2-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-278"><a href="#cb2-278" aria-hidden="true" tabindex="-1"></a>Oddly enough, if we pass an single integer pandas will interpret it as a column selection, not as a row selection as one might expect, and this will raise an error if there is no column with that name.</span>
+<span id="cb2-279"><a href="#cb2-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-282"><a href="#cb2-282" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-283"><a href="#cb2-283" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="dv">0</span>]</span>
+<span id="cb2-284"><a href="#cb2-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-285"><a href="#cb2-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-286"><a href="#cb2-286" aria-hidden="true" tabindex="-1"></a>**Important.** These inconsistencies should motivate you to prefer .loc and .iloc for DataFrame indexing.</span>
+<span id="cb2-287"><a href="#cb2-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-288"><a href="#cb2-288" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mathematical operations on data tables</span></span>
+<span id="cb2-289"><a href="#cb2-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-290"><a href="#cb2-290" aria-hidden="true" tabindex="-1"></a><span class="fu">### Basic statistics</span></span>
+<span id="cb2-291"><a href="#cb2-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-292"><a href="#cb2-292" aria-hidden="true" tabindex="-1"></a>Numpy arrays readily have a few mathematicla methods that operate element-wise on the array data, such as <span class="in">`sum()`</span>, <span class="in">`mean()`</span>, <span class="in">`std()`</span>, etc.</span>
+<span id="cb2-293"><a href="#cb2-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-294"><a href="#cb2-294" aria-hidden="true" tabindex="-1"></a>They operate on rows or columns depending on the <span class="in">`axis`</span> parameter:</span>
+<span id="cb2-295"><a href="#cb2-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-296"><a href="#cb2-296" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>axis=0 indicates that the operation is performed column-wise (i.e., along rows).</span>
+<span id="cb2-297"><a href="#cb2-297" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>axis=1 indicates that the operation is performed row-wise (i.e., along columns).</span>
+<span id="cb2-298"><a href="#cb2-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-301"><a href="#cb2-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-302"><a href="#cb2-302" aria-hidden="true" tabindex="-1"></a><span class="co"># column wise mean</span></span>
+<span id="cb2-303"><a href="#cb2-303" aria-hidden="true" tabindex="-1"></a>data_clean.mean(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb2-304"><a href="#cb2-304" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-305"><a href="#cb2-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-306"><a href="#cb2-306" aria-hidden="true" tabindex="-1"></a>Similar operations exist in pandas and work column-wise (default) or row-wise depending on the <span class="in">`axis`</span> parameter as well.</span>
+<span id="cb2-307"><a href="#cb2-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-310"><a href="#cb2-310" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-311"><a href="#cb2-311" aria-hidden="true" tabindex="-1"></a>df_clean.mean()</span>
+<span id="cb2-312"><a href="#cb2-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-313"><a href="#cb2-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-316"><a href="#cb2-316" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-317"><a href="#cb2-317" aria-hidden="true" tabindex="-1"></a>df_clean.mean(axis<span class="op">=</span><span class="dv">1</span>) <span class="co">#averaging across columns, which makes little sense fir this dataset</span></span>
+<span id="cb2-318"><a href="#cb2-318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-319"><a href="#cb2-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-320"><a href="#cb2-320" aria-hidden="true" tabindex="-1"></a>We can also compute standard devations:</span>
+<span id="cb2-321"><a href="#cb2-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-324"><a href="#cb2-324" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-325"><a href="#cb2-325" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to numpy:</span><span class="ch">\n</span><span class="st">"</span>, data_clean.std(axis<span class="op">=</span><span class="dv">0</span>))</span>
+<span id="cb2-326"><a href="#cb2-326" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to pandas:</span><span class="ch">\n</span><span class="st">"</span>, df_clean.std())</span>
+<span id="cb2-327"><a href="#cb2-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-328"><a href="#cb2-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-329"><a href="#cb2-329" aria-hidden="true" tabindex="-1"></a>Oh, the two appear to provide quantitatively different results! This may come to a surprise, but it is an example of how different libraries may implement similar functions with slightly different conventions, and how important it is to read the documentation carefully.</span>
+<span id="cb2-330"><a href="#cb2-330" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-331"><a href="#cb2-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a>For numpy this is</span>
-<span id="cb2-334"><a href="#cb2-334" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.std)</span>
-<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a>If you read the documentation correctl you will find that <span class="in">`numpy.std()`</span> by default computes the standard deviation with with degree of freedom <span class="in">`ddof=0`</span>, which is the *population standard deviation*</span>
-<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a>$$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2}$$</span>
-<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a>This is different from the *sample standard deviation* formula, which uses <span class="in">`ddof=1`</span></span>
-<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a>$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2}$$</span>
-<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a>The two have different meanings: </span>
-<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the population standard deviation is used when you have data for the **entire population**</span>
-<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the sample standard deviation is used when you have a **sample** from a larger population and want to estimate the **population standard deviation**.</span>
-<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a><span class="in">`pandas`</span> by default uses the sample standard deviation formula (<span class="in">`ddof=1`</span>).</span>
-<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a>In order to match the two results, we can specify <span class="in">`ddof=0`</span> in the function calls</span>
-<span id="cb2-357"><a href="#cb2-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a><span class="co"># change this value to 1 to see the difference</span></span>
-<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a>selected_ddof <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to numpy:</span><span class="ch">\n</span><span class="st">"</span>, data_clean.std(axis<span class="op">=</span><span class="dv">0</span>, ddof<span class="op">=</span>selected_ddof))</span>
-<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to pandas:</span><span class="ch">\n</span><span class="st">"</span>, df_clean.std(ddof<span class="op">=</span>selected_ddof))</span>
-<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a><span class="fu">### More general mathematical operations</span></span>
-<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a>Numpy has a large set of mathematical functions that can be applied element-wise to arrays, such as <span class="in">`np.sin()`</span>, <span class="in">`np.exp()`</span>, <span class="in">`np.log()`</span>, etc.</span>
-<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a>What if we want to apply these functions to pandas DataFrames?</span>
-<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-373"><a href="#cb2-373" aria-hidden="true" tabindex="-1"></a>We can surely create new columns by applying numpy functions to existing columns:</span>
-<span id="cb2-374"><a href="#cb2-374" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="st">"log grade"</span>] <span class="op">=</span> np.log(df_clean[<span class="st">"grade"</span>])</span>
-<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a>df_clean</span>
-<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a>We can even apply the functions to the entire DataFrame, and <span class="in">`numpy`</span> will apply them element-wise:</span>
-<span id="cb2-384"><a href="#cb2-384" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a>np.log(df_clean) <span class="co"># meaningless but possible</span></span>
-<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a>These are fast operations because they are *vectorized*. </span>
-<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a><span class="fu">## Views vs Copies: A Critical Difference</span></span>
-<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a>When working with <span class="in">`numpy`</span> arrays and <span class="in">`pandas`</span> DataFrames, understanding the distinction between **views** and **copies** is crucial to avoid unexpected behavior.</span>
-<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a>A **view** is a reference to the original data structure - modifying a view will change the original data.</span>
-<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a>A **copy** is an independent duplicate - modifying a copy leaves the original unchanged.</span>
-<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a>This distinction is particularly important when subsetting data or performing operations that might create either views or copies.</span>
-<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a><span class="fu">### Views and copies in NumPy</span></span>
-<span id="cb2-404"><a href="#cb2-404" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-405"><a href="#cb2-405" aria-hidden="true" tabindex="-1"></a>In <span class="in">`numpy`</span>, **slicing creates views by default**. This is done for memory efficiency, but it means that modifying a slice will affect the original array.</span>
-<span id="cb2-406"><a href="#cb2-406" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple array</span></span>
-<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
-<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original)</span>
-<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a slice (this is a VIEW, not a copy)</span></span>
-<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a>sliced <span class="op">=</span> original[<span class="dv">1</span>:<span class="dv">4</span>]</span>
-<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sliced array:"</span>, sliced)</span>
-<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the slice</span></span>
-<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a>sliced[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">999</span></span>
-<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">After modifying sliced[0] = 999:"</span>)</span>
-<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original)  <span class="co"># Changed!</span></span>
-<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sliced array:"</span>, sliced)</span>
-<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a>Notice that modifying the slice changed the original array! This is because <span class="in">`sliced`</span> is a **view** of <span class="in">`original`</span>, not an independent copy.</span>
-<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a>We can verify this using <span class="in">`np.shares_memory()`</span>:</span>
-<span id="cb2-428"><a href="#cb2-428" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if they share memory</span></span>
-<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Do they share memory?"</span>, np.shares_memory(original, sliced))</span>
-<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a>To create an independent copy that won't affect the original, use the <span class="in">`.copy()`</span> method explicitly:</span>
-<span id="cb2-437"><a href="#cb2-437" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new array</span></span>
-<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a>original2 <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
-<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original2)</span>
-<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an explicit copy</span></span>
-<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a>copied <span class="op">=</span> original2[<span class="dv">1</span>:<span class="dv">4</span>].copy()</span>
-<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Copied array:"</span>, copied)</span>
-<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the copy</span></span>
-<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a>copied[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">888</span></span>
-<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">After modifying copied[0] = 888:"</span>)</span>
-<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original2)  <span class="co"># Unchanged!</span></span>
-<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Copied array:"</span>, copied)</span>
-<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Do they share memory?"</span>, np.shares_memory(original2, copied))</span>
-<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a><span class="fu">### Views and copies in Pandas</span></span>
-<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a>The situation in <span class="in">`pandas`</span> is more complex. Pandas tries to avoid unnecessary copying for performance, but the behavior is not always obvious.</span>
-<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a>**Chained indexing** (using multiple <span class="in">`[]`</span> operations in sequence) can be particularly problematic and may trigger a <span class="in">`SettingWithCopyWarning`</span>.</span>
-<span id="cb2-463"><a href="#cb2-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a test DataFrame</span></span>
-<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a>df_test <span class="op">=</span> pd.DataFrame({</span>
-<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
-<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
-<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>]</span>
-<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a>})</span>
-<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original DataFrame:"</span>)</span>
-<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
-<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a>If we try to filter rows and then modify the result, pandas may issue a warning because it's unclear whether we're modifying a view or a copy:</span>
-<span id="cb2-479"><a href="#cb2-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a><span class="co"># Chained indexing - may trigger SettingWithCopyWarning</span></span>
-<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df_test[df_test[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">1</span>]</span>
-<span id="cb2-485"><a href="#cb2-485" aria-hidden="true" tabindex="-1"></a>df_subset[<span class="st">'B'</span>] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># This might warn you!</span></span>
-<span id="cb2-486"><a href="#cb2-486" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-487"><a href="#cb2-487" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Modified subset:"</span>)</span>
-<span id="cb2-488"><a href="#cb2-488" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_subset)</span>
-<span id="cb2-489"><a href="#cb2-489" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Original DataFrame (may or may not be affected):"</span>)</span>
-<span id="cb2-490"><a href="#cb2-490" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
-<span id="cb2-491"><a href="#cb2-491" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-492"><a href="#cb2-492" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-493"><a href="#cb2-493" aria-hidden="true" tabindex="-1"></a>**Best practice 1**: Use <span class="in">`.copy()`</span> explicitly when you want to work with a subset independently:</span>
-<span id="cb2-494"><a href="#cb2-494" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-497"><a href="#cb2-497" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-498"><a href="#cb2-498" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe approach: explicit copy</span></span>
-<span id="cb2-499"><a href="#cb2-499" aria-hidden="true" tabindex="-1"></a>df_safe <span class="op">=</span> df_test[df_test[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">1</span>].copy()</span>
-<span id="cb2-500"><a href="#cb2-500" aria-hidden="true" tabindex="-1"></a>df_safe[<span class="st">'B'</span>] <span class="op">=</span> <span class="dv">999</span></span>
-<span id="cb2-501"><a href="#cb2-501" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-502"><a href="#cb2-502" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Modified copy:"</span>)</span>
-<span id="cb2-503"><a href="#cb2-503" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_safe)</span>
-<span id="cb2-504"><a href="#cb2-504" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Original DataFrame (unchanged):"</span>)</span>
-<span id="cb2-505"><a href="#cb2-505" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
-<span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a>**Best practice 2**: If you want to modify the original DataFrame directly, use <span class="in">`.loc[]`</span> in a single operation:</span>
-<span id="cb2-509"><a href="#cb2-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-513"><a href="#cb2-513" aria-hidden="true" tabindex="-1"></a><span class="co"># Direct modification using .loc[] (modifies original)</span></span>
-<span id="cb2-514"><a href="#cb2-514" aria-hidden="true" tabindex="-1"></a>df_test.loc[df_test[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">1</span>, <span class="st">'C'</span>] <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb2-515"><a href="#cb2-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-516"><a href="#cb2-516" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After .loc[] modification:"</span>)</span>
-<span id="cb2-517"><a href="#cb2-517" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
-<span id="cb2-518"><a href="#cb2-518" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-332"><a href="#cb2-332" aria-hidden="true" tabindex="-1"></a>For numpy this is</span>
+<span id="cb2-333"><a href="#cb2-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-336"><a href="#cb2-336" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-337"><a href="#cb2-337" aria-hidden="true" tabindex="-1"></a><span class="bu">help</span>(np.std)</span>
+<span id="cb2-338"><a href="#cb2-338" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-339"><a href="#cb2-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-340"><a href="#cb2-340" aria-hidden="true" tabindex="-1"></a>If you read the documentation correctl you will find that <span class="in">`numpy.std()`</span> by default computes the standard deviation with with degree of freedom <span class="in">`ddof=0`</span>, which is the *population standard deviation*</span>
+<span id="cb2-341"><a href="#cb2-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-342"><a href="#cb2-342" aria-hidden="true" tabindex="-1"></a>$$\sigma = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2}$$</span>
+<span id="cb2-343"><a href="#cb2-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-344"><a href="#cb2-344" aria-hidden="true" tabindex="-1"></a>This is different from the *sample standard deviation* formula, which uses <span class="in">`ddof=1`</span></span>
+<span id="cb2-345"><a href="#cb2-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-346"><a href="#cb2-346" aria-hidden="true" tabindex="-1"></a>$$s = \sqrt{\frac{1}{N-1} \sum_{i=1}^{N} (x_i - \bar{x})^2}$$</span>
+<span id="cb2-347"><a href="#cb2-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-348"><a href="#cb2-348" aria-hidden="true" tabindex="-1"></a>The two have different meanings: </span>
+<span id="cb2-349"><a href="#cb2-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-350"><a href="#cb2-350" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the population standard deviation is used when you have data for the **entire population**</span>
+<span id="cb2-351"><a href="#cb2-351" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>the sample standard deviation is used when you have a **sample** from a larger population and want to estimate the **population standard deviation**.</span>
+<span id="cb2-352"><a href="#cb2-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-353"><a href="#cb2-353" aria-hidden="true" tabindex="-1"></a><span class="in">`pandas`</span> by default uses the sample standard deviation formula (<span class="in">`ddof=1`</span>).</span>
+<span id="cb2-354"><a href="#cb2-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-355"><a href="#cb2-355" aria-hidden="true" tabindex="-1"></a>In order to match the two results, we can specify <span class="in">`ddof=0`</span> in the function calls</span>
+<span id="cb2-356"><a href="#cb2-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-359"><a href="#cb2-359" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-360"><a href="#cb2-360" aria-hidden="true" tabindex="-1"></a><span class="co"># change this value to 1 to see the difference</span></span>
+<span id="cb2-361"><a href="#cb2-361" aria-hidden="true" tabindex="-1"></a>selected_ddof <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-362"><a href="#cb2-362" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to numpy:</span><span class="ch">\n</span><span class="st">"</span>, data_clean.std(axis<span class="op">=</span><span class="dv">0</span>, ddof<span class="op">=</span>selected_ddof))</span>
+<span id="cb2-363"><a href="#cb2-363" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"St deviation of each column according to pandas:</span><span class="ch">\n</span><span class="st">"</span>, df_clean.std(ddof<span class="op">=</span>selected_ddof))</span>
+<span id="cb2-364"><a href="#cb2-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-365"><a href="#cb2-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-366"><a href="#cb2-366" aria-hidden="true" tabindex="-1"></a><span class="fu">### More general mathematical operations</span></span>
+<span id="cb2-367"><a href="#cb2-367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-368"><a href="#cb2-368" aria-hidden="true" tabindex="-1"></a>Numpy has a large set of mathematical functions that can be applied element-wise to arrays, such as <span class="in">`np.sin()`</span>, <span class="in">`np.exp()`</span>, <span class="in">`np.log()`</span>, etc.</span>
+<span id="cb2-369"><a href="#cb2-369" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-370"><a href="#cb2-370" aria-hidden="true" tabindex="-1"></a>What if we want to apply these functions to pandas DataFrames?</span>
+<span id="cb2-371"><a href="#cb2-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-372"><a href="#cb2-372" aria-hidden="true" tabindex="-1"></a>We can surely create new columns by applying numpy functions to existing columns:</span>
+<span id="cb2-373"><a href="#cb2-373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-376"><a href="#cb2-376" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-377"><a href="#cb2-377" aria-hidden="true" tabindex="-1"></a>df_clean[<span class="st">"log grade"</span>] <span class="op">=</span> np.log(df_clean[<span class="st">"grade"</span>])</span>
+<span id="cb2-378"><a href="#cb2-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-379"><a href="#cb2-379" aria-hidden="true" tabindex="-1"></a>df_clean</span>
+<span id="cb2-380"><a href="#cb2-380" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-381"><a href="#cb2-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-382"><a href="#cb2-382" aria-hidden="true" tabindex="-1"></a>We can even apply the functions to the entire DataFrame, and <span class="in">`numpy`</span> will apply them element-wise:</span>
+<span id="cb2-383"><a href="#cb2-383" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-386"><a href="#cb2-386" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-387"><a href="#cb2-387" aria-hidden="true" tabindex="-1"></a>np.log(df_clean) <span class="co"># meaningless but possible</span></span>
+<span id="cb2-388"><a href="#cb2-388" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-389"><a href="#cb2-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-390"><a href="#cb2-390" aria-hidden="true" tabindex="-1"></a>These are fast operations because they are *vectorized*. </span>
+<span id="cb2-391"><a href="#cb2-391" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-392"><a href="#cb2-392" aria-hidden="true" tabindex="-1"></a><span class="fu">## Views vs Copies: A Critical Difference</span></span>
+<span id="cb2-393"><a href="#cb2-393" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-394"><a href="#cb2-394" aria-hidden="true" tabindex="-1"></a>When working with <span class="in">`numpy`</span> arrays and <span class="in">`pandas`</span> DataFrames, understanding the distinction between **views** and **copies** is crucial to avoid unexpected behavior.</span>
+<span id="cb2-395"><a href="#cb2-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-396"><a href="#cb2-396" aria-hidden="true" tabindex="-1"></a>A **view** is a reference to the original data structure - modifying a view will change the original data.</span>
+<span id="cb2-397"><a href="#cb2-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-398"><a href="#cb2-398" aria-hidden="true" tabindex="-1"></a>A **copy** is an independent duplicate - modifying a copy leaves the original unchanged.</span>
+<span id="cb2-399"><a href="#cb2-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-400"><a href="#cb2-400" aria-hidden="true" tabindex="-1"></a>This distinction is particularly important when subsetting data or performing operations that might create either views or copies.</span>
+<span id="cb2-401"><a href="#cb2-401" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-402"><a href="#cb2-402" aria-hidden="true" tabindex="-1"></a><span class="fu">### Views and copies in NumPy</span></span>
+<span id="cb2-403"><a href="#cb2-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-404"><a href="#cb2-404" aria-hidden="true" tabindex="-1"></a>In <span class="in">`numpy`</span>, **slicing creates views by default**. This is done for memory efficiency, but it means that modifying a slice will affect the original array.</span>
+<span id="cb2-405"><a href="#cb2-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-408"><a href="#cb2-408" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-409"><a href="#cb2-409" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simple array</span></span>
+<span id="cb2-410"><a href="#cb2-410" aria-hidden="true" tabindex="-1"></a>original <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb2-411"><a href="#cb2-411" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original)</span>
+<span id="cb2-412"><a href="#cb2-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-413"><a href="#cb2-413" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a slice (this is a VIEW, not a copy)</span></span>
+<span id="cb2-414"><a href="#cb2-414" aria-hidden="true" tabindex="-1"></a>sliced <span class="op">=</span> original[<span class="dv">1</span>:<span class="dv">4</span>]</span>
+<span id="cb2-415"><a href="#cb2-415" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sliced array:"</span>, sliced)</span>
+<span id="cb2-416"><a href="#cb2-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-417"><a href="#cb2-417" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the slice</span></span>
+<span id="cb2-418"><a href="#cb2-418" aria-hidden="true" tabindex="-1"></a>sliced[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">999</span></span>
+<span id="cb2-419"><a href="#cb2-419" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">After modifying sliced[0] = 999:"</span>)</span>
+<span id="cb2-420"><a href="#cb2-420" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original)  <span class="co"># Changed!</span></span>
+<span id="cb2-421"><a href="#cb2-421" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sliced array:"</span>, sliced)</span>
+<span id="cb2-422"><a href="#cb2-422" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-423"><a href="#cb2-423" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-424"><a href="#cb2-424" aria-hidden="true" tabindex="-1"></a>Notice that modifying the slice changed the original array! This is because <span class="in">`sliced`</span> is a **view** of <span class="in">`original`</span>, not an independent copy.</span>
+<span id="cb2-425"><a href="#cb2-425" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-426"><a href="#cb2-426" aria-hidden="true" tabindex="-1"></a>We can verify this using <span class="in">`np.shares_memory()`</span>:</span>
+<span id="cb2-427"><a href="#cb2-427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-430"><a href="#cb2-430" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-431"><a href="#cb2-431" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if they share memory</span></span>
+<span id="cb2-432"><a href="#cb2-432" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Do they share memory?"</span>, np.shares_memory(original, sliced))</span>
+<span id="cb2-433"><a href="#cb2-433" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-434"><a href="#cb2-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-435"><a href="#cb2-435" aria-hidden="true" tabindex="-1"></a>To create an independent copy that won't affect the original, use the <span class="in">`.copy()`</span> method explicitly:</span>
+<span id="cb2-436"><a href="#cb2-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-439"><a href="#cb2-439" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-440"><a href="#cb2-440" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new array</span></span>
+<span id="cb2-441"><a href="#cb2-441" aria-hidden="true" tabindex="-1"></a>original2 <span class="op">=</span> np.array([<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>])</span>
+<span id="cb2-442"><a href="#cb2-442" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original2)</span>
+<span id="cb2-443"><a href="#cb2-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-444"><a href="#cb2-444" aria-hidden="true" tabindex="-1"></a><span class="co"># Create an explicit copy</span></span>
+<span id="cb2-445"><a href="#cb2-445" aria-hidden="true" tabindex="-1"></a>copied <span class="op">=</span> original2[<span class="dv">1</span>:<span class="dv">4</span>].copy()</span>
+<span id="cb2-446"><a href="#cb2-446" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Copied array:"</span>, copied)</span>
+<span id="cb2-447"><a href="#cb2-447" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-448"><a href="#cb2-448" aria-hidden="true" tabindex="-1"></a><span class="co"># Modify the copy</span></span>
+<span id="cb2-449"><a href="#cb2-449" aria-hidden="true" tabindex="-1"></a>copied[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">888</span></span>
+<span id="cb2-450"><a href="#cb2-450" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">After modifying copied[0] = 888:"</span>)</span>
+<span id="cb2-451"><a href="#cb2-451" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original array:"</span>, original2)  <span class="co"># Unchanged!</span></span>
+<span id="cb2-452"><a href="#cb2-452" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Copied array:"</span>, copied)</span>
+<span id="cb2-453"><a href="#cb2-453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-454"><a href="#cb2-454" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Do they share memory?"</span>, np.shares_memory(original2, copied))</span>
+<span id="cb2-455"><a href="#cb2-455" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-456"><a href="#cb2-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-457"><a href="#cb2-457" aria-hidden="true" tabindex="-1"></a><span class="fu">### Views and copies in Pandas</span></span>
+<span id="cb2-458"><a href="#cb2-458" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-459"><a href="#cb2-459" aria-hidden="true" tabindex="-1"></a>The situation in <span class="in">`pandas`</span> is more complex. Pandas tries to avoid unnecessary copying for performance, but the behavior is not always obvious.</span>
+<span id="cb2-460"><a href="#cb2-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-461"><a href="#cb2-461" aria-hidden="true" tabindex="-1"></a>**Chained indexing** (using multiple <span class="in">`[]`</span> operations in sequence) can be particularly problematic and may trigger a <span class="in">`SettingWithCopyWarning`</span>.</span>
+<span id="cb2-462"><a href="#cb2-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-465"><a href="#cb2-465" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-466"><a href="#cb2-466" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a test DataFrame</span></span>
+<span id="cb2-467"><a href="#cb2-467" aria-hidden="true" tabindex="-1"></a>df_test <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb2-468"><a href="#cb2-468" aria-hidden="true" tabindex="-1"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>],</span>
+<span id="cb2-469"><a href="#cb2-469" aria-hidden="true" tabindex="-1"></a>    <span class="st">'B'</span>: [<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>],</span>
+<span id="cb2-470"><a href="#cb2-470" aria-hidden="true" tabindex="-1"></a>    <span class="st">'C'</span>: [<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">300</span>, <span class="dv">400</span>]</span>
+<span id="cb2-471"><a href="#cb2-471" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb2-472"><a href="#cb2-472" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-473"><a href="#cb2-473" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original DataFrame:"</span>)</span>
+<span id="cb2-474"><a href="#cb2-474" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
+<span id="cb2-475"><a href="#cb2-475" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-476"><a href="#cb2-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-477"><a href="#cb2-477" aria-hidden="true" tabindex="-1"></a>If we try to filter rows and then modify the result, pandas may issue a warning because it's unclear whether we're modifying a view or a copy:</span>
+<span id="cb2-478"><a href="#cb2-478" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-481"><a href="#cb2-481" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-482"><a href="#cb2-482" aria-hidden="true" tabindex="-1"></a><span class="co"># Chained indexing - may trigger SettingWithCopyWarning</span></span>
+<span id="cb2-483"><a href="#cb2-483" aria-hidden="true" tabindex="-1"></a>df_subset <span class="op">=</span> df_test[df_test[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">1</span>]</span>
+<span id="cb2-484"><a href="#cb2-484" aria-hidden="true" tabindex="-1"></a>df_subset[<span class="st">'B'</span>] <span class="op">=</span> <span class="dv">0</span>  <span class="co"># This might warn you!</span></span>
+<span id="cb2-485"><a href="#cb2-485" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-486"><a href="#cb2-486" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Modified subset:"</span>)</span>
+<span id="cb2-487"><a href="#cb2-487" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_subset)</span>
+<span id="cb2-488"><a href="#cb2-488" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Original DataFrame (may or may not be affected):"</span>)</span>
+<span id="cb2-489"><a href="#cb2-489" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
+<span id="cb2-490"><a href="#cb2-490" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-491"><a href="#cb2-491" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-492"><a href="#cb2-492" aria-hidden="true" tabindex="-1"></a>**Best practice 1**: Use <span class="in">`.copy()`</span> explicitly when you want to work with a subset independently:</span>
+<span id="cb2-493"><a href="#cb2-493" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-496"><a href="#cb2-496" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-497"><a href="#cb2-497" aria-hidden="true" tabindex="-1"></a><span class="co"># Safe approach: explicit copy</span></span>
+<span id="cb2-498"><a href="#cb2-498" aria-hidden="true" tabindex="-1"></a>df_safe <span class="op">=</span> df_test[df_test[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">1</span>].copy()</span>
+<span id="cb2-499"><a href="#cb2-499" aria-hidden="true" tabindex="-1"></a>df_safe[<span class="st">'B'</span>] <span class="op">=</span> <span class="dv">999</span></span>
+<span id="cb2-500"><a href="#cb2-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-501"><a href="#cb2-501" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Modified copy:"</span>)</span>
+<span id="cb2-502"><a href="#cb2-502" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_safe)</span>
+<span id="cb2-503"><a href="#cb2-503" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Original DataFrame (unchanged):"</span>)</span>
+<span id="cb2-504"><a href="#cb2-504" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
+<span id="cb2-505"><a href="#cb2-505" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-506"><a href="#cb2-506" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-507"><a href="#cb2-507" aria-hidden="true" tabindex="-1"></a>**Best practice 2**: If you want to modify the original DataFrame directly, use <span class="in">`.loc[]`</span> in a single operation:</span>
+<span id="cb2-508"><a href="#cb2-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-511"><a href="#cb2-511" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-512"><a href="#cb2-512" aria-hidden="true" tabindex="-1"></a><span class="co"># Direct modification using .loc[] (modifies original)</span></span>
+<span id="cb2-513"><a href="#cb2-513" aria-hidden="true" tabindex="-1"></a>df_test.loc[df_test[<span class="st">'A'</span>] <span class="op">&gt;</span> <span class="dv">1</span>, <span class="st">'C'</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb2-514"><a href="#cb2-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-515"><a href="#cb2-515" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"After .loc[] modification:"</span>)</span>
+<span id="cb2-516"><a href="#cb2-516" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_test)</span>
+<span id="cb2-517"><a href="#cb2-517" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-518"><a href="#cb2-518" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-519"><a href="#cb2-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-520"><a href="#cb2-520" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-521"><a href="#cb2-521" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Library <span class="pp">|</span> Default behavior <span class="pp">|</span> How to get a copy <span class="pp">|</span> When it matters <span class="pp">|</span></span>
-<span id="cb2-522"><a href="#cb2-522" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|-----------------|-------------------|-----------------|</span></span>
-<span id="cb2-523"><a href="#cb2-523" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NumPy** | Slicing creates **views** <span class="pp">|</span> Use <span class="in">`.copy()`</span> explicitly <span class="pp">|</span> When modifying slices <span class="pp">|</span></span>
-<span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pandas** <span class="pp">|</span> Complex (depends on operation) <span class="pp">|</span> Use <span class="in">`.copy()`</span> or <span class="in">`.loc[]`</span> <span class="pp">|</span> When subsetting and modifying <span class="pp">|</span></span>
+<span id="cb2-520"><a href="#cb2-520" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Library <span class="pp">|</span> Default behavior <span class="pp">|</span> How to get a copy <span class="pp">|</span> When it matters <span class="pp">|</span></span>
+<span id="cb2-521"><a href="#cb2-521" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------|-----------------|-------------------|-----------------|</span></span>
+<span id="cb2-522"><a href="#cb2-522" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **NumPy** | Slicing creates **views** <span class="pp">|</span> Use <span class="in">`.copy()`</span> explicitly <span class="pp">|</span> When modifying slices <span class="pp">|</span></span>
+<span id="cb2-523"><a href="#cb2-523" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> **Pandas** <span class="pp">|</span> Complex (depends on operation) <span class="pp">|</span> Use <span class="in">`.copy()`</span> or <span class="in">`.loc[]`</span> <span class="pp">|</span> When subsetting and modifying <span class="pp">|</span></span>
+<span id="cb2-524"><a href="#cb2-524" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-525"><a href="#cb2-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interoperability with Plotting</span></span>
-<span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a>While plotting libraries like <span class="in">`matplotlib`</span> can work directly with pandas DataFrames, there are situations where converting to numpy arrays is useful or even necessary.</span>
-<span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-531"><a href="#cb2-531" aria-hidden="true" tabindex="-1"></a>Let's explore when and why you might convert data for plotting purposes.</span>
-<span id="cb2-532"><a href="#cb2-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-533"><a href="#cb2-533" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plotting directly with pandas vs numpy</span></span>
-<span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a>Both approaches work, but have different advantages:</span>
-<span id="cb2-536"><a href="#cb2-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-541"><a href="#cb2-541" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 1: Plotting directly with pandas (column labels preserved)</span></span>
-<span id="cb2-543"><a href="#cb2-543" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
-<span id="cb2-544"><a href="#cb2-544" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a>ax1.plot(df_clean[<span class="st">'id'</span>], df_clean[<span class="st">'score'</span>], <span class="st">'o-'</span>)</span>
-<span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Student ID'</span>)</span>
-<span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Score'</span>)</span>
-<span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Pandas approach'</span>)</span>
-<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-550"><a href="#cb2-550" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 2: Convert to numpy first (more explicit)</span></span>
-<span id="cb2-551"><a href="#cb2-551" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_clean[<span class="st">'id'</span>].to_numpy()</span>
-<span id="cb2-552"><a href="#cb2-552" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_clean[<span class="st">'score'</span>].to_numpy()</span>
-<span id="cb2-553"><a href="#cb2-553" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-554"><a href="#cb2-554" aria-hidden="true" tabindex="-1"></a>ax2.plot(x, y, <span class="st">'o-'</span>)</span>
-<span id="cb2-555"><a href="#cb2-555" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Student ID'</span>)</span>
-<span id="cb2-556"><a href="#cb2-556" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Score'</span>)</span>
-<span id="cb2-557"><a href="#cb2-557" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'NumPy approach'</span>)</span>
-<span id="cb2-558"><a href="#cb2-558" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-559"><a href="#cb2-559" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb2-560"><a href="#cb2-560" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-561"><a href="#cb2-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-562"><a href="#cb2-562" aria-hidden="true" tabindex="-1"></a>Both approaches produce identical plots. The <span class="in">`pandas`</span> approach is more concise for simple plots, while the numpy approach can be clearer when you need the data for other operations.</span>
+<span id="cb2-526"><a href="#cb2-526" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interoperability with Plotting</span></span>
+<span id="cb2-527"><a href="#cb2-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-528"><a href="#cb2-528" aria-hidden="true" tabindex="-1"></a>While plotting libraries like <span class="in">`matplotlib`</span> can work directly with pandas DataFrames, there are situations where converting to numpy arrays is useful or even necessary.</span>
+<span id="cb2-529"><a href="#cb2-529" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-530"><a href="#cb2-530" aria-hidden="true" tabindex="-1"></a>Let's explore when and why you might convert data for plotting purposes.</span>
+<span id="cb2-531"><a href="#cb2-531" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-532"><a href="#cb2-532" aria-hidden="true" tabindex="-1"></a><span class="fu">### Plotting directly with pandas vs numpy</span></span>
+<span id="cb2-533"><a href="#cb2-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-534"><a href="#cb2-534" aria-hidden="true" tabindex="-1"></a>Both approaches work, but have different advantages:</span>
+<span id="cb2-535"><a href="#cb2-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-538"><a href="#cb2-538" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-539"><a href="#cb2-539" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-540"><a href="#cb2-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-541"><a href="#cb2-541" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 1: Plotting directly with pandas (column labels preserved)</span></span>
+<span id="cb2-542"><a href="#cb2-542" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">4</span>))</span>
+<span id="cb2-543"><a href="#cb2-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-544"><a href="#cb2-544" aria-hidden="true" tabindex="-1"></a>ax1.plot(df_clean[<span class="st">'id'</span>], df_clean[<span class="st">'score'</span>], <span class="st">'o-'</span>)</span>
+<span id="cb2-545"><a href="#cb2-545" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'Student ID'</span>)</span>
+<span id="cb2-546"><a href="#cb2-546" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Score'</span>)</span>
+<span id="cb2-547"><a href="#cb2-547" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Pandas approach'</span>)</span>
+<span id="cb2-548"><a href="#cb2-548" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-549"><a href="#cb2-549" aria-hidden="true" tabindex="-1"></a><span class="co"># Approach 2: Convert to numpy first (more explicit)</span></span>
+<span id="cb2-550"><a href="#cb2-550" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> df_clean[<span class="st">'id'</span>].to_numpy()</span>
+<span id="cb2-551"><a href="#cb2-551" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> df_clean[<span class="st">'score'</span>].to_numpy()</span>
+<span id="cb2-552"><a href="#cb2-552" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-553"><a href="#cb2-553" aria-hidden="true" tabindex="-1"></a>ax2.plot(x, y, <span class="st">'o-'</span>)</span>
+<span id="cb2-554"><a href="#cb2-554" aria-hidden="true" tabindex="-1"></a>ax2.set_xlabel(<span class="st">'Student ID'</span>)</span>
+<span id="cb2-555"><a href="#cb2-555" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Score'</span>)</span>
+<span id="cb2-556"><a href="#cb2-556" aria-hidden="true" tabindex="-1"></a>ax2.set_title(<span class="st">'NumPy approach'</span>)</span>
+<span id="cb2-557"><a href="#cb2-557" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-558"><a href="#cb2-558" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb2-559"><a href="#cb2-559" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-560"><a href="#cb2-560" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-561"><a href="#cb2-561" aria-hidden="true" tabindex="-1"></a>Both approaches produce identical plots. The <span class="in">`pandas`</span> approach is more concise for simple plots, while the numpy approach can be clearer when you need the data for other operations.</span>
+<span id="cb2-562"><a href="#cb2-562" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-563"><a href="#cb2-563" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-564"><a href="#cb2-564" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-565"><a href="#cb2-565" aria-hidden="true" tabindex="-1"></a>For example, create contour plots to represent fields over a grid can be more straightforward using numpy arrays. </span>
-<span id="cb2-566"><a href="#cb2-566" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-567"><a href="#cb2-567" aria-hidden="true" tabindex="-1"></a>In the example below, we take tabulated data, arrange it into a grid using a pivot table, with x and y coordinates as columns and rows, get (x,y) pairs via <span class="in">`numpy.meshgrid()`</span>, and then plot the contour using <span class="in">`matplotlib`</span>.   </span>
-<span id="cb2-568"><a href="#cb2-568" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-571"><a href="#cb2-571" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
-<span id="cb2-572"><a href="#cb2-572" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Creating a contour map from gridded data</span></span>
-<span id="cb2-573"><a href="#cb2-573" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-574"><a href="#cb2-574" aria-hidden="true" tabindex="-1"></a><span class="co"># Load temperature measurements from a 5x5 grid</span></span>
-<span id="cb2-575"><a href="#cb2-575" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'temperature_grid.csv'</span>)</span>
-<span id="cb2-576"><a href="#cb2-576" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.head(<span class="dv">10</span>))</span>
-<span id="cb2-577"><a href="#cb2-577" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-578"><a href="#cb2-578" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot to create a 2D grid structure</span></span>
-<span id="cb2-579"><a href="#cb2-579" aria-hidden="true" tabindex="-1"></a>temp_grid <span class="op">=</span> data.pivot(index<span class="op">=</span><span class="st">'y_position'</span>, columns<span class="op">=</span><span class="st">'x_position'</span>, values<span class="op">=</span><span class="st">'temperature'</span>)</span>
-<span id="cb2-580"><a href="#cb2-580" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Temperature grid:"</span>)</span>
-<span id="cb2-581"><a href="#cb2-581" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temp_grid)</span>
-<span id="cb2-582"><a href="#cb2-582" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-583"><a href="#cb2-583" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to numpy array for contour plotting</span></span>
-<span id="cb2-584"><a href="#cb2-584" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> temp_grid.to_numpy()</span>
-<span id="cb2-585"><a href="#cb2-585" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(temp_grid.columns, temp_grid.index)</span>
-<span id="cb2-586"><a href="#cb2-586" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-587"><a href="#cb2-587" aria-hidden="true" tabindex="-1"></a><span class="co"># Create contour plot (requires numpy arrays)</span></span>
-<span id="cb2-588"><a href="#cb2-588" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb2-589"><a href="#cb2-589" aria-hidden="true" tabindex="-1"></a>contour <span class="op">=</span> ax.contourf(X, Y, Z, levels<span class="op">=</span><span class="dv">15</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
-<span id="cb2-590"><a href="#cb2-590" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'X Position (cm)'</span>)</span>
-<span id="cb2-591"><a href="#cb2-591" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Y Position (cm)'</span>)</span>
-<span id="cb2-592"><a href="#cb2-592" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Temperature Distribution (°C)'</span>)</span>
-<span id="cb2-593"><a href="#cb2-593" aria-hidden="true" tabindex="-1"></a>plt.colorbar(contour, label<span class="op">=</span><span class="st">'Temperature (°C)'</span>)</span>
-<span id="cb2-594"><a href="#cb2-594" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-595"><a href="#cb2-595" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-564"><a href="#cb2-564" aria-hidden="true" tabindex="-1"></a>For example, create contour plots to represent fields over a grid can be more straightforward using numpy arrays. </span>
+<span id="cb2-565"><a href="#cb2-565" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-566"><a href="#cb2-566" aria-hidden="true" tabindex="-1"></a>In the example below, we take tabulated data, arrange it into a grid using a pivot table, with x and y coordinates as columns and rows, get (x,y) pairs via <span class="in">`numpy.meshgrid()`</span>, and then plot the contour using <span class="in">`matplotlib`</span>.   </span>
+<span id="cb2-567"><a href="#cb2-567" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-570"><a href="#cb2-570" aria-hidden="true" tabindex="-1"></a><span class="in">```{pyodide}</span></span>
+<span id="cb2-571"><a href="#cb2-571" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Creating a contour map from gridded data</span></span>
+<span id="cb2-572"><a href="#cb2-572" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-573"><a href="#cb2-573" aria-hidden="true" tabindex="-1"></a><span class="co"># Load temperature measurements from a 5x5 grid</span></span>
+<span id="cb2-574"><a href="#cb2-574" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> pd.read_csv(<span class="st">'temperature_grid.csv'</span>)</span>
+<span id="cb2-575"><a href="#cb2-575" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.head(<span class="dv">10</span>))</span>
+<span id="cb2-576"><a href="#cb2-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-577"><a href="#cb2-577" aria-hidden="true" tabindex="-1"></a><span class="co"># Pivot to create a 2D grid structure</span></span>
+<span id="cb2-578"><a href="#cb2-578" aria-hidden="true" tabindex="-1"></a>temp_grid <span class="op">=</span> data.pivot(index<span class="op">=</span><span class="st">'y_position'</span>, columns<span class="op">=</span><span class="st">'x_position'</span>, values<span class="op">=</span><span class="st">'temperature'</span>)</span>
+<span id="cb2-579"><a href="#cb2-579" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Temperature grid:"</span>)</span>
+<span id="cb2-580"><a href="#cb2-580" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(temp_grid)</span>
+<span id="cb2-581"><a href="#cb2-581" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-582"><a href="#cb2-582" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert to numpy array for contour plotting</span></span>
+<span id="cb2-583"><a href="#cb2-583" aria-hidden="true" tabindex="-1"></a>Z <span class="op">=</span> temp_grid.to_numpy()</span>
+<span id="cb2-584"><a href="#cb2-584" aria-hidden="true" tabindex="-1"></a>X, Y <span class="op">=</span> np.meshgrid(temp_grid.columns, temp_grid.index)</span>
+<span id="cb2-585"><a href="#cb2-585" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-586"><a href="#cb2-586" aria-hidden="true" tabindex="-1"></a><span class="co"># Create contour plot (requires numpy arrays)</span></span>
+<span id="cb2-587"><a href="#cb2-587" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
+<span id="cb2-588"><a href="#cb2-588" aria-hidden="true" tabindex="-1"></a>contour <span class="op">=</span> ax.contourf(X, Y, Z, levels<span class="op">=</span><span class="dv">15</span>, cmap<span class="op">=</span><span class="st">'coolwarm'</span>)</span>
+<span id="cb2-589"><a href="#cb2-589" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'X Position (cm)'</span>)</span>
+<span id="cb2-590"><a href="#cb2-590" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Y Position (cm)'</span>)</span>
+<span id="cb2-591"><a href="#cb2-591" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Temperature Distribution (°C)'</span>)</span>
+<span id="cb2-592"><a href="#cb2-592" aria-hidden="true" tabindex="-1"></a>plt.colorbar(contour, label<span class="op">=</span><span class="st">'Temperature (°C)'</span>)</span>
+<span id="cb2-593"><a href="#cb2-593" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-594"><a href="#cb2-594" aria-hidden="true" tabindex="-1"></a></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
