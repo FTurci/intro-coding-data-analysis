@@ -4376,70 +4376,120 @@
     "href": "16/exercises_pandas_vs_numpy.html",
     "title": "Numpy vs Pandas: Exercises",
     "section": "",
-    "text": "We explore a numerical dataset freely avaible under MIT license on Kaggle, a platform for data science competitions and datasets.\nThe dataset focuses on solar system objects and contains several attributes."
+    "text": "We explore a numerical dataset freely avaible under MIT license on Kaggle, a platform for data science competitions and datasets.\nThe dataset focuses on solar system objects and contains several attributes.",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-1-extracting-numpy-arrays",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-1-extracting-numpy-arrays",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 1: Extracting numpy arrays",
-    "text": "Exercise 1: Extracting numpy arrays\n\nSelect the columns semimajorAxis, density, and gravity from the DataFrame df and convert them into a numpy array named np_solar_data.\nThen, design a test (e.g. using an if/else statement or an assert statement) to verify that np_solar_data is indeed a numpy array. Notice that simply printing the type of np_solar_data is not a test!\n\nReminder. An assert statement is a way to test if a condition in your code returns True. If not, the program will raise an AssertionError.\nIt uses the keyword assert followed by the condition to test and an optional error message.\nassert condition, \"Error message if condition is False\"\nHint. If the conversion to numpy array is correct, then the type of np_solar_data should be np.ndarray"
+    "text": "Exercise 1: Extracting numpy arrays\n\nSelect the columns semimajorAxis, density, and gravity from the DataFrame df and convert them into a numpy array named np_solar_data.\nThen, design a test (e.g. using an if/else statement or an assert statement) to verify that np_solar_data is indeed a numpy array. Notice that simply printing the type of np_solar_data is not a test!\n\nReminder. An assert statement is a way to test if a condition in your code returns True. If not, the program will raise an AssertionError.\nIt uses the keyword assert followed by the condition to test and an optional error message.\nassert condition, \"Error message if condition is False\"\nHint. If the conversion to numpy array is correct, then the type of np_solar_data should be np.ndarray",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-2-extracting-basic-statistics",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-2-extracting-basic-statistics",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 2: Extracting basic statistics",
-    "text": "Exercise 2: Extracting basic statistics\n\nUsing the numpy array np_solar_data created in Exercise 1, compute the mean and standard deviation for each of the three columns: semimajorAxis, density, and gravity. Store the results in two separate numpy arrays named mean_values and std_values.\nCan you find way to compute these same statistics from the original DataFrame df without converting it to a numpy array? Store these results in two separate pandas Series named mean_series and std_series.\nInspect the stand deviations in the numpy and pandas result. Can you choose parameters such that the results are identical?"
+    "text": "Exercise 2: Extracting basic statistics\n\nUsing the numpy array np_solar_data created in Exercise 1, compute the mean and standard deviation for each of the three columns: semimajorAxis, density, and gravity. Store the results in two separate numpy arrays named mean_values and std_values.\nCan you find way to compute these same statistics from the original DataFrame df without converting it to a numpy array? Store these results in two separate pandas Series named mean_series and std_series.\nInspect the stand deviations in the numpy and pandas result. Can you choose parameters such that the results are identical?",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-3-understanding-pandas-settingwithcopywarning",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-3-understanding-pandas-settingwithcopywarning",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 3: Understanding Pandas SettingWithCopyWarning",
-    "text": "Exercise 3: Understanding Pandas SettingWithCopyWarning\nYou want to analyze only the rocky planets by creating a subset and adding a calculated column.\nTask: - Create a subset rocky_planets from df filtering for isPlanet == True and density &gt; 3 - Add a new column mass_estimate to rocky_planets calculated as density * gravity - Observe any warnings that pandas displays - What does the warning mean? Why did it appear?"
+    "text": "Exercise 3: Understanding Pandas SettingWithCopyWarning\nYou want to analyze only the rocky planets by creating a subset and adding a calculated column.\nTask: - Create a subset rocky_planets from df filtering for isPlanet == True and density &gt; 3 - Add a new column mass_estimate to rocky_planets calculated as density * gravity - Observe any warnings that pandas displays - What does the warning mean? Why did it appear?",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-4-when-views-and-copies-actually-break-your-code",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-4-when-views-and-copies-actually-break-your-code",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 4: When Views and Copies Actually Break Your Code",
-    "text": "Exercise 4: When Views and Copies Actually Break Your Code\nThe warning is nice, but let’s see actual unexpected behavior! You’ll try to add a column categorizing planets as inner or outer solar system objects, but the code won’t work as expected.\nNote. There are two types of chained indexing, both problematic:\n\nColumn-then-row: df['column'][condition] = value (select column, then filter)\nRow-then-column: df[condition]['column'] = value (filter rows, then select column)\n\nBoth create intermediate objects (potential copies) before assignment, so modifications may be lost!\n\nReload the DataFrame: df = pd.read_csv(\"kaggle_solar/sol_data.csv\")\nFilter for planets: planets = df[df['isPlanet'] == True].copy()\nInitialize a column: planets['outer_planet'] = False\nTry row-then-column chained indexing: planets[planets['semimajorAxis'] &gt; 5]['outer_planet'] = TrueNote: Objects with semimajorAxis &gt; 5 AU are beyond Jupiter’s orbit (outer solar system).\nCheck if it worked, then use .loc[] to do it correctly"
+    "text": "Exercise 4: When Views and Copies Actually Break Your Code\nThe warning is nice, but let’s see actual unexpected behavior! You’ll try to add a column categorizing planets as inner or outer solar system objects, but the code won’t work as expected.\nNote. There are two types of chained indexing, both problematic:\n\nColumn-then-row: df['column'][condition] = value (select column, then filter)\nRow-then-column: df[condition]['column'] = value (filter rows, then select column)\n\nBoth create intermediate objects (potential copies) before assignment, so modifications may be lost!\n\nReload the DataFrame: df = pd.read_csv(\"kaggle_solar/sol_data.csv\")\nFilter for planets: planets = df[df['isPlanet'] == True].copy()\nInitialize a column: planets['outer_planet'] = False\nTry row-then-column chained indexing: planets[planets['semimajorAxis'] &gt; 5]['outer_planet'] = TrueNote: Objects with semimajorAxis &gt; 5 AU are beyond Jupiter’s orbit (outer solar system).\nCheck if it worked, then use .loc[] to do it correctly",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-5-extracting-data-and-processing-it-with-numpy-and-matpltolib",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-5-extracting-data-and-processing-it-with-numpy-and-matpltolib",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 5: extracting data and processing it with numpy and matpltolib",
-    "text": "Exercise 5: extracting data and processing it with numpy and matpltolib\nWe now want to extract data and process it with numpy functions.\n\nUsing numpy or pandas extract the escape velocity and the mass in kg for all the objects and plot them in a scatter plot using matplotlib.\nConsider that th escape velocity can be calculated as follows:\n\n\\[\nv_{e s c}=\\sqrt{2 g R}\n\\]\nwhere: - \\(g\\) is the surface gravity - \\(R\\) is the radius of the object in\n\nImprove your plotting to illustrate this relationship explicitly (e.g. by changing the scales, plotting guides to the eye, etc.). Note that the radius is in km, the escape veclocity is in m/s, and the gravity is in m/s²."
+    "text": "Exercise 5: extracting data and processing it with numpy and matpltolib\nWe now want to extract data and process it with numpy functions.\n\nUsing numpy or pandas extract the escape velocity and the mass in kg for all the objects and plot them in a scatter plot using matplotlib.\nConsider that th escape velocity can be calculated as follows:\n\n\\[\nv_{e s c}=\\sqrt{2 g R}\n\\]\nwhere: - \\(g\\) is the surface gravity - \\(R\\) is the radius of the object in\n\nImprove your plotting to illustrate this relationship explicitly (e.g. by changing the scales, plotting guides to the eye, etc.). Note that the radius is in km, the escape veclocity is in m/s, and the gravity is in m/s².",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-6-string-operations---pandas-vs-numpy",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-6-string-operations---pandas-vs-numpy",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 6: String Operations - Pandas vs NumPy",
-    "text": "Exercise 6: String Operations - Pandas vs NumPy\nExtract planet names and convert them to uppercase using both pandas and numpy approaches.\nTask: - Filter the DataFrame to get only planets (where isPlanet == True) - Extract the planet names (column eName) using pandas methods and convert them to uppercase (UPPERCASE). Store this in a variable named pandas_upper_names - Now try to do the same using numpy: convert the eName column to a numpy array and apply string operations:\n- you can use a for loop to iterate through the names and convert them to uppercase (e.g. via list comprehension)\n- or use `numpy.char` sub module for vectorized string operations\n\nWhich approach is easier for string operations?"
+    "text": "Exercise 6: String Operations - Pandas vs NumPy\nExtract planet names and convert them to uppercase using both pandas and numpy approaches.\nTask: - Filter the DataFrame to get only planets (where isPlanet == True) - Extract the planet names (column eName) using pandas methods and convert them to uppercase (UPPERCASE). Store this in a variable named pandas_upper_names - Now try to do the same using numpy: convert the eName column to a numpy array and apply string operations:\n- you can use a for loop to iterate through the names and convert them to uppercase (e.g. via list comprehension)\n- or use `numpy.char` sub module for vectorized string operations\n\nWhich approach is easier for string operations?",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-7-grouping-and-aggregation---pandas-vs-numpy",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-7-grouping-and-aggregation---pandas-vs-numpy",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 7: Grouping and Aggregation - Pandas vs NumPy",
-    "text": "Exercise 7: Grouping and Aggregation - Pandas vs NumPy\nCalculate the mean density for planets vs non-planets using pandas groupby, then try to replicate this in numpy.\nTask: - Use pandas groupby() to compute the mean density grouped by isPlanet (True/False) - Now try to replicate this result using only numpy arrays: - Convert the relevant columns to numpy arrays - Manually separate the data into two groups (planets and non-planets) - Calculate the mean for each group\n\nWhich approach is more convenient? What happens if you need to group by multiple columns?"
+    "text": "Exercise 7: Grouping and Aggregation - Pandas vs NumPy\nCalculate the mean density for planets vs non-planets using pandas groupby, then try to replicate this in numpy.\nTask: - Use pandas groupby() to compute the mean density grouped by isPlanet (True/False) - Now try to replicate this result using only numpy arrays: - Convert the relevant columns to numpy arrays - Manually separate the data into two groups (planets and non-planets) - Calculate the mean for each group\n\nWhich approach is more convenient? What happens if you need to group by multiple columns?",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-8-correlation-matrix---pandas-vs-numpy",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-8-correlation-matrix---pandas-vs-numpy",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 8: Correlation Matrix - Pandas vs NumPy",
-    "text": "Exercise 8: Correlation Matrix - Pandas vs NumPy\nCalculate the correlation matrix for physical properties using pandas and numpy.\nBackground:\nThe covariance between two variables \\(X\\) and \\(Y\\) measures how they vary together: \\[\\text{cov}(X,Y) = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})\\]\nThe correlation coefficient normalizes covariance by the standard deviations: \\[r_{XY} = \\frac{\\text{cov}(X,Y)}{\\sigma_X \\sigma_Y}\\] where \\(\\sigma_X = \\sqrt{\\frac{1}{n-1}\\sum(x_i - \\bar{x})^2}\\) is the standard deviation.\nCorrelation ranges from -1 (perfect negative) to +1 (perfect positive), with 0 meaning no linear relationship.\nStandardization: Transform each variable to have mean = 0 and standard deviation = 1: \\[z_i = \\frac{x_i - \\bar{x}}{\\sigma_x}\\]\nAfter standardization, the correlation matrix can be computed using matrix multiplication.\nTask:\n\nUse pandas .corr() to compute the correlation matrix for density, gravity, and meanRadius\nNow replicate this using numpy by following these steps:\n\nExtract data: Get the three columns as an \\(n \\times 3\\) matrix \\(X\\) (n rows/objects, 3 columns/variables)\nCenter the data: Subtract the mean of each column to get \\(X_{\\text{centered}}\\) (remember that you can use the axis parameter in numpy functions)\nStandardize: Divide each centered column by its standard deviation to get \\(Z\\) (the standardized matrix)\nCompute correlation: The correlation matrix is \\(R = \\frac{1}{n-1} Z^T Z\\) (a \\(3 \\times 3\\) matrix)\nCompare with the pandas result\n\n\nNote: The matrix \\(Z\\) has shape \\((n \\times 3)\\), so \\(Z^T\\) has shape \\((3 \\times n)\\), and their product gives a \\((3 \\times 3)\\) correlation matrix."
+    "text": "Exercise 8: Correlation Matrix - Pandas vs NumPy\nCalculate the correlation matrix for physical properties using pandas and numpy.\nBackground:\nThe covariance between two variables \\(X\\) and \\(Y\\) measures how they vary together: \\[\\text{cov}(X,Y) = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})(y_i - \\bar{y})\\]\nThe correlation coefficient normalizes covariance by the standard deviations: \\[r_{XY} = \\frac{\\text{cov}(X,Y)}{\\sigma_X \\sigma_Y}\\] where \\(\\sigma_X = \\sqrt{\\frac{1}{n-1}\\sum(x_i - \\bar{x})^2}\\) is the standard deviation.\nCorrelation ranges from -1 (perfect negative) to +1 (perfect positive), with 0 meaning no linear relationship.\nStandardization: Transform each variable to have mean = 0 and standard deviation = 1: \\[z_i = \\frac{x_i - \\bar{x}}{\\sigma_x}\\]\nAfter standardization, the correlation matrix can be computed using matrix multiplication.\nTask:\n\nUse pandas .corr() to compute the correlation matrix for density, gravity, and meanRadius\nNow replicate this using numpy by following these steps:\n\nExtract data: Get the three columns as an \\(n \\times 3\\) matrix \\(X\\) (n rows/objects, 3 columns/variables)\nCenter the data: Subtract the mean of each column to get \\(X_{\\text{centered}}\\) (remember that you can use the axis parameter in numpy functions)\nStandardize: Divide each centered column by its standard deviation to get \\(Z\\) (the standardized matrix)\nCompute correlation: The correlation matrix is \\(R = \\frac{1}{n-1} Z^T Z\\) (a \\(3 \\times 3\\) matrix)\nCompare with the pandas result\n\n\nNote: The matrix \\(Z\\) has shape \\((n \\times 3)\\), so \\(Z^T\\) has shape \\((3 \\times n)\\), and their product gives a \\((3 \\times 3)\\) correlation matrix.",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "16/exercises_pandas_vs_numpy.html#exercise-9-creating-a-theoretical-model-visualization-with-numpy",
     "href": "16/exercises_pandas_vs_numpy.html#exercise-9-creating-a-theoretical-model-visualization-with-numpy",
     "title": "Numpy vs Pandas: Exercises",
     "section": "Exercise 9: Creating a Theoretical Model Visualization with NumPy",
-    "text": "Exercise 9: Creating a Theoretical Model Visualization with NumPy\nCreate a contour plot showing how escape velocity varies with surface gravity and radius, then overlay real solar system objects.\nScientific Background:\nFrom \\(v_{esc} = \\sqrt{2gR}\\), we can predict escape velocity for any combination of surface gravity \\(g\\) and radius \\(R\\). This creates a “phase space” showing where different types of objects fall.\nTask:\n\nCreate a grid of theoretical values using numpy:\n\nUse np.linspace() to create arrays of gravity values (0.1 to 30 m/s²) and radius values (100 to 100,000 km)\nUse np.meshgrid() to create 2D grids for both variables\nCalculate theoretical escape velocity on this grid using the formula (remember unit conversions!)\n\nCreate a contour plot:\n\nUse plt.contourf() or plt.contour() to plot the theoretical escape velocity\nAdd contour labels showing escape velocity values\nFilter the dataset for the 8 true planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune\nOverlay these planets on the contour plot using plt.scatter()\n\nInterpretation:\n\nDo the 8 planets fall on the theoretical contours?\nCan you identify different groups among the planets (rocky vs gas/ice giants)?\n\n\nUse the matplotlib documentation at https://matplotlib.org/stable/contents.html if needed."
+    "text": "Exercise 9: Creating a Theoretical Model Visualization with NumPy\nCreate a contour plot showing how escape velocity varies with surface gravity and radius, then overlay real solar system objects.\nScientific Background:\nFrom \\(v_{esc} = \\sqrt{2gR}\\), we can predict escape velocity for any combination of surface gravity \\(g\\) and radius \\(R\\). This creates a “phase space” showing where different types of objects fall.\nTask:\n\nCreate a grid of theoretical values using numpy:\n\nUse np.linspace() to create arrays of gravity values (0.1 to 30 m/s²) and radius values (100 to 100,000 km)\nUse np.meshgrid() to create 2D grids for both variables\nCalculate theoretical escape velocity on this grid using the formula (remember unit conversions!)\n\nCreate a contour plot:\n\nUse plt.contourf() or plt.contour() to plot the theoretical escape velocity\nAdd contour labels showing escape velocity values\nFilter the dataset for the 8 true planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune\nOverlay these planets on the contour plot using plt.scatter()\n\nInterpretation:\n\nDo the 8 planets fall on the theoretical contours?\nCan you identify different groups among the planets (rocky vs gas/ice giants)?\n\n\nUse the matplotlib documentation at https://matplotlib.org/stable/contents.html if needed.",
+    "crumbs": [
+      "Home",
+      "16 Pandas vs Numpy",
+      "Numpy vs Pandas: Exercises"
+    ]
   },
   {
     "objectID": "10/exercises_multid.html",
