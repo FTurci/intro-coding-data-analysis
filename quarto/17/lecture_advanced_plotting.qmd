@@ -1,6 +1,5 @@
 ---
 title: Advanced Plotting with Python
-jupyter: python3
 ---
 
 
@@ -287,6 +286,17 @@ plt.show()
 ### Multi-plot Grids
 
 The `FacetGrid` function allows you to create grids of plots, one for each value of a categorical variable. This is powerful for comparing patterns across different subsets of data.
+
+To use a `FacetGrid`, you first create the grid object and then map a plotting function to it. For example, you can create a grid of scatter plots for different species in the Iris dataset.
+
+In particuar, one uses the method `map()` to apply a plotting function to each subset of the data defined by the grid. The `map()` method takes a plotting function (like `sns.scatterplot`) and the variables to plot as arguments. It applies the function to each subset of the data corresponding to the facets defined in the grid.
+
+For example, if you have a `FacetGrid` that is faceted by a categorical variable (e.g., species), and you want to create a scatter plot of two numerical variables (e.g., sepal length and sepal width) for each species, you would use:
+
+```python
+g = sns.FacetGrid(iris, col='species')
+g.map(sns.scatterplot, 'sepal_length', 'sepal_width')
+``` 
 
 ```{pyodide}
 #| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
