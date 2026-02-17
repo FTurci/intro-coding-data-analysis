@@ -1,10 +1,6 @@
 ---
 title: Practicing plotting with `pandas`
-jupyter:
-  kernelspec:
-    display_name: 3.11.1
-    language: python
-    name: python3
+jupyter: python3
 ---
 
 
@@ -31,6 +27,7 @@ Read in the dataset using `pandas`.
 Then, pivot the data so that you have years as the index, countries as the columns, and deforestation as the values.
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 import pandas as pd
 import requests
@@ -42,6 +39,7 @@ df
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 df_pivot = df.pivot(index="Year", columns="Entity", values="Deforestation")
 df_pivot
@@ -51,7 +49,7 @@ df_pivot
 
 The datasets contains rates in ha/year (hectares per year) for many different countries, as well as the various regions including the world as a whole.
 
-Find the names of such regions in the dataset and create a plot with multiple lines, one for each region, showing deforestation over time. Include also the world as a whole.
+Find the names of such geographical regions (i.e. exclude country names)  in the dataset and create a plot with multiple lines, one for each region, showing deforestation over time. Include also the world as a whole.
 
 **Plot requirements:**
 
@@ -69,6 +67,7 @@ Find the names of such regions in the dataset and create a plot with multiple li
 
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # the unique codes are
 # clearly only the WORLD has its own code OWID_WRL
@@ -77,6 +76,7 @@ df['Code'].unique()
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # Find entities without country codes - these are typically regions
 regions = df[df['Code'].isna()]['Entity'].unique()
@@ -87,6 +87,7 @@ all_regions = list(regions) + ['World']
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 markers = ['o', 's', '^', 'v', 'D', 'p', '*', 'h', 'x', '+', 'd', 'H']
 
@@ -110,6 +111,7 @@ Pick now year 2020 and create a pie chart showing the share of deforestation for
 - You can improve the rendering of the pie chart by adding formatted percentage labels with the `autopct` to plot using the `pie` kind.
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 #SOLUTION
 continents = ['Africa', 'Asia', 'Europe', 'North America', 'Oceania', 'South America']
 year = 2020
@@ -131,6 +133,7 @@ Create a stacked area plot showing how deforestation is distributed across conti
 **Hint:** Use `kind='area'` and set `stacked=True`. 
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 
 # Filter for continental regions and positive deforestation values
@@ -164,6 +167,7 @@ where the `~` operator negates the boolean condition.
 - You can use `barh` as the kind of plot to create horizontal bar plots.
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 year = 2010
 
@@ -174,6 +178,7 @@ top_10
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 top_10.plot(kind='barh', x='Entity', y='Deforestation', figsize=(10, 6), 
             title=f"Top 10 Countries by Deforestation in {year}", 
@@ -213,12 +218,14 @@ Finally, create a bar plot showing the top 10 countries with the highest defores
 - When merging, provide a list of common columns to the `on` argument. In this case, the common columns are likely to be `Entity`, `Year` and `Code`.
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 df_areas = pd.read_csv("https://ourworldindata.org/grapher/land-area-km.csv")
 df_areas
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 df_merged = pd.merge(df, df_areas, on=['Entity',"Year","Code"])
 
@@ -226,11 +233,13 @@ df_merged
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 df_merged['Fraction of deforested surface'] = df_merged['Deforestation'] / (df_merged['Land area (sq. km)'] * 100)
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 df_no_regions = df_merged[~df_merged['Entity'].isin(all_regions)]
 
@@ -239,6 +248,7 @@ top_10_def_area
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 top_10_def_area.plot(kind='barh', x='Entity', y='Fraction of deforested surface', figsize=(10, 6), 
             title=f"Top 10 Countries by Deforestation in {year}", 
@@ -252,6 +262,7 @@ We can further extend our analysis by bringing in data on vegetable oil producti
 First, we load the vegetable oil production dataset from Our World in Data, which contains production data for various types of oils (palm oil, soybean oil, sunflower oil, etc.).
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 import pandas as pd
 
@@ -266,6 +277,7 @@ df_oil
 Since deforestation is driven by various oil crops (not just palm oil), **sum all vegetable oil production types to get a total for each country and year** and store it as a new column. This provides a more comprehensive view of agricultural oil pressure.
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # sum all vegetable oils
 
@@ -283,6 +295,7 @@ To get a by country view of vegetable oil production, pivot the vegetable oil da
 
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # Pivot by country
 df_total_oil = df_oil.pivot(index="Year", columns="Entity", values="Total_Oil_Production")
@@ -296,6 +309,7 @@ df_total_oil
 Filter to include only countries that appear in both the top 10 deforestation list (from 2010, Exercise 5) AND have oil production data.
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # take a selction of countires presnet in the top deforestation and in teh oil data
 
@@ -315,12 +329,14 @@ Produce two plots:
 - then a smoothened version of the same plot (using a rolling mean with a window of 10 years).
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # Make values relative to year 1990 (base year = 100)
 df_total_oil_relative = (df_total_oil / df_total_oil.loc[1990]) * 100
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # Plot relative growth
 df_total_oil_relative[country_selection].plot(figsize=(12, 6),
@@ -330,6 +346,7 @@ df_total_oil_relative[country_selection].plot(figsize=(12, 6),
 ```
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 # smoothened
 df_total_oil_relative_smooth = df_total_oil_relative.rolling(window=10, center=True).mean()
@@ -359,6 +376,7 @@ Both lines should be on the same plot with the same y-axis scale (since both use
 - You may want to create a new dataframe using pd.DataFrame and a suitable dictionary
 
 ```{pyodide}
+#| caption: "▶ Ctrl/Cmd+Enter | ⇥ Ctrl/Cmd+] | ⇤ Ctrl/Cmd+["
 # SOLUTION
 
 # Normalize deforestation to 1990 baseline

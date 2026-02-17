@@ -33,7 +33,7 @@ Then, pivot the data so that you have years as the index, countries as the colum
 
 The datasets contains rates in ha/year (hectares per year) for many different countries, as well as the various regions including the world as a whole.
 
-Find the names of such regions in the dataset and create a plot with multiple lines, one for each region, showing deforestation over time. Include also the world as a whole.
+Find the names of such geographical regions in the dataset and create a plot with multiple lines, one for each region, showing deforestation over time. Include also the world as a whole.
 
 **Plot requirements:**
 
