@@ -1813,14 +1813,24 @@
     "href": "21/lecture_reflections.html",
     "title": "Reflections",
     "section": "",
-    "text": "This year we explored the Python programming language and how to use it to analyze data.\nWe covered the following topics:\nThe journey entailed a lot of syntax and semantics of Python, but we also touched on the philosophy of programming and data analysis. We discussed how to think about problems, how to break them down into smaller pieces, and how to communicate our findings effectively.\nThese skills come to fruit in Project 4, where you will apply what you’ve learned to a real-world dataset and write a report on your findings. This project will be an opportunity to demonstrate your ability to analyze data, draw conclusions, and communicate your r"
+    "text": "This year we explored the Python programming language and how to use it to analyze data.\nWe covered the following topics:\nThe journey entailed a lot of syntax and semantics of Python, but we also touched on the philosophy of programming and data analysis. We discussed how to think about problems, how to break them down into smaller pieces, and how to communicate our findings effectively.\nThese skills come to fruit in Project 4, where you will apply what you’ve learned to a real-world dataset and write a report on your findings. This project will be an opportunity to demonstrate your ability to analyze data, draw conclusions, and communicate your r",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Reflections"
+    ]
   },
   {
     "objectID": "21/lecture_reflections.html#conclusion",
     "href": "21/lecture_reflections.html#conclusion",
     "title": "Reflections",
     "section": "Conclusion",
-    "text": "Conclusion\nWe hope you have enjoyed this course and you will continue to explore the fascinating world of data analysis.\nWe remain available to support you with any questions you have about the content of this course and more in general if you want to continue learning about data analysis and scientific computing. You can reach out to us via email."
+    "text": "Conclusion\nWe hope you have enjoyed this course and you will continue to explore the fascinating world of data analysis.\nWe remain available to support you with any questions you have about the content of this course and more in general if you want to continue learning about data analysis and scientific computing. You can reach out to us via email.",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Reflections"
+    ]
   },
   {
     "objectID": "21/exercises_reflections-solutions.html#exercise-2-saving-figures",
@@ -5518,70 +5528,120 @@
     "href": "21/exercises_reflections.html",
     "title": "Revision exercises",
     "section": "",
-    "text": "These exercises are an occasion to consolidate some techniues and see some of the potential ahead (e.g. using scipy).)\nEach exercise has a short description, a PROVIDED code cell with data or setup you should not modify, and a COMPLETE THIS CODE cell where you write your solution."
+    "text": "These exercises are an occasion to consolidate some techniues and see some of the potential ahead (e.g. using scipy).)\nEach exercise has a short description, a PROVIDED code cell with data or setup you should not modify, and a COMPLETE THIS CODE cell where you write your solution.",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-1-customising-plot-styles",
     "href": "21/exercises_reflections.html#exercise-1-customising-plot-styles",
     "title": "Revision exercises",
     "section": "Exercise 1: Customising Plot Styles",
-    "text": "Exercise 1: Customising Plot Styles\nObjective: Practice using matplotlib’s colour, linestyle, and marker options to produce a well-formatted figure.\nMatplotlib supports a wide range of style options:\n\nColours: named strings (\"red\", \"midnightblue\"), greyscale fractions (\"0.5\"), hex codes, or default cycle colours (\"C0\", \"C1\", \"C2\"). See the colour reference.\nLinestyles: \"-\" (solid), \"--\" (dashed), \":\" (dotted), \"-.\" (dash-dot). See the linestyle gallery.\nMarkers: \"o\" (circle), \"x\" (cross), \".\" (point), \"^\" (triangle), etc. See the marker reference.\n\nTask: The provided cell below defines three wave signals. Create a single figure with all three curves on the same axes:\n\ny1 — red, dashed line with circle markers (\"o\")\ny2 — midnightblue, solid line, no markers\ny3 — grey (\"0.5\"), dotted line with cross markers (\"x\")\n\nAdd a title, x-label, y-label, and a legend."
+    "text": "Exercise 1: Customising Plot Styles\nObjective: Practice using matplotlib’s colour, linestyle, and marker options to produce a well-formatted figure.\nMatplotlib supports a wide range of style options:\n\nColours: named strings (\"red\", \"midnightblue\"), greyscale fractions (\"0.5\"), hex codes, or default cycle colours (\"C0\", \"C1\", \"C2\"). See the colour reference.\nLinestyles: \"-\" (solid), \"--\" (dashed), \":\" (dotted), \"-.\" (dash-dot). See the linestyle gallery.\nMarkers: \"o\" (circle), \"x\" (cross), \".\" (point), \"^\" (triangle), etc. See the marker reference.\n\nTask: The provided cell below defines three wave signals. Create a single figure with all three curves on the same axes:\n\ny1 — red, dashed line with circle markers (\"o\")\ny2 — midnightblue, solid line, no markers\ny3 — grey (\"0.5\"), dotted line with cross markers (\"x\")\n\nAdd a title, x-label, y-label, and a legend.",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-2-saving-figures",
     "href": "21/exercises_reflections.html#exercise-2-saving-figures",
     "title": "Revision exercises",
     "section": "Exercise 2: Saving Figures",
-    "text": "Exercise 2: Saving Figures\nObjective: Practice saving matplotlib and pandas figures to file using fig.savefig().\nThe file format is determined by the extension you provide:\n\n.png — PNG raster image (default)\n.pdf — PDF vector format (ideal for publications)\nOther formats: .eps, .ps, .svg\n\nTask:\n\nThe provided cell creates a matplotlib figure. Save it as both \"sqrt_plot.png\" and \"sqrt_plot.pdf\".\nThen practice saving a pandas plot using two different approaches:\n\nApproach 1: Create a fig, ax pair with plt.subplots(), pass ax to df.plot(ax=ax), then save via fig.savefig().\nApproach 2: Don’t create a fig explicitly — capture the Axes returned by ax = df.plot(), retrieve the Figure with ax.get_figure(), then save.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApproach 1 (Pandas): Pass an Axes object to df.plot() so you already hold the fig handle:\n\n\n\n\n\n\nApproach 2 (Pandas): Let df.plot() return the Axes, then retrieve the Figure from it:"
+    "text": "Exercise 2: Saving Figures\nObjective: Practice saving matplotlib and pandas figures to file using fig.savefig().\nThe file format is determined by the extension you provide:\n\n.png — PNG raster image (default)\n.pdf — PDF vector format (ideal for publications)\nOther formats: .eps, .ps, .svg\n\nTask:\n\nThe provided cell creates a matplotlib figure. Save it as both \"sqrt_plot.png\" and \"sqrt_plot.pdf\".\nThen practice saving a pandas plot using two different approaches:\n\nApproach 1: Create a fig, ax pair with plt.subplots(), pass ax to df.plot(ax=ax), then save via fig.savefig().\nApproach 2: Don’t create a fig explicitly — capture the Axes returned by ax = df.plot(), retrieve the Figure with ax.get_figure(), then save.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nApproach 1 (Pandas): Pass an Axes object to df.plot() so you already hold the fig handle:\n\n\n\n\n\n\nApproach 2 (Pandas): Let df.plot() return the Axes, then retrieve the Figure from it:",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-3-index-based-scatter-plot-with-pandas",
     "href": "21/exercises_reflections.html#exercise-3-index-based-scatter-plot-with-pandas",
     "title": "Revision exercises",
     "section": "Exercise 3: Index-based Scatter Plot with Pandas",
-    "text": "Exercise 3: Index-based Scatter Plot with Pandas\nObjective: Learn how to create scatter-like plots in pandas when the x-axis should be the DataFrame index.\ndf.plot.scatter() requires two column names and cannot use the index as the x-axis. To produce a scatter-like appearance (markers, no connecting line) against the index, use df.plot.line() with two key parameters:\n\nmarker= — any marker symbol, e.g. \"o\", \"x\", \".\"\nlinestyle=\"None\" (or \" \" or \"\") — suppresses the connecting line\n\nTask:\n\nUsing the weather DataFrame provided below, plot the \"temperature\" column as a scatter-like plot: circle markers (\"o\"), no connecting line.\nIn the second code cell, create the same plot without linestyle=\"None\" and observe what changes."
+    "text": "Exercise 3: Index-based Scatter Plot with Pandas\nObjective: Learn how to create scatter-like plots in pandas when the x-axis should be the DataFrame index.\ndf.plot.scatter() requires two column names and cannot use the index as the x-axis. To produce a scatter-like appearance (markers, no connecting line) against the index, use df.plot.line() with two key parameters:\n\nmarker= — any marker symbol, e.g. \"o\", \"x\", \".\"\nlinestyle=\"None\" (or \" \" or \"\") — suppresses the connecting line\n\nTask:\n\nUsing the weather DataFrame provided below, plot the \"temperature\" column as a scatter-like plot: circle markers (\"o\"), no connecting line.\nIn the second code cell, create the same plot without linestyle=\"None\" and observe what changes.",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-4-dual-y-axis-plots-with-twinx",
     "href": "21/exercises_reflections.html#exercise-4-dual-y-axis-plots-with-twinx",
     "title": "Revision exercises",
     "section": "Exercise 4: Dual Y-axis Plots with twinx()",
-    "text": "Exercise 4: Dual Y-axis Plots with twinx()\nObjective: Create a figure that displays two datasets with different scales using two y-axes.\nWhen two quantities have very different units or magnitudes, you can use ax.twinx() to create a second Axes that shares the x-axis but has an independent y-axis on the right side. Match the axis label and tick colours to the corresponding dataset so the figure is easy to read.\nThe default matplotlib cycle colours \"C0\", \"C1\", etc. are useful for visually separating the two datasets.\nTask: Using the monthly climate data provided below, create a dual y-axis figure:\n\nLeft y-axis: monthly average temperature (°C) plotted as a line, coloured \"C0\"\nRight y-axis: monthly rainfall (mm) plotted as a bar chart, coloured \"C1\"\nColour each y-axis label and its tick labels to match the data series\nSet the x-tick labels to month names and add a title"
+    "text": "Exercise 4: Dual Y-axis Plots with twinx()\nObjective: Create a figure that displays two datasets with different scales using two y-axes.\nWhen two quantities have very different units or magnitudes, you can use ax.twinx() to create a second Axes that shares the x-axis but has an independent y-axis on the right side. Match the axis label and tick colours to the corresponding dataset so the figure is easy to read.\nThe default matplotlib cycle colours \"C0\", \"C1\", etc. are useful for visually separating the two datasets.\nTask: Using the monthly climate data provided below, create a dual y-axis figure:\n\nLeft y-axis: monthly average temperature (°C) plotted as a line, coloured \"C0\"\nRight y-axis: monthly rainfall (mm) plotted as a bar chart, coloured \"C1\"\nColour each y-axis label and its tick labels to match the data series\nSet the x-tick labels to month names and add a title",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-5-revision-of-random-number-generation-with-numpy",
     "href": "21/exercises_reflections.html#exercise-5-revision-of-random-number-generation-with-numpy",
     "title": "Revision exercises",
     "section": "Exercise 5: Revision of Random Number Generation with NumPy",
-    "text": "Exercise 5: Revision of Random Number Generation with NumPy\nObjective: Practice creating and using a NumPy random number generator.\nThe modern NumPy approach is to create a generator object first, optionally with a fixed seed so results are reproducible:\nfrom numpy import random\nrng = random.default_rng(seed=42)\nYou can then call methods on rng to draw samples:\n\nrng.integers(low, high) — a single random integer in [low, high)\nrng.integers(low, high, size=n) — an array of n random integers\nrng.choice(seq) — a single random element from a sequence\nrng.choice(seq, size=k, replace=False) — k unique elements (no repeats)\nrng.shuffle(seq) — shuffle a list in-place\n\nTasks:\n\nCreate a generator with seed=99.\nGenerate an array of 10 random integers between 1 and 100 (inclusive of 1, exclusive of 100).\nFrom the list [\"rock\", \"paper\", \"scissors\"], simulate 5 random choices with replacement.\nShuffle the list [1, 2, 3, 4, 5] in-place and print it before and after."
+    "text": "Exercise 5: Revision of Random Number Generation with NumPy\nObjective: Practice creating and using a NumPy random number generator.\nThe modern NumPy approach is to create a generator object first, optionally with a fixed seed so results are reproducible:\nfrom numpy import random\nrng = random.default_rng(seed=42)\nYou can then call methods on rng to draw samples:\n\nrng.integers(low, high) — a single random integer in [low, high)\nrng.integers(low, high, size=n) — an array of n random integers\nrng.choice(seq) — a single random element from a sequence\nrng.choice(seq, size=k, replace=False) — k unique elements (no repeats)\nrng.shuffle(seq) — shuffle a list in-place\n\nTasks:\n\nCreate a generator with seed=99.\nGenerate an array of 10 random integers between 1 and 100 (inclusive of 1, exclusive of 100).\nFrom the list [\"rock\", \"paper\", \"scissors\"], simulate 5 random choices with replacement.\nShuffle the list [1, 2, 3, 4, 5] in-place and print it before and after.",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-6-datetimeindex-and-filtering-by-month",
     "href": "21/exercises_reflections.html#exercise-6-datetimeindex-and-filtering-by-month",
     "title": "Revision exercises",
     "section": "Exercise 6: DatetimeIndex and Filtering by Month",
-    "text": "Exercise 6: DatetimeIndex and Filtering by Month\nObjective: Work with a pandas DatetimeIndex to filter rows by a specific month.\nWhen a DataFrame has a DatetimeIndex, you can access time components via .index.month, .index.year, .index.day, etc. These return integer arrays you can use as boolean filters.\nTasks — using the DataFrame provided below:\n\nConfirm the index is a DatetimeIndex by printing df.index.\nExtract only the rows from March (month 3) using .index.month.\nCalculate the mean value for each month across all years. (Hint: group by df.index.month using df.groupby(df.index.month).mean().)"
+    "text": "Exercise 6: DatetimeIndex and Filtering by Month\nObjective: Work with a pandas DatetimeIndex to filter rows by a specific month.\nWhen a DataFrame has a DatetimeIndex, you can access time components via .index.month, .index.year, .index.day, etc. These return integer arrays you can use as boolean filters.\nTasks — using the DataFrame provided below:\n\nConfirm the index is a DatetimeIndex by printing df.index.\nExtract only the rows from March (month 3) using .index.month.\nCalculate the mean value for each month across all years. (Hint: group by df.index.month using df.groupby(df.index.month).mean().)",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-7-nan-propagation",
     "href": "21/exercises_reflections.html#exercise-7-nan-propagation",
     "title": "Revision exercises",
     "section": "Exercise 7: NaN Propagation",
-    "text": "Exercise 7: NaN Propagation\nObjective: Understand how NaN values behave in arithmetic operations on pandas Series.\nKey rules:\n\nNaN + number → NaN (NaN is “viral” in arithmetic)\nPandas aggregation functions (.mean(), .sum(), etc.) skip NaN by default\nYou can fill NaN values before operating with df[\"col\"].fillna(value)\n\nTasks — using the DataFrame provided below:\n\nAdd the two columns \"a\" and \"b\" together. Observe what happens where one value is NaN.\nAdd 100 to column \"b\". What happens to the NaN entries?\nCompute the mean of \"b\" — does pandas skip the NaN values?\nFill the NaN values in \"b\" with 0 first, then add 100. How does the result differ?"
+    "text": "Exercise 7: NaN Propagation\nObjective: Understand how NaN values behave in arithmetic operations on pandas Series.\nKey rules:\n\nNaN + number → NaN (NaN is “viral” in arithmetic)\nPandas aggregation functions (.mean(), .sum(), etc.) skip NaN by default\nYou can fill NaN values before operating with df[\"col\"].fillna(value)\n\nTasks — using the DataFrame provided below:\n\nAdd the two columns \"a\" and \"b\" together. Observe what happens where one value is NaN.\nAdd 100 to column \"b\". What happens to the NaN entries?\nCompute the mean of \"b\" — does pandas skip the NaN values?\nFill the NaN values in \"b\" with 0 first, then add 100. How does the result differ?",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-8-finding-a-minimum-with-scipy.optimize",
     "href": "21/exercises_reflections.html#exercise-8-finding-a-minimum-with-scipy.optimize",
     "title": "Revision exercises",
     "section": "Exercise 8: Finding a Minimum with scipy.optimize",
-    "text": "Exercise 8: Finding a Minimum with scipy.optimize\nObjective: Use scipy.optimize.minimize_scalar to find the minimum of a function, and restrict the search to a specific interval using bounds.\nThe lecture showed minimising \\(f(x) = x^2\\) — a simple case where the minimum is at 0. In practice you often need to find a minimum inside a specific range. Passing method=\"bounded\" and bounds=(a, b) restricts the search to \\([a, b]\\):\nfrom scipy.optimize import minimize_scalar\nresult = minimize_scalar(f, bounds=(0, 10), method=\"bounded\")\nprint(result.x, result.fun)\nTasks:\n\nDefine the function \\(f(x) = \\sin(x) + 0.1 \\, x^2\\).\nUse minimize_scalar with bounds=(0, 10) and method=\"bounded\" to find its minimum in \\([0, 10]\\).\nPlot \\(f(x)\\) over \\([0, 10]\\) and mark the minimum with a red dot. Label the axes and add a legend."
+    "text": "Exercise 8: Finding a Minimum with scipy.optimize\nObjective: Use scipy.optimize.minimize_scalar to find the minimum of a function, and restrict the search to a specific interval using bounds.\nThe lecture showed minimising \\(f(x) = x^2\\) — a simple case where the minimum is at 0. In practice you often need to find a minimum inside a specific range. Passing method=\"bounded\" and bounds=(a, b) restricts the search to \\([a, b]\\):\nfrom scipy.optimize import minimize_scalar\nresult = minimize_scalar(f, bounds=(0, 10), method=\"bounded\")\nprint(result.x, result.fun)\nTasks:\n\nDefine the function \\(f(x) = \\sin(x) + 0.1 \\, x^2\\).\nUse minimize_scalar with bounds=(0, 10) and method=\"bounded\" to find its minimum in \\([0, 10]\\).\nPlot \\(f(x)\\) over \\([0, 10]\\) and mark the minimum with a red dot. Label the axes and add a legend.",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "21/exercises_reflections.html#exercise-9-sampling-from-distributions-with-scipy.stats",
     "href": "21/exercises_reflections.html#exercise-9-sampling-from-distributions-with-scipy.stats",
     "title": "Revision exercises",
     "section": "Exercise 9: Sampling from Distributions with scipy.stats",
-    "text": "Exercise 9: Sampling from Distributions with scipy.stats\nObjective: Use scipy.stats distribution objects to draw random samples and plot theoretical probability density functions (PDFs).\nscipy.stats provides objects for many statistical distributions. Each object lets you:\n\n.rvs(size=n, random_state=rng) — draw n random samples\n.pdf(x) — evaluate the theoretical probability density at each point in x\n.mean(), .std() — get the theoretical mean and standard deviation\n\nFor example, a normal distribution with mean 5 and standard deviation 2:\nfrom scipy import stats\ndist = stats.norm(loc=5, scale=2)\n\nsamples = dist.rvs(size=200, random_state=42)\nTasks:\n\nCreate a normal distribution with mean 10 and standard deviation 3. Draw 500 samples from it.\nPlot a normalised histogram (density=True) of the samples.\nOn the same axes, overlay the theoretical PDF curve using .pdf() evaluated over a suitable range of x values.\nPrint the theoretical mean and standard deviation using .mean() and .std(), and compare them to samples.mean() and samples.std()."
+    "text": "Exercise 9: Sampling from Distributions with scipy.stats\nObjective: Use scipy.stats distribution objects to draw random samples and plot theoretical probability density functions (PDFs).\nscipy.stats provides objects for many statistical distributions. Each object lets you:\n\n.rvs(size=n, random_state=rng) — draw n random samples\n.pdf(x) — evaluate the theoretical probability density at each point in x\n.mean(), .std() — get the theoretical mean and standard deviation\n\nFor example, a normal distribution with mean 5 and standard deviation 2:\nfrom scipy import stats\ndist = stats.norm(loc=5, scale=2)\n\nsamples = dist.rvs(size=200, random_state=42)\nTasks:\n\nCreate a normal distribution with mean 10 and standard deviation 3. Draw 500 samples from it.\nPlot a normalised histogram (density=True) of the samples.\nOn the same axes, overlay the theoretical PDF curve using .pdf() evaluated over a suitable range of x values.\nPrint the theoretical mean and standard deviation using .mean() and .std(), and compare them to samples.mean() and samples.std().",
+    "crumbs": [
+      "Home",
+      "21 Reflections",
+      "Revision exercises"
+    ]
   },
   {
     "objectID": "slides/08_working_numpy_slides.html#array-indexing-slicing",
