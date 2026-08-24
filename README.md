@@ -2,7 +2,7 @@
 
 Refurbished course.
 
-Contains
+It contains
 
-- Notebooks for weekly workshops
-- quarto website with pyodide interactivity
+- `Jupyter` notebooks for weekly workshops
+- `quarto` website with pyodide interactivity, inside the `quarto` folder
